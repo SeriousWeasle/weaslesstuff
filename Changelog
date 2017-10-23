@@ -1,0 +1,43 @@
+Version 1.00
+-Added a shells variant giving only 2 shells (Actor name ShellsTwo)
+
+Version 1.01
+-Added a shell spawner (75% chance for vanilla shells and 25% chance for 2 shells)
+
+Version 1.02
+-Added bolt ammo type
+-Added 8 shells
+-Added 10 shells
+    Still need to add sprites for the new items
+
+Version 1.03
+-Removed bolt ammo type
+-Made 8 and 10 shell packs spawn
+-Added textures to 8 and 10 shell items
+
+Version 1.04
+-Added 2 new zombieman variants; the assault rifle zombie and the plasma pistol zombie.
+    New variants need new textures, as they currently use the default zombieman texture.
+
+Version 1.05
+-Added a file called 'Credits' in the root directory of the mod
+-Changed changelog layout
+-Added a new Zombieman; shoots imp fireballs
+
+Version 1.06
+-Added an entry to the credits list
+
+Version 1.07
+-Added the Auto Shotgun
+-Added Auto Shotgun Shells
+-Redid the formatting of DECORATE.txt
+-Made shotgun zombies have a 1 in 4 chance to also drop shells
+-Made 10 shells variant drop from shell boxes
+
+Version 1.08
+-Added a stackable backpack with the actor name "weasbackpack"
+
+Version 1.09
+-Added a smaller variant of the stackable backpack
+-Made new backpack overwrite original backpack
+-Replaced berserk pack with small ammo upgrades

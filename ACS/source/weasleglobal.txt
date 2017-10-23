@@ -1,0 +1,45 @@
+#library "weasleglobal"
+#include "zcommon.acs"
+
+script "superbackpack" (void)
+{
+    SetAmmoCapacity("Clip", GetAmmoCapacity("Clip") + 200);
+	SetAmmoCapacity("Shell", GetAmmoCapacity("Shell") + 50);
+	SetAmmoCapacity("RocketAmmo", GetAmmoCapacity("RocketAmmo") + 50);
+	SetAmmoCapacity("Cell", GetAmmoCapacity("Cell") + 300);
+	SetAmmoCapacity("ShellAuto", GetAmmoCapacity("ShellAuto") + 200);
+}
+
+script "shellsupgrade" (void)
+{
+	SetAmmoCapacity("Shell", GetAmmoCapacity("Shell") + 5);
+}
+
+script "bulletupgrade" (void)
+{
+	SetAmmoCapacity("Clip", GetAmmoCapacity("Clip") + 20);
+}
+
+script "rocketupgrade" (void)
+{
+	SetAmmoCapacity("RocketAmmo", GetAmmoCapacity("RocketAmmo") + 5);
+}
+
+script "cellupgrade" (void)
+{
+	SetAmmoCapacity("Cell", GetAmmoCapacity("Cell") + 30);
+}
+
+script "shellautoupgrade" (void)
+{
+	SetAmmoCapacity("ShellAuto", GetAmmoCapacity("ShellAuto") + 20);
+}
+
+script "smallbackpack" (void)
+{
+    SetAmmoCapacity("Clip", GetAmmoCapacity("Clip") + 20);
+	SetAmmoCapacity("Shell", GetAmmoCapacity("Shell") + 5);
+	SetAmmoCapacity("RocketAmmo", GetAmmoCapacity("RocketAmmo") + 5);
+	SetAmmoCapacity("Cell", GetAmmoCapacity("Cell") + 30);
+	SetAmmoCapacity("ShellAuto", GetAmmoCapacity("ShellAuto") + 20);
+}

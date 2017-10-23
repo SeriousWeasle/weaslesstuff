@@ -1,0 +1,34 @@
+ACTOR AutoShotgun : DoomWeapon
+{
+    Weapon.SlotNumber 3
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 12
+    Weapon.AmmoType "ShellAuto"
+    Inventory.PickupMessage "Got the Auto Shotgun"
+    States
+    {
+        Ready:
+            SHTG A 1 A_WeaponReady
+            Loop
+        Deselect:
+            SHTG A 1 A_Lower
+            Loop
+        Select:
+            SHTG A 1 A_Raise
+            Loop
+        Fire:
+            SHTG A 2
+            SHTG A 6 A_FireShotgun
+            SHTG A 2 A_ReFire
+            SHTG BC 5
+            SHTG D 4
+            SHTG CB 5
+            Goto Ready
+        Flash:
+            SHTF A 4 Bright A_Light1
+            Goto LightDone
+        Spawn:
+            SHOT A -1
+            Stop
+    }
+}
