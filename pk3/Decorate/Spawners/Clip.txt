@@ -1,0 +1,5 @@
+ACTOR ClipSpawner : RandomSpawner replaces Clip
+{
+    DropItem "ClipVanilla" 255 75
+    DropItem "Clip12mm" 255 25
+}

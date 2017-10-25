@@ -8,6 +8,7 @@ script "superbackpack" (void)
 	SetAmmoCapacity("RocketAmmo", GetAmmoCapacity("RocketAmmo") + 50);
 	SetAmmoCapacity("Cell", GetAmmoCapacity("Cell") + 300);
 	SetAmmoCapacity("ShellAuto", GetAmmoCapacity("ShellAuto") + 200);
+	SetAmmoCapacity("Clip12mm", GetAmmoCapacity("Clip12mm") + 128);
 }
 
 script "shellsupgrade" (void)
@@ -35,6 +36,11 @@ script "shellautoupgrade" (void)
 	SetAmmoCapacity("ShellAuto", GetAmmoCapacity("ShellAuto") + 20);
 }
 
+script "clip12mmupgrade" (void)
+{
+	SetAmmoCapacity("Clip12mm", GetAmmoCapacity("Clip12mm") + 16);
+}
+
 script "smallbackpack" (void)
 {
     SetAmmoCapacity("Clip", GetAmmoCapacity("Clip") + 20);
@@ -42,6 +48,7 @@ script "smallbackpack" (void)
 	SetAmmoCapacity("RocketAmmo", GetAmmoCapacity("RocketAmmo") + 5);
 	SetAmmoCapacity("Cell", GetAmmoCapacity("Cell") + 30);
 	SetAmmoCapacity("ShellAuto", GetAmmoCapacity("ShellAuto") + 20);
+	SetAmmoCapacity("Clip12mm", GetAmmoCapacity("Clip12mm") + 16);
 }
 
 script "noberserk" (void)

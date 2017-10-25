@@ -57,3 +57,10 @@ Version 1.11
 -Made 12mm pistol spawn
 -Added sprites for autoshotgun and world sprite for 12mm pistol
 -Tweaked autoshotgun shell spawn rate
+
+Version 1.13
+-Changed pickup messages for the weapons
+-Added 12mm bullet ammo type
+-12mm pistol uses 12mm bullets
+-12mm bullets have their own upgrade
+-Fixed some balancing

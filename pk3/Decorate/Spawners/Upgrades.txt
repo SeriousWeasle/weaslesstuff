@@ -5,10 +5,11 @@ ACTOR BackpackSpawner : RandomSpawner replaces Backpack
 
 ACTOR UpgradeSpawner : RandomSpawner
 {
-    DropItem "SmallBackpack" 255 10
+    DropItem "SmallBackpack" 255 15
     DropItem "ShellUpgrade" 255 25
-    DropItem "BulletUpgrade" 255 20
-    DropItem "RocketUpgrade" 255 15
-    DropItem "CellUpgrade" 255 15
-    DropItem "AutoShellUpgrade" 255 15
+    DropItem "BulletUpgrade" 255 25
+    DropItem "RocketUpgrade" 255 25
+    DropItem "CellUpgrade" 255 25
+    DropItem "AutoShellUpgrade" 255 25
+    DropItem "12mmBulletUpgrade" 255 25
 }

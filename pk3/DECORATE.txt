@@ -8,6 +8,7 @@
 //Ammo
 #include "Decorate/Ammo/Shells.txt"
 #include "Decorate/Ammo/ShellsAuto.txt"
+#include "Decorate/Ammo/Bullets12mm.txt"
 
 
 //Monsters
@@ -24,6 +25,7 @@
 
 //Spawners
 #include "Decorate/Spawners/Shells.txt"
+#include "Decorate/Spawners/Clip.txt"
 
 #include "Decorate/Spawners/Zombieman.txt"
 #include "Decorate/Spawners/ShotgunGuy.txt"

@@ -82,6 +82,20 @@ ACTOR AutoShellUpgrade : CustomInventory
     }
 }
 
+ACTOR 12mmBulletUpgrade : CustomInventory
+{
+    Height 26
+    Inventory.PickupMessage "Got a 12mm bullet inventory space upgrade"
+    States
+    {
+        Spawn:
+            12UP A -1
+            Stop
+        Pickup:
+            TNT1 A 1 ACS_NamedExecute("clip12mmupgrade", 0)
+    }
+}
+
 ACTOR SmallBackpack : CustomInventory
 {
     Height 26

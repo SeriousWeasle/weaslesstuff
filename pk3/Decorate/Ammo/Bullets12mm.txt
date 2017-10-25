@@ -1,0 +1,15 @@
+ACTOR Clip12mm : Ammo
+{
+    Inventory.PickupMessage "Picked up 8 12mm bullets"
+    Inventory.Amount 8
+    Inventory.MaxAmount 128
+    Ammo.BackpackAmount 24
+    Ammo.BackpackMaxAmount 256
+    Inventory.Icon "B128A0"
+    States
+    {
+        Spawn:
+            B128 A -1
+            Stop
+    }
+}

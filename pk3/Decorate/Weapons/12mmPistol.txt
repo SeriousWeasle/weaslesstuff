@@ -3,8 +3,8 @@ ACTOR 12mmPistol : DoomWeapon
     Weapon.SlotNumber 2
     Weapon.AmmoUse 1
     Weapon.AmmoGive 24
-    Weapon.AmmoType "Clip"
-    Inventory.PickupMessage "Got a 12 mm Pistol"
+    Weapon.AmmoType "Clip12mm"
+    Inventory.PickupMessage "Got a CE standard issue 12 mm Pistol"
     States
     {
         Ready:

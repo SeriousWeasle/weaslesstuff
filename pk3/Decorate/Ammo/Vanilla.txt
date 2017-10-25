@@ -7,3 +7,9 @@ ACTOR ShellBoxVanilla : ShellBox
 {
     Inventory.PickupMessage "Picked up 20 shells"
 }
+
+ACTOR ClipVanilla : Clip
+{
+    Inventory.PickupMessage "Picked up 10 9mm bullets"
+    Inventory.Amount 10
+}
