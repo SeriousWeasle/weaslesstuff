@@ -19,6 +19,7 @@
 
 //Weapons
 #include "Decorate/Weapons/AutoShotgun.txt"
+#include "Decorate/Weapons/12mmPistol.txt"
 
 
 //Spawners

@@ -1,0 +1,37 @@
+ACTOR 12mmPistol : DoomWeapon
+{
+    Weapon.SlotNumber 3
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 24
+    Weapon.AmmoType "Clip"
+    Inventory.PickupMessage "Got a 12 mm Pistol"
+    States
+    {
+        Ready:
+            PSTV A 1 A_WeaponReady
+            Loop
+        Deselect:
+            PSTV A 0 A_PlaySound("12mmPistol/Lower", CHAN_WEAPON)
+            Goto Lower
+        Lower:
+            PSTV A 1 A_Lower
+            Loop
+        Select:
+            PSTV A 0 A_PlaySound("12mmPistol/Raise", CHAN_WEAPON)
+            Goto Raise
+        Raise:
+            PSTV A 1 A_Raise
+            Loop
+        Fire:
+            PSTV A 2 A_PlaySound ("12mmPistol/Fire", CHAN_WEAPON)
+            PSTV B 6 A_FireBullets(2.4, 0, 1, 12, "BulletPuff")
+            PSTV C 4
+            PSTV D 4
+            PSTV E 4
+            PSTV F 5 A_ReFire
+            Goto Ready
+        Spawn:
+        BPAK A -1
+        Stop
+    }
+}

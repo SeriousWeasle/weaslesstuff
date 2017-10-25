@@ -47,3 +47,8 @@ Version 1.10
 -New cvar will spawn berserk if set to 0 and upgrades if it is set to anything else
 -Moved code and sprites into pk3
 -Made upgrade spawner no longer spawn berserk pack
+
+Version 1.11
+-Updated README.md
+-Fixed super shotgun slot number
+-Added a 12 mm pistol
