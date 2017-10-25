@@ -1,0 +1,27 @@
+ACTOR ShellAuto : Ammo
+{
+    Inventory.PickupMessage "Picked up 4 Auto Shotgun Shells"
+    Inventory.Amount 4
+    Inventory.MaxAmount 200
+    Ammo.BackpackAmount 12
+    Ammo.BackpackMaxAmount 400
+    Inventory.Icon "GNSHA0"
+    States
+    {
+        Spawn:
+            GNSH A -1
+            Stop
+    }
+}
+
+ACTOR ShellBoxAuto : ShellAuto
+{
+    Inventory.PickupMessage "Picked up 24 Auto Shotgun Shells"
+    Inventory.Amount 24
+    States
+    {
+        Spawn:
+            GNSB A -1
+            Stop
+    }
+}

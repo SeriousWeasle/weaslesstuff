@@ -1,0 +1,16 @@
+ACTOR BerserkToggleSpawner replaces Berserk
+{
+    States
+    {
+        Spawn:
+            TNT1 A 0 A_JumpIf(CallACS("noberserk")>0 || CallACS("noberserk")<0, "DropUpgrade")
+            TNT1 A 0 A_JumpIf(CallACS("noberserk")==0, "DropBerserk")
+            Loop
+        DropUpgrade:
+            TNT1 A 0 A_DropItem("UpgradeSpawner")
+            Stop
+        DropBerserk:
+            TNT1 A 0 A_DropItem("VanillaBerserk")
+            Stop
+    }
+}

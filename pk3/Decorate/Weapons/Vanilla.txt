@@ -1,0 +1,4 @@
+ACTOR VanillaSuperShotgun : SuperShotgun
+{
+    Inventory.PickupMessage "Got the Double Barreled Shotgun"
+}
