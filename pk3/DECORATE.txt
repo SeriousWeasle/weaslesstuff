@@ -31,5 +31,7 @@
 #include "Decorate/Spawners/Upgrades.txt"
 
 #include "Decorate/Spawners/SuperShotgun.txt"
+#include "Decorate/Spawners/Chainsaw.txt"
+#include "Decorate/Spawners/Shotgun.txt"
 
 #include "Decorate/Spawners/ToggleSpawners.txt"

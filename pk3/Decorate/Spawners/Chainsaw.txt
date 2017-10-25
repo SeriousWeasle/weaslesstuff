@@ -1,0 +1,5 @@
+ACTOR ChainsawSpawner : RandomSpawner replaces Chainsaw
+{
+    DropItem "12mmPistol" 255 50
+    DropItem "VanillaChainsaw" 255 50
+}

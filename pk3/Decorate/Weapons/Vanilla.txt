@@ -1,5 +1,14 @@
 ACTOR VanillaSuperShotgun : SuperShotgun
 {
-    Inventory.PickupMessage "Got the Double Barreled Shotgun"
+    Weapon.SlotNumber 3
+}
+
+ACTOR VanillaChainsaw : Chainsaw
+{
+    Weapon.SlotNumber 1
+}
+
+ACTOR VanillaShotgun : Shotgun
+{
     Weapon.SlotNumber 3
 }

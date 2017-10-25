@@ -18,14 +18,14 @@ ACTOR AutoShotgun : DoomWeapon
             Loop
         Fire:
             ASHT A 2 A_PlaySound("AutoShotgun/Fire", CHAN_WEAPON)
-            ASHT B 1
-            ASHT C 6 A_FireBullets(5.6, 0, 7, 2, "BulletPuff")
+            ASHT B 3 A_FireBullets(5.6, 0, 7, 2, "BulletPuff")
+            ASHT C 7
             ASHT A 2 A_ReFire
             ASHT A 0 A_PlaySound("AutoShotgun/Pump", 5)
             ASHT DEFED 3
             Goto Ready
         Spawn:
-            SHOT A -1
+            ASHT G -1
             Stop
     }
 }

@@ -1,6 +1,6 @@
 ACTOR 12mmPistol : DoomWeapon
 {
-    Weapon.SlotNumber 3
+    Weapon.SlotNumber 2
     Weapon.AmmoUse 1
     Weapon.AmmoGive 24
     Weapon.AmmoType "Clip"
@@ -31,7 +31,7 @@ ACTOR 12mmPistol : DoomWeapon
             PSTV F 5 A_ReFire
             Goto Ready
         Spawn:
-        BPAK A -1
+        PSTV G -1
         Stop
     }
 }

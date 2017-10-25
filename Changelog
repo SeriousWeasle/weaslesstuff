@@ -51,4 +51,9 @@ Version 1.10
 Version 1.11
 -Updated README.md
 -Fixed super shotgun slot number
--Added a 12 mm pistol
+-Added a 12mm pistol
+
+-Version 1.12
+-Made 12mm pistol spawn
+-Added sprites for autoshotgun and world sprite for 12mm pistol
+-Tweaked autoshotgun shell spawn rate

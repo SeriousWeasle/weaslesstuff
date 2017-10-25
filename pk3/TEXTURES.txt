@@ -96,3 +96,21 @@ Sprite SHUPA0, 18, 10
         Rotate 0
     }
 }
+
+Sprite PSTVG0, 28, 19
+{
+    Offset 14, 19
+    Patch PSTVG0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite ASHTG0, 68, 20
+{
+    Offset 34, 20
+    Patch ASHTG0, 0, 0
+    {
+        Rotate 0
+    }
+}
