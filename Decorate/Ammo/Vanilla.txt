@@ -1,9 +1,0 @@
-ACTOR ShellsVanilla : Shell
-{
-    Inventory.PickupMessage "Picked up 4 shells."
-}
-
-ACTOR ShellBoxVanilla : ShellBox
-{
-    Inventory.PickupMessage "Picked up 20 shells"
-}

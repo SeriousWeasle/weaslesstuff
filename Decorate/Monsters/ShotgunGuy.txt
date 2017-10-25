@@ -1,5 +1,0 @@
-ACTOR ShotgunGuyNew : ShotgunGuy
-{
-    DropItem "Shotgun"
-    DropItem "Shell" 64
-}

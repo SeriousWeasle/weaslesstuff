@@ -1,4 +1,0 @@
-ACTOR ZombiemanPistol : Zombieman
-{
-    Health 20
-}

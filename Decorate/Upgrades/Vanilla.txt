@@ -1,4 +1,0 @@
-ACTOR VanillaBerserk : Berserk
-{
-
-}

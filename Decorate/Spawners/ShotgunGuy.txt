@@ -1,4 +1,0 @@
-ACTOR ShotgunGuySpawner : RandomSpawner replaces ShotgunGuy
-{
-    DropItem "ShotgunGuyNew" 255 100
-}

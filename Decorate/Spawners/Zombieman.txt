@@ -1,7 +1,0 @@
-ACTOR ZombiemanSpawner : RandomSpawner replaces Zombieman
-{
-    DropItem "ZombiemanPistol" 255 75
-    DropItem "ZombiemanPlasmaPistol" 255 10
-    DropItem "ZombiemanAssaultRifle" 255 15
-    DropItem "ZombiemanImpball" 255 15
-}
