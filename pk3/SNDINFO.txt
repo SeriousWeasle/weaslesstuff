@@ -2,3 +2,7 @@
 12mmPistol/Raise       12mmup
 12mmPistol/Lower       12mmlow
 12mmPistol/Fire        12mmfire
+
+//Autoshotgun stuff
+AutoShotgun/Fire       ashtfire
+AutoShotgun/Pump       ashtpump
