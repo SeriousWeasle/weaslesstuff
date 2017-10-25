@@ -41,3 +41,9 @@ Version 1.09
 -Added a smaller variant of the stackable backpack
 -Made new backpack overwrite original backpack
 -Replaced berserk pack with small ammo upgrades
+
+Version 1.10
+-Added a cvar called weasle_noberserk. default = 1
+-New cvar will spawn berserk if set to 0 and upgrades if it is set to anything else
+-Moved code and sprites into pk3
+-Made upgrade spawner no longer spawn berserk pack
