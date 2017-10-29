@@ -1,9 +1,12 @@
 ACTOR 12mmPistol : DoomWeapon
 {
     Weapon.SlotNumber 2
-    Weapon.AmmoUse 1
-    Weapon.AmmoGive 24
-    Weapon.AmmoType "Clip12mm"
+    Weapon.AmmoUse1 1
+    Weapon.AmmoGive1 24
+    Weapon.AmmoType1 "Clip12mm"
+    Weapon.AmmoUse2 1
+    Weapon.AmmoGive2 2
+    Weapon.AmmoType2 "DarkCrystal"
     Inventory.PickupMessage "Got a CE standard issue 12 mm Pistol"
     States
     {
@@ -30,8 +33,44 @@ ACTOR 12mmPistol : DoomWeapon
             PSTV E 4
             PSTV F 5 A_ReFire
             Goto Ready
+        AltFire:
+            PSTV A 2 A_PlaySound ("12mmPistol/Fire", CHAN_WEAPON)
+            PSTV B 0 A_SetBlend("Blue", 0.05, 12)
+            PSTV B 6 A_FireCustomMissile("DarkCrystalProjectile", 0, 1, 6, 2, 0)
+            PSTV B 0
+            PSTV C 4 
+            PSTV D 4
+            PSTV E 4
+            PSTV F 5
+            Goto Ready
         Spawn:
         PSTV G -1
         Stop
+    }
+}
+
+ACTOR DarkCrystalProjectile
+{
+    Radius 3
+    Height 4
+    Speed 45
+    Damage 16
+    SeeSound ""
+    DeathSound ""
+    RenderStyle Add
+    Projectile
+    Scale 0.5
+    Alpha 1
+    +DONTSPLASH
+    +RANDOMIZE
+    States
+    {
+        Spawn:
+            BPAK A 1
+            DCRS A 1
+            Loop
+        Death:
+            B128 A 1
+            Stop
     }
 }

@@ -132,3 +132,12 @@ Sprite 12UPA0, 12, 14
         Rotate 0
     }
 }
+
+Sprite DCRSA0, 21, 17
+{
+    Offset 10, 17
+    Patch DCRSA0, 0, 0
+    {
+        Rotate 0
+    }
+}

@@ -1,0 +1,15 @@
+ACTOR DarkCrystal : Ammo
+{
+    Inventory.PickupMessage "Picked up a small amount of dark energy crystals"
+    Inventory.Amount 4
+    Inventory.MaxAmount 64
+    Ammo.BackpackAmount 12
+    Ammo.BackpackMaxAmount 128
+    Inventory.Icon "DCRSA0"
+    States
+    {
+        Spawn:
+            DCRS A -1
+            Stop
+    }
+}
