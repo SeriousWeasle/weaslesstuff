@@ -34,7 +34,7 @@ ACTOR 12mmPistol : DoomWeapon
             PSTV F 5 A_ReFire
             Goto Ready
         AltFire:
-            PSTV A 2 A_PlaySound ("12mmPistol/Fire", CHAN_WEAPON)
+            PSTV A 2 A_PlaySound ("12mmPistol/FireDarkEnergy", CHAN_WEAPON)
             PSTV B 0 A_SetBlend("Blue", 0.05, 12)
             PSTV B 6 A_FireCustomMissile("DarkCrystalProjectile", 0, 1, 6, 2, 0)
             PSTV B 0

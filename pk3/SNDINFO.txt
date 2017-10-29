@@ -1,8 +1,9 @@
 //Pistol stuff
-12mmPistol/Raise       12mmup
-12mmPistol/Lower       12mmlow
-12mmPistol/Fire        12mmfire
+12mmPistol/Raise             12mmup
+12mmPistol/Lower             12mmlow
+12mmPistol/Fire              12mmfire
+12mmPistol/FireDarkEnergy    12mmfde
 
 //Autoshotgun stuff
-AutoShotgun/Fire       ashtfire
-AutoShotgun/Pump       ashtpump
+AutoShotgun/Fire             ashtfire
+AutoShotgun/Pump             ashtpump
