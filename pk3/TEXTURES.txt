@@ -141,3 +141,93 @@ Sprite DCRSA0, 21, 17
         Rotate 0
     }
 }
+
+Sprite DMBLA0, 17, 17
+{
+    Offset 17, 17
+    Patch DMBLA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DMBLB0, 17, 17
+{
+    Offset 17, 17
+    Patch DMBLB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DMBLC0, 17, 17
+{
+    Offset 17, 17
+    Patch DMBLC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DMBLD0, 17, 17
+{
+    Offset 17, 17
+    Patch DMBLD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKA0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKB0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKC0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKD0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKE0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKE0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKF0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKF0, 0, 0
+    {
+        Rotate 0
+    }
+}

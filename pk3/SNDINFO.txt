@@ -7,3 +7,11 @@
 //Autoshotgun stuff
 AutoShotgun/Fire             ashtfire
 AutoShotgun/Pump             ashtpump
+
+//Explosions
+Explosions/DarkEnergy        denexp
+
+//Effects
+SFX/DarkEnergySparks1        dmsprk1
+SFX/DarkEnergySparks2        dmsprk2
+SFX/DarkEnergySparks3        dmsprk3

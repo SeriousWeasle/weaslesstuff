@@ -60,17 +60,17 @@ ACTOR DarkCrystalProjectile
     RenderStyle Add
     Projectile
     Scale 0.5
-    Alpha 1
+    Alpha 3
     +DONTSPLASH
     +RANDOMIZE
     States
     {
         Spawn:
-            BPAK A 1
-            DCRS A 1
+            DMBL ABCD 1          
             Loop
         Death:
-            B128 A 1
+            B128 A 1 A_PlaySound("Explosions/DarkEnergy", 5)
+            TNT1 A 0 A_Explode(130,128,1)
             Stop
     }
 }
