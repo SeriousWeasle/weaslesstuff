@@ -9,66 +9,12 @@ ACTOR DarkCrystal : Ammo
     States
     {
         Spawn:
-            DCRS A 1 A_Jump(127, 1, 2, 3, 4, 5, 6)
+            DCRS A 135
             DCRS A 1 A_SpawnItemEx("DarkSparksRandomizer", random(1,3), random(-12,12), random(0,10), 0, 0, 0, 0)
             DCRS A 127
             DCRS A 1 A_SpawnItemEx("DarkSparksRandomizer", random(1,3), random(-12,12), random(0,10), 0, 0, 0, 0)
             DCRS A 168
             DCRS A 1 A_SpawnItemEx("DarkSparksRandomizer", random(1,3), random(-12,12), random(0,10), 0, 0, 0, 0)
-            DCRS A 135
             Loop
     }
-}
-
-ACTOR DarkSparks
-{
-    Radius 2
-    Height 4
-    Mass 75
-    Speed 0
-    Damage 0
-    Projectile
-    Scale 0.5
-    States
-    {
-        Spawn:
-            DSPK ABC 1 {A_SetRenderStyle(0.85, STYLE_Translucent); A_PlaySound("SFX/DarkEnergySparks1", 5);}
-            DSPK D 3 A_SetRenderStyle(0.75, STYLE_Translucent)
-            DSPK E 3 A_SetRenderStyle(0.5, STYLE_Translucent)
-            DSPK F 3 A_SetRenderStyle(0.25, STYLE_Translucent)
-            Stop
-    }
-}
-
-ACTOR DarkSparks2 : DarkSparks
-{
-    States
-    {
-        Spawn:
-            DSPK ABC 1 {A_SetRenderStyle(0.85, STYLE_Translucent); A_PlaySound("SFX/DarkEnergySparks2", 5);}
-            DSPK D 3 A_SetRenderStyle(0.75, STYLE_Translucent)
-            DSPK E 3 A_SetRenderStyle(0.5, STYLE_Translucent)
-            DSPK F 3 A_SetRenderStyle(0.25, STYLE_Translucent)
-            Stop
-    }
-}
-
-ACTOR DarkSparks3 : DarkSparks
-{
-    States
-    {
-        Spawn:
-            DSPK ABC 1 {A_SetRenderStyle(0.85, STYLE_Translucent); A_PlaySound("SFX/DarkEnergySparks3", 5);}
-            DSPK D 3 A_SetRenderStyle(0.75, STYLE_Translucent)
-            DSPK E 3 A_SetRenderStyle(0.5, STYLE_Translucent)
-            DSPK F 3 A_SetRenderStyle(0.25, STYLE_Translucent)
-            Stop
-    }
-}
-
-ACTOR DarkSparksRandomizer : RandomSpawner
-{
-    DropItem "DarkSparks" 255 1
-    DropItem "DarkSparks2" 255 1
-    DropItem "DarkSparks3" 255 1
 }

@@ -8,6 +8,9 @@
 AutoShotgun/Fire             ashtfire
 AutoShotgun/Pump             ashtpump
 
+//SMG stuff
+SMG/Fire                     smgfire
+
 //Explosions
 Explosions/DarkEnergy        denexp
 

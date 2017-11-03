@@ -72,3 +72,10 @@ Version 1.14
 Version 1.15
 -Added some visual effects to the dark crystal ammo
 -Partially fixed the 12mm altfire
+
+Version 1.16
+-Completely redid 12mm altfire
+-Added an SMG
+-Added 5mm bullets
+-Fixed bug where everything had a super small chance to not spawn
+-Kept old 12mm altfire stuff for later weapon

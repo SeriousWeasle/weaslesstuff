@@ -231,3 +231,39 @@ Sprite DSPKF0, 20, 20
         Rotate 0
     }
 }
+
+Sprite B525A0, 14, 8
+{
+    Offset 7, 8
+    Patch B525A0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite SMGIA0, 38, 14
+{
+    Offset 14, 14
+    Patch SMGIA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite 5MMUA0, 17, 11
+{
+    Offset 8, 11
+    Patch 5MMUA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DCUPA0, 22, 18
+{
+    Offset 11, 18
+    Patch DCUPA0, 0, 0
+    {
+        Rotate 0
+    }
+}

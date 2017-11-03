@@ -1,0 +1,15 @@
+ACTOR Clip5mm : Ammo
+{
+    Inventory.PickupMessage "Picked up 25 5mm bullets"
+    Inventory.Amount 25
+    Inventory.MaxAmount 750
+    Ammo.BackpackAmount 24
+    Ammo.BackpackMaxAmount 1500
+    Inventory.Icon "B525A0"
+    States
+    {
+        Spawn:
+            B525 A -1
+            Stop
+    }
+}

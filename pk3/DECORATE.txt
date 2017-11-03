@@ -10,6 +10,7 @@
 #include "Decorate/Ammo/ShellsAuto.txt"
 #include "Decorate/Ammo/Bullets12mm.txt"
 #include "Decorate/Ammo/DarkCrystals.txt"
+#include "Decorate/Ammo/Bullets5mm.txt"
 
 
 //Monsters
@@ -22,6 +23,7 @@
 //Weapons
 #include "Decorate/Weapons/AutoShotgun.txt"
 #include "Decorate/Weapons/12mmPistol.txt"
+#include "Decorate/Weapons/SMG.txt"
 
 
 //Spawners
@@ -36,5 +38,6 @@
 #include "Decorate/Spawners/SuperShotgun.txt"
 #include "Decorate/Spawners/Chainsaw.txt"
 #include "Decorate/Spawners/Shotgun.txt"
+#include "Decorate/Spawners/Chaingun.txt"
 
 #include "Decorate/Spawners/ToggleSpawners.txt"

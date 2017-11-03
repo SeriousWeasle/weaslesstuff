@@ -9,6 +9,8 @@ script "superbackpack" (void)
 	SetAmmoCapacity("Cell", GetAmmoCapacity("Cell") + 300);
 	SetAmmoCapacity("ShellAuto", GetAmmoCapacity("ShellAuto") + 200);
 	SetAmmoCapacity("Clip12mm", GetAmmoCapacity("Clip12mm") + 128);
+	SetAmmoCapacity("DarkCrystal", GetAmmoCapacity("DarkCrystal") + 64);
+	SetAmmoCapacity("Clip5mm", GetAmmoCapacity("Clip5mm") + 750);
 }
 
 script "shellsupgrade" (void)
@@ -41,6 +43,16 @@ script "clip12mmupgrade" (void)
 	SetAmmoCapacity("Clip12mm", GetAmmoCapacity("Clip12mm") + 16);
 }
 
+script "darkcrystalupgrade" (void)
+{
+	SetAmmoCapacity("DarkCrystal", GetAmmoCapacity("DarkCrystal") + 8);
+}
+
+script "clip5mmupgrade" (void)
+{
+	SetAmmoCapacity("Clip5mm", GetAmmoCapacity("Clip5mm") + 75);
+}
+
 script "smallbackpack" (void)
 {
     SetAmmoCapacity("Clip", GetAmmoCapacity("Clip") + 20);
@@ -49,6 +61,8 @@ script "smallbackpack" (void)
 	SetAmmoCapacity("Cell", GetAmmoCapacity("Cell") + 30);
 	SetAmmoCapacity("ShellAuto", GetAmmoCapacity("ShellAuto") + 20);
 	SetAmmoCapacity("Clip12mm", GetAmmoCapacity("Clip12mm") + 16);
+	SetAmmoCapacity("DarkCrystal", GetAmmoCapacity("DarkCrystal") + 8);
+	SetAmmoCapacity("Clip5mm", GetAmmoCapacity("Clip5mm") + 75);
 }
 
 script "noberserk" (void)

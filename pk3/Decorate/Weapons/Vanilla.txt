@@ -12,3 +12,8 @@ ACTOR VanillaShotgun : Shotgun
 {
     Weapon.SlotNumber 3
 }
+
+ACTOR VanillaChaingun : Chaingun
+{
+    Weapon.SlotNumber 4
+}

@@ -1,5 +1,5 @@
 ACTOR ShotgunSpawner : RandomSpawner replaces Shotgun
 {
-    DropItem "12mmPistol" 255 5
-    DropItem "VanillaShotgun" 255 95
+    DropItem "12mmPistol" 256 5
+    DropItem "VanillaShotgun" 256 95
 }
