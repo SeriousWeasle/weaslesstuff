@@ -42,7 +42,7 @@ ACTOR 12mmPistol : DoomWeapon
             PSTV F 3 A_ReFire
             Goto Ready
         Spawn:
-        PSTI A -1
+        PSTV G -1
         Stop
     }
 }

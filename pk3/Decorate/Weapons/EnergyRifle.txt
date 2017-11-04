@@ -1,1 +1,6 @@
-ACTOR 
+ACTOR EnergyRifle : DoomWeapon
+{
+    Weapon.SlotNumber 6
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 
+}
