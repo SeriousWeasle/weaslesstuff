@@ -1,0 +1,17 @@
+ACTOR DarkEnergyRifle : DoomWeapon
+{
+    Weapon.SlotNumber 6
+    Weapon.AmmoUse 1
+    Weapon.AmmoGive 4
+    Weapon.AmmoType "DarkCrystal"
+    Inventory.PickupMessage "Picked up a dark energy rifle"
+    States
+    {
+        Ready:
+            
+        Fire:
+
+        Spawn:
+
+    }
+}
