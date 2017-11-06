@@ -11,7 +11,13 @@
 #include "Decorate/Ammo/Bullets12mm.txt"
 #include "Decorate/Ammo/DarkCrystals.txt"
 #include "Decorate/Ammo/Bullets5mm.txt"
+#include "Decorate/Ammo/Mixed.txt"
 
+//Effects
+#include "Decorate/Effects/DarkEnergy.txt"
+#include "Decorate/Effects/LunariumSolarium.txt"
+
+//Inventory
 
 //Monsters
 #include "Decorate/Monsters/Zombieman.txt"
@@ -24,20 +30,25 @@
 #include "Decorate/Weapons/AutoShotgun.txt"
 #include "Decorate/Weapons/12mmPistol.txt"
 #include "Decorate/Weapons/SMG.txt"
+#include "Decorate/Weapons/DarkEnergyRifle.txt"
+#include "Decorate/Weapons/LunSolCannon.txt"
+#include "Decorate/Weapons/MachinePistol.txt"
 
 
 //Spawners
-#include "Decorate/Spawners/Shells.txt"
-#include "Decorate/Spawners/Clip.txt"
+#include "Decorate/Spawners/Ammo/Shells.txt"
+#include "Decorate/Spawners/Ammo/Clip.txt"
+#include "Decorate/Spawners/Ammo/Cells.txt"
+#include "Decorate/Spawners/Ammo/ClipBox.txt"
 
 #include "Decorate/Spawners/Zombieman.txt"
 #include "Decorate/Spawners/ShotgunGuy.txt"
 
 #include "Decorate/Spawners/Upgrades.txt"
 
-#include "Decorate/Spawners/SuperShotgun.txt"
-#include "Decorate/Spawners/Chainsaw.txt"
-#include "Decorate/Spawners/Shotgun.txt"
-#include "Decorate/Spawners/Chaingun.txt"
+#include "Decorate/Spawners/Weapons/SuperShotgun.txt"
+#include "Decorate/Spawners/Weapons/Shotgun.txt"
+#include "Decorate/Spawners/Weapons/Chaingun.txt"
+#include "Decorate/Spawners/Weapons/PlasmaRifle.txt"
 
 #include "Decorate/Spawners/ToggleSpawners.txt"

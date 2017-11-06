@@ -1,0 +1,6 @@
+ACTOR ChaingunSpawner : RandomSpawner replaces Chaingun
+{
+    DropItem "VanillaChaingun" 255 4
+    DropItem "SMG" 255 3
+    DropItem "MachinePistolGiver" 255 1
+}

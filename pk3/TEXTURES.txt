@@ -25,19 +25,19 @@ Sprite SHLDA0, 25, 9
     }
 }
 
-Sprite GNSHA0, 15, 7
+Sprite AUSHA0, 15, 7
 {
     Offset 8, 7
-    Patch GNSHA0, 0, 0
+    Patch AUSHA0, 0, 0
     {
         Rotate 0
     }
 }
 
-Sprite GNSBA0, 32, 12
+Sprite AUSBA0, 32, 12
 {
     Offset 16, 12
-    Patch GNSBA0, 0, 0
+    Patch AUSBA0, 0, 0
     {
         Rotate 0
     }
@@ -61,10 +61,10 @@ Sprite CLUPA0, 20, 15
     }
 }
 
-Sprite GNSUA0, 18, 10
+Sprite AUSUA0, 18, 10
 {
     Offset 9, 10
-    Patch GNSUA0, 0, 0
+    Patch AUSUA0, 0, 0
     {
         Rotate 0
     }
@@ -144,7 +144,7 @@ Sprite DCRSA0, 21, 17
 
 Sprite DMBLA0, 17, 17
 {
-    Offset 17, 17
+    Offset 8, 8
     Patch DMBLA0, 0, 0
     {
         Rotate 0
@@ -153,26 +153,8 @@ Sprite DMBLA0, 17, 17
 
 Sprite DMBLB0, 17, 17
 {
-    Offset 17, 17
+    Offset 8, 8
     Patch DMBLB0, 0, 0
-    {
-        Rotate 0
-    }
-}
-
-Sprite DMBLC0, 17, 17
-{
-    Offset 17, 17
-    Patch DMBLC0, 0, 0
-    {
-        Rotate 0
-    }
-}
-
-Sprite DMBLD0, 17, 17
-{
-    Offset 17, 17
-    Patch DMBLD0, 0, 0
     {
         Rotate 0
     }
@@ -232,6 +214,123 @@ Sprite DSPKF0, 20, 20
     }
 }
 
+Sprite DSPKG0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKG0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKH0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKH0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKI0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKI0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKJ0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKJ0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKK0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKK0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKL0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKL0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKM0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKM0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKN0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKN0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKO0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKO0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKP0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKP0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKQ0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKQ0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKR0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKR0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSPKS0, 20, 20
+{
+    Offset 20, 20
+    Patch DSPKS0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
 Sprite B525A0, 14, 8
 {
     Offset 7, 8
@@ -263,6 +362,1070 @@ Sprite DCUPA0, 22, 18
 {
     Offset 11, 18
     Patch DCUPA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite PSMKA0, 70, 50
+{
+    Offset 35, 25
+    Patch PSMKA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite PSMKB0, 70, 50
+{
+    Offset 35, 25
+    Patch PSMKB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite PSMKC0, 70, 50
+{
+    Offset 35, 25
+    Patch PSMKC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite PSMKD0, 70, 50
+{
+    Offset 35, 25
+    Patch PSMKD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite PSMKE0, 70, 50
+{
+    Offset 35, 25
+    Patch PSMKE0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite PSMKF0, 70, 50
+{
+    Offset 35, 25
+    Patch PSMKF0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite PSMKG0, 70, 50
+{
+    Offset 35, 25
+    Patch PSMKG0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite PSMKH0, 70, 50
+{
+    Offset 35, 25
+    Patch PSMKH0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DENPA0, 10, 10
+{
+    Offset 5, 5
+    Patch DENPA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DENPB0, 10, 10
+{
+    Offset 5, 5
+    Patch DENPB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DENPC0, 10, 10
+{
+    Offset 5, 5
+    Patch DENPC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DENPD0, 10, 10
+{
+    Offset 5, 5
+    Patch DENPD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DENPE0, 10, 10
+{
+    Offset 5, 5
+    Patch DENPE0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DENPF0, 10, 10
+{
+    Offset 5, 5
+    Patch DENPF0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DENPG0, 10, 10
+{
+    Offset 5, 5
+    Patch DENPG0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DENPH0, 10, 10
+{
+    Offset 5, 5
+    Patch DENPH0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite BPRTA0, 100, 100
+{
+    Offset 50, 50
+    Patch BPRTA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite BPRTB0, 100, 100
+{
+    Offset 50, 50
+    Patch BPRTB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+
+Sprite BPRTC0, 100, 100
+{
+    Offset 50, 50
+    Patch BPRTC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+
+Sprite BPRTD0, 100, 100
+{
+    Offset 50, 50
+    Patch BPRTD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+
+Sprite BPRTE0, 100, 100
+{
+    Offset 50, 50
+    Patch BPRTE0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite BPRTF0, 100, 100
+{
+    Offset 50, 50
+    Patch BPRTF0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DMXPA0, 50, 50
+{
+    Offset 25, 25
+    Patch DMXPA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DMXPB0, 50, 50
+{
+    Offset 25, 25
+    Patch DMXPB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DMXPC0, 50, 50
+{
+    Offset 25, 25
+    Patch DMXPC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DMXPD0, 50, 50
+{
+    Offset 25, 25
+    Patch DMXPD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DMXPE0, 50, 50
+{
+    Offset 25, 25
+    Patch DMXPE0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DMXPF0, 50, 50
+{
+    Offset 25, 25
+    Patch DMXPF0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DMXPG0, 50, 50
+{
+    Offset 25, 25
+    Patch DMXPG0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LUNPA0, 32, 32
+{
+    Offset 16, 16
+    Patch LUNPA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LUNPB0, 32, 32
+{
+    Offset 16, 16
+    Patch LUNPB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LUNPC0, 32, 32
+{
+    Offset 16, 16
+    Patch LUNPC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNXPA0, 80, 80
+{
+    Offset 40, 40
+    Patch LNXPA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNXPB0, 80, 80
+{
+    Offset 40, 40
+    Patch LNXPB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNXPC0, 80, 80
+{
+    Offset 40, 40
+    Patch LNXPC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNXPD0, 80, 80
+{
+    Offset 40, 40
+    Patch LNXPD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNXPE0, 80, 80
+{
+    Offset 40, 40
+    Patch LNXPE0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNXPF0, 80, 80
+{
+    Offset 40, 40
+    Patch LNXPF0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNXPG0, 80, 80
+{
+    Offset 40, 40
+    Patch LNXPG0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLA0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLB0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLC0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLD0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLE0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLE0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLF0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLF0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLG0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLG0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLH0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLH0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLI0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLI0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLJ0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLJ0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLK0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLK0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLL0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLL0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLM0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLM0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLN0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLN0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLO0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLO0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLP0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLP0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLQ0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLQ0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLR0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLR0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLS0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLS0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLT0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLT0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLU0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLU0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLV0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLV0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DSKLW0, 80, 80
+{
+    Offset 40, 40
+    Patch DSKLW0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DRKFA0, 80, 50
+{
+    Offset 40, 25
+    Patch DRKFA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DRKFB0, 80, 50
+{
+    Offset 40, 25
+    Patch DRKFB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DRKFC0, 80, 50
+{
+    Offset 40, 25
+    Patch DRKFC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DRKFD0, 80, 50
+{
+    Offset 40, 25
+    Patch DRKFD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DRKFE0, 80, 50
+{
+    Offset 40, 25
+    Patch DRKFE0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DRKFF0, 80, 50
+{
+    Offset 40, 25
+    Patch DRKFF0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DRKFG0, 80, 50
+{
+    Offset 40, 25
+    Patch DRKFG0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DRKFH0, 80, 50
+{
+    Offset 40, 25
+    Patch DRKFH0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DRKFI0, 80, 50
+{
+    Offset 40, 25
+    Patch DRKFI0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite 5MMUB0, 68, 44
+{
+    XScale 4
+    YScale 4
+    Offset 34, 44
+    Patch 5MMUB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite 12UPB0, 48, 56
+{
+    XScale 4
+    YScale 4
+    Offset 24, 56
+    Patch 12UPB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite AUSUB0, 72, 40
+{
+    XScale 4
+    YScale 4
+    Offset 36, 40
+    Patch AUSUB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite BLUPB0, 48, 56
+{
+    XScale 4
+    YScale 4
+    Offset 24, 56
+    Patch BLUPB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite CLUPB0, 80, 60
+{
+    XScale 4
+    YScale 4
+    Offset 40, 60
+    Patch CLUPB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DCUPB0, 88, 72
+{
+    XScale 4
+    YScale 4
+    Offset 44, 72
+    Patch DCUPB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite RKUPB0, 60, 120
+{
+    XScale 4
+    YScale 4
+    Offset 30, 120
+    Patch RKUPB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite SHUPB0, 72, 40
+{
+    XScale 4
+    YScale 4
+    Offset 36, 40
+    Patch SHUPB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite MPSTD0, 27, 16
+{
+    Offset 14, 16
+    Patch MPSTD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite DENRE0, 47, 23
+{
+    Offset 24, 23
+    Patch DENRE0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite PSTDA0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVA0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVA0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTDB0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVB0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVB0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTDC0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVC0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVC0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTDD0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVD0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVD0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTDE0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVE0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVE0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTDF0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVF0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVF0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTDG0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVB0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVA0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTDH0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVC0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVA0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTDI0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVD0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVB0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTDJ0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVE0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVC0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTDK0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVF0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVD0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTDL0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVA0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVE0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTDM0, 320, 200
+{
+    Offset 0, 0
+    Patch PSTVA0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch PSTVF0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite MPTDA0, 320, 200
+{
+    Offset 0, 0
+    Patch MPSTA0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch MPSTA0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite MPTDB0, 320, 200
+{
+    Offset 0, 0
+    Patch MPSTB0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch MPSTB0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite MPTDC0, 320, 200
+{
+    Offset 0, 0
+    Patch MPSTC0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch MPSTC0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite MPTDG0, 320, 200
+{
+    Offset 0, 0
+    Patch MPSTE0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch MPSTE0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite MPTDH0, 320, 200
+{
+    Offset 0, 0
+    Patch MPSTF0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch MPSTF0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite MPTDD0, 320, 200
+{
+    Offset 0, 0
+    Patch MPSTH0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch MPSTH0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite MPTDF0, 320, 200
+{
+    Offset 0, 0
+    Patch MPSTF0, 0, 0
+    {
+        Rotate 0
+    }
+    Patch MPSTF0, 0, 0
+    {
+        Rotate 0
+        FlipX
+    }
+}
+
+Sprite PSTVH0, 58, 19
+{
+    Offset 29, 19
+    Patch PSTVH0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite MPSTI0, 56, 19
+{
+    Offset 28, 19
+    Patch MPSTI0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite B12LA0, 28, 16
+{
+    Offset 14, 16
+    Patch B12LA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite B5LGA0, 28, 16
+{
+    Offset 14, 16
+    Patch B5LGA0, 0, 0
     {
         Rotate 0
     }

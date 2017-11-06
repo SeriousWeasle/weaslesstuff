@@ -1,0 +1,12 @@
+AddOptionMenu "OptionsMenu"
+{
+    StaticText ""
+    SubMenu "Weasle's Stuff options", "WeasleOptions"
+}
+
+OptionMenu "WeasleOptions"
+{
+    Title "Weasle's Stuff options"
+    StaticText ""
+    Option "Replace Berserk with ammo upgrades?", "weasle_noberserk", "yesno"
+}

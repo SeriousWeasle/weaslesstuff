@@ -19,7 +19,7 @@ ACTOR ShellUpgrade : CustomInventory
     States
     {
         Spawn:
-            SHUP A -1
+            SHUP B -1
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("shellsupgrade", 0)
@@ -33,7 +33,7 @@ ACTOR BulletUpgrade : CustomInventory
     States
     {
         Spawn:
-            BLUP A -1
+            BLUP B -1
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("bulletupgrade", 0)
@@ -47,7 +47,7 @@ ACTOR RocketUpgrade : CustomInventory
     States
     {
         Spawn:
-            RKUP A -1
+            RKUP B -1
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("rocketupgrade", 0)
@@ -61,7 +61,7 @@ ACTOR CellUpgrade : CustomInventory
     States
     {
         Spawn:
-            CLUP A -1
+            CLUP B -1
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("cellupgrade", 0)
@@ -75,7 +75,7 @@ ACTOR AutoShellUpgrade : CustomInventory
     States
     {
         Spawn:
-            GNSU A -1
+            AUSU B -1
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("shellautoupgrade", 0)
@@ -89,7 +89,7 @@ ACTOR 12mmBulletUpgrade : CustomInventory
     States
     {
         Spawn:
-            12UP A -1
+            12UP B -1
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("clip12mmupgrade", 0)
@@ -103,12 +103,12 @@ ACTOR DarkCrystalUpgrade : CustomInventory
     States
     {
         Spawn:
-            DCUP A 135
-            DCUP A 1 A_SpawnItemEx("DarkSparksRandomizer", random(1,3), random(-12,12), random(0,10), 0, 0, 0, 0)
-            DCUP A 127
-            DCUP A 1 A_SpawnItemEx("DarkSparksRandomizer", random(1,3), random(-12,12), random(0,10), 0, 0, 0, 0)
-            DCUP A 168
-            DCUP A 1 A_SpawnItemEx("DarkSparksRandomizer", random(1,3), random(-12,12), random(0,10), 0, 0, 0, 0)
+            DCUP B 135
+            DCUP B 1 A_SpawnItemEx("DarkSparksRandomizer", random(1,3), random(-12,12), random(0,10), 0, 0, 0, 0)
+            DCUP B 127
+            DCUP B 1 A_SpawnItemEx("DarkSparksRandomizer", random(1,3), random(-12,12), random(0,10), 0, 0, 0, 0)
+            DCUP B 168
+            DCUP B 1 A_SpawnItemEx("DarkSparksRandomizer", random(1,3), random(-12,12), random(0,10), 0, 0, 0, 0)
             Loop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("darkcrystalupgrade", 0)
@@ -122,7 +122,7 @@ ACTOR 5mmBulletUpgrade : CustomInventory
     States
     {
         Spawn:
-            5MMU A -1
+            5MMU B -1
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("clip5mmupgrade", 0)

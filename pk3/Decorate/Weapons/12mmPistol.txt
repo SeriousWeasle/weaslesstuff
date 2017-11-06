@@ -1,11 +1,36 @@
+ACTOR 12mmPistolAmount : Inventory
+{
+    Inventory.MaxAmount 1
+}
+
+ACTOR 12mmPistolGiver : CustomInventory
+{
+    Inventory.PickupMessage "Got a CE standard issue 12 mm Pistol"
+    States
+    {
+        Spawn:
+            PSTV G -1
+            Stop
+        Pickup:
+            TNT1 A 0 A_JumpIfInventory("12mmPistolAmount", 1, "GiveSecond")
+            TNT1 A 0 A_GiveInventory("12mmPistol", 1)
+            TNT1 A 0 A_GiveInventory("12mmPistolAmount", 1)
+            Stop
+        GiveSecond:
+            TNT1 A 0 A_GiveInventory("12mmPistol", 1)
+            TNT1 A 0 A_GiveInventory("Double12mmPistol", 1)
+            Stop
+    }
+}
+
 ACTOR 12mmPistol : DoomWeapon
 {
     Weapon.SlotNumber 2
     Weapon.AmmoUse1 1
-    Weapon.AmmoGive1 24
+    Weapon.AmmoGive1 12
     Weapon.AmmoType1 "Clip12mm"
     Weapon.AmmoUse2 1
-    Weapon.AmmoGive2 2
+    Weapon.AmmoGive2 0
     Weapon.AmmoType2 "Clip12mm"
     Inventory.PickupMessage "Got a CE standard issue 12 mm Pistol"
     States
@@ -14,35 +39,84 @@ ACTOR 12mmPistol : DoomWeapon
             PSTV A 1 A_WeaponReady
             Loop
         Deselect:
-            PSTV A 0 A_PlaySound("12mmPistol/Lower", CHAN_WEAPON)
+            PSTV A 0 A_PlaySound("12mmPistol/Lower", 0)
             Goto Lower
         Lower:
             PSTV A 1 A_Lower
             Loop
         Select:
-            PSTV A 0 A_PlaySound("12mmPistol/Raise", CHAN_WEAPON)
+            PSTV A 0 A_PlaySound("12mmPistol/Raise", 0)
             Goto Raise
         Raise:
             PSTV A 1 A_Raise
             Loop
         Fire:
-            PSTV A 2 A_PlaySound ("12mmPistol/Fire", CHAN_WEAPON)
-            PSTV B 7 A_FireBullets(2.4, 0, 1, 16, "BulletPuff")
-            PSTV C 5
-            PSTV D 5
-            PSTV E 5
-            PSTV F 6 A_ReFire
+            PSTV A 1 A_PlaySound ("12mmPistol/Fire", 0)
+            PSTV B 6 A_FireBullets(2.4, 0, 1, 16, "BulletPuff")
+            PSTV C 2
+            PSTV D 4
+            PSTV E 4
+            PSTV F 5 A_ReFire
             Goto Ready
         AltFire:
-            PSTV A 1 A_PlaySound ("12mmPistol/Fire")
-            PSTV B 4 A_FireBullets(5.8, 0, 1, 16, "BulletPuff")
-            PSTV C 2 
+            PSTV A 1 A_PlaySound ("12mmPistol/Fire", 0)
+            PSTV B 3 A_FireBullets(5.8, 0, 1, 16, "BulletPuff")
+            PSTV C 1 
             PSTV D 2
             PSTV E 2
             PSTV F 3 A_ReFire
             Goto Ready
         Spawn:
-        PSTV G -1
+            PSTV G -1
+            Stop
+    }
+}
+
+ACTOR Double12mmPistol : DoomWeapon
+{
+    Weapon.SlotNumber 2
+    Weapon.AmmoUse1 2
+    Weapon.AmmoGive1 0
+    Weapon.AmmoType1 "Clip12mm"
+    Weapon.AmmoUse2 2
+    Weapon.AmmoGive2 0
+    Weapon.AmmoType2 "Clip12mm"
+    Inventory.PickupMessage "Got a CE standard issue 12 mm Pistol"
+    States
+    {
+        Ready:
+            PSTD A 1 A_WeaponReady
+            Loop
+        Deselect:
+            PSTD A 0 A_PlaySound("12mmPistol/Lower", 0)
+            Goto Lower
+        Lower:
+            PSTD A 1 A_Lower
+            Loop
+        Select:
+            PSTD A 0 A_PlaySound("12mmPistol/Raise", 0)
+            Goto Raise
+        Raise:
+            PSTD A 1 A_Raise
+            Loop
+        Fire:
+            PSTD A 1 A_PlaySound ("12mmPistol/Fire", 0)
+            PSTD B 6 A_FireBullets(3.6, 0, 2, 16, "BulletPuff")
+            PSTD C 2
+            PSTD D 4
+            PSTD E 4
+            PSTD F 5 A_ReFire
+            Goto Ready
+        AltFire:
+            PSTD A 1 A_PlaySound ("12mmPistol/Fire", 0)
+            PSTD B 3 A_FireBullets(6.4, 0, 2, 16, "BulletPuff")
+            PSTD C 1 
+            PSTD D 2
+            PSTD E 2
+            PSTD F 3 A_ReFire
+            Goto Ready
+        Spawn:
+        PSTV H -1
         Stop
     }
 }

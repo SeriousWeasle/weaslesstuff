@@ -1,0 +1,5 @@
+ACTOR CellSpawner : RandomSpawner replaces Cell
+{
+    DropItem "CellVanilla" 255 4
+    DropItem "DarkCrystal" 255 1
+}

@@ -1,17 +1,552 @@
 ACTOR DarkEnergyRifle : DoomWeapon
 {
     Weapon.SlotNumber 6
-    Weapon.AmmoUse 1
-    Weapon.AmmoGive 4
-    Weapon.AmmoType "DarkCrystal"
+    Weapon.AmmoUse1 1
+    Weapon.AmmoGive1 4
+    Weapon.AmmoType1 "DarkCrystal"
+    Weapon.AmmoUse2 1
+    Weapon.AmmoGive2 0
+    Weapon.AmmoType2 "DarkCrystal"
     Inventory.PickupMessage "Picked up a dark energy rifle"
     States
     {
         Ready:
-            
+            DENR A 1 A_WeaponReady
+            Loop
+        Deselect:
+            DENR A 0 A_PlaySound("12mmPistol/Lower", 0)
+            Goto Lower
+        Lower:
+            DENR A 1 A_Lower
+            Loop
+        Select:
+            DENR A 0 A_PlaySound("12mmPistol/Raise", 0)
+            Goto Raise
+        Raise:
+            DENR A 1 A_Raise
+            Loop
         Fire:
-
+            DENR A 0 A_PlaySound ("DarkEnergyRifle/Fire", 0)
+            DENR B 3 A_FireCustomMissile("DarkEnergyProjectile")
+            DENR A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 10
+            DENR A 5 A_ReFire
+            Goto Ready
+        AltFire:
+            DENR A 0 A_PlaySound ("DarkEnergyRifle/Fire", 0)
+            DENR B 3 A_FireCustomMissile("DarkEnergyProjectileAltFire")
+            DENR A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
+            DENR A 10
+            DENR A 5 A_ReFire
+            Goto Ready
         Spawn:
+        DENR E -1
+        Stop
+    }
+}
 
+ACTOR DarkEnergyProjectile
+{
+    Radius 3
+    Height 4
+    Speed 45
+    Damage 4
+    SeeSound ""
+    DeathSound ""
+    RenderStyle Subtract
+    Projectile
+    Scale 1
+    Alpha 0.75
+    +DONTSPLASH
+    States
+    {
+        Spawn:
+            DMBL A 1
+                {
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL A 1
+                {
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL A 1
+                {
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 1
+                {
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 1
+                {
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 1   
+                {
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                }      
+            Loop
+        Death:
+            DMBL A 2
+                {
+                    A_SpawnItemEx("PurpleSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkLargeShooter", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 2
+                {
+                    A_SpawnItemEx("PurpleSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL A 2
+                {
+                    A_SpawnItemEx("PurpleSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 2
+                {
+                    A_SpawnItemEx("PurpleSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL A 2
+                {
+                    A_SpawnItemEx("PurpleSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 2
+                {
+                    A_SpawnItemEx("PurpleSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkLargeShooter", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL A 2
+                {
+                    A_SpawnItemEx("PurpleSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 2
+                {
+                    A_SpawnItemEx("PurpleSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL A 2
+                {
+                    A_SpawnItemEx("PurpleSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 2
+                {
+                    A_SpawnItemEx("PurpleSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL A 2
+                {
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 2
+                {
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL A 2
+                {
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkLargeShooter", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 2
+                {
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL A 2
+                {
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 2
+                {
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkLargeShooter", 0, 0, 0, 0, 0, 0, 0);
+                }
+            TNT1 A 0 A_PlaySound("Explosions/DarkEnergySmall", 0, 3.5)
+            TNT1 A 0 A_PlaySound("Explosions/DarkEnergySmall", 0, 3.5)
+            TNT1 A 0 A_Explode(192,192,1)
+            TNT1 A 0 A_SpawnItemEx("DarkEnergyExplosionAnimSmall", 0, 0, 0, 0, 0, 0, 0)
+            Stop
+    }
+}
+
+ACTOR DarkEnergyProjectileAltFire
+{
+    Radius 3
+    Height 4
+    Speed 20
+    Damage 4
+    SeeSound ""
+    DeathSound ""
+    RenderStyle Subtract
+    Projectile
+    Scale 1
+    Alpha 0.75
+    +DONTSPLASH
+    States
+    {
+        Spawn:
+            DMBL A 1
+                {
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL A 1
+                {
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL A 1
+                {
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 1
+                {
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 1
+                {
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                }
+            DMBL B 1   
+                {
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkEnergyParticleRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("DarkSparkShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                    A_SpawnItemEx("BlackParticleShooter", 0, 0, 0, 0, 0, 0, 0);
+                }      
+            Loop
+        Death:
+            TNT1 A 0
+            {
+                A_SpawnItemEx("BlackSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("BlackSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("BlackSmokeRandomizer", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+                A_SpawnItemEx("PurpleSmokeRandomizerSecondary", 0, 0, 0, 0, 0, 0, 0);
+            }
+            Stop
     }
 }

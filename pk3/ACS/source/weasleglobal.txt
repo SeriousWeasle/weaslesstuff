@@ -9,7 +9,7 @@ script "superbackpack" (void)
 	SetAmmoCapacity("Cell", GetAmmoCapacity("Cell") + 300);
 	SetAmmoCapacity("ShellAuto", GetAmmoCapacity("ShellAuto") + 200);
 	SetAmmoCapacity("Clip12mm", GetAmmoCapacity("Clip12mm") + 128);
-	SetAmmoCapacity("DarkCrystal", GetAmmoCapacity("DarkCrystal") + 64);
+	SetAmmoCapacity("DarkCrystal", GetAmmoCapacity("DarkCrystal") + 32);
 	SetAmmoCapacity("Clip5mm", GetAmmoCapacity("Clip5mm") + 750);
 }
 
@@ -45,7 +45,7 @@ script "clip12mmupgrade" (void)
 
 script "darkcrystalupgrade" (void)
 {
-	SetAmmoCapacity("DarkCrystal", GetAmmoCapacity("DarkCrystal") + 8);
+	SetAmmoCapacity("DarkCrystal", GetAmmoCapacity("DarkCrystal") + 4);
 }
 
 script "clip5mmupgrade" (void)
@@ -61,7 +61,7 @@ script "smallbackpack" (void)
 	SetAmmoCapacity("Cell", GetAmmoCapacity("Cell") + 30);
 	SetAmmoCapacity("ShellAuto", GetAmmoCapacity("ShellAuto") + 20);
 	SetAmmoCapacity("Clip12mm", GetAmmoCapacity("Clip12mm") + 16);
-	SetAmmoCapacity("DarkCrystal", GetAmmoCapacity("DarkCrystal") + 8);
+	SetAmmoCapacity("DarkCrystal", GetAmmoCapacity("DarkCrystal") + 4);
 	SetAmmoCapacity("Clip5mm", GetAmmoCapacity("Clip5mm") + 75);
 }
 

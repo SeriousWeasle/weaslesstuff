@@ -13,3 +13,15 @@ ACTOR Clip12mm : Ammo
             Stop
     }
 }
+
+ACTOR ClipBox12mm : Clip12mm
+{
+    Inventory.PickupMessage "Picked up 40 12mm bullets"
+    Inventory.Amount 40
+    States
+    {
+        Spawn:
+            B12L A -1
+            Stop
+    }
+}

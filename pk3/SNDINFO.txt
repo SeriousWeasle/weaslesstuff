@@ -2,7 +2,6 @@
 12mmPistol/Raise             12mmup
 12mmPistol/Lower             12mmlow
 12mmPistol/Fire              12mmfire
-12mmPistol/FireDarkEnergy    12mmfde
 
 //Autoshotgun stuff
 AutoShotgun/Fire             ashtfire
@@ -11,10 +10,21 @@ AutoShotgun/Pump             ashtpump
 //SMG stuff
 SMG/Fire                     smgfire
 
+//Dark Energy Rifle
+DarkEnergyRifle/Fire         firedenr
+
+LunSolCannon/Fire            lnslfire
+
 //Explosions
-Explosions/DarkEnergy        denexp
+Explosions/DarkEnergySmall   denexp1
+Explosions/Lunarium          lunexp
+Explosions/Solarium          solexp
 
 //Effects
 SFX/DarkEnergySparks1        dmsprk1
 SFX/DarkEnergySparks2        dmsprk2
 SFX/DarkEnergySparks3        dmsprk3
+
+SFX/DarkEnergySparkLarge1    dmspkl1
+SFX/DarkEnergySparkLarge2    dmspkl2
+SFX/DarkEnergySparkLarge3    dmspkl3

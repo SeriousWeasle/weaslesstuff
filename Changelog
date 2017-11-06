@@ -79,3 +79,22 @@ Version 1.16
 -Added 5mm bullets
 -Fixed bug where everything had a super small chance to not spawn
 -Kept old 12mm altfire stuff for later weapon
+
+Version 1.17
+-Smoothed the SMG's animation
+-Added an alt-fire to the SMG
+-Allowed all shotgun types to use all shell types
+    Normal shotgun: fire-normal shells / altfire-autoshotgun shells
+    Double barreled shotgun: Fire to shoot (obviously) / Reload to change ammo types
+    Auto Shotgun: The opposite of the normal shotgun
+-Added a machine pistol
+-Added dual wielding for the machine pistol and the 12mm pistol
+-Added the dark energy rifle
+-12mm pistol now spawns instead of the shotgun or instead of clips with a small chance
+-Machinepistol has a chance to spawn instead of clips and a chance to spawn instead of the chaingun.
+-Changed autoshotgun fire sound
+-Added 5mm and 12mm clipboxes
+-Removed some (now) useless code
+-Fixed some balancing issues
+-Fixed small bugs
+-Working on new weapon

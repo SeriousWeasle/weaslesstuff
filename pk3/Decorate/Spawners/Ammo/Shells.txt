@@ -1,0 +1,14 @@
+ACTOR ShellSpawner : RandomSpawner replaces Shell
+{
+    DropItem "ShellsVanilla" 255 35
+    DropItem "ShellsTwo" 255 20
+    DropItem "ShellsEight" 255 10
+    DropItem "ShellAuto" 255 35
+}
+
+ACTOR ShellBoxSpawner : RandomSpawner replaces ShellBox
+{
+    DropItem "ShellBoxVanilla" 255 6
+    DropItem "ShellsTen" 255 3
+    DropItem "ShellBoxAuto" 255 3
+}

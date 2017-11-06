@@ -5,11 +5,11 @@ ACTOR ShellAuto : Ammo
     Inventory.MaxAmount 200
     Ammo.BackpackAmount 12
     Ammo.BackpackMaxAmount 400
-    Inventory.Icon "GNSHA0"
+    Inventory.Icon "AUSHA0"
     States
     {
         Spawn:
-            GNSH A -1
+            AUSH A -1
             Stop
     }
 }
@@ -21,7 +21,7 @@ ACTOR ShellBoxAuto : ShellAuto
     States
     {
         Spawn:
-            GNSB A -1
+            AUSB A -1
             Stop
     }
 }

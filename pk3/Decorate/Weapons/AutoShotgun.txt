@@ -1,9 +1,12 @@
 ACTOR AutoShotgun : DoomWeapon
 {
     Weapon.SlotNumber 3
-    Weapon.AmmoUse 1
-    Weapon.AmmoGive 12
-    Weapon.AmmoType "ShellAuto"
+    Weapon.AmmoUse1 1
+    Weapon.AmmoGive1 16
+    Weapon.AmmoType1 "ShellAuto"
+    Weapon.AmmoGive2 8
+    Weapon.AmmoType2 "Shell"
+    Weapon.AmmoUse2 1
     Inventory.PickupMessage "Got the Auto Shotgun. Let's kill some stuff at a fast pace!"
     States
     {
@@ -17,12 +20,18 @@ ACTOR AutoShotgun : DoomWeapon
             ASHT A 1 A_Raise
             Loop
         Fire:
-            ASHT A 2 A_PlaySound("AutoShotgun/Fire", CHAN_WEAPON)
-            ASHT B 3 A_FireBullets(5.6, 0, 7, 2, "BulletPuff")
+            ASHT A 0 A_PlaySound("weapons/shotgf", 1)
+            ASHT B 3 A_FireBullets (5.6, 0, 7, 5, "BulletPuff")
             ASHT C 7
             ASHT A 2 A_ReFire
-            ASHT A 0 A_PlaySound("AutoShotgun/Pump", 5)
-            ASHT DEFED 3
+            ASHT DEFED 5
+            Goto Ready
+        AltFire:
+            ASHT A 0 A_PlaySound("weapons/shotgf", 1)
+            ASHT B 5 A_FireBullets (3.6, 0, 7, 3, "BulletPuff")
+            ASHT C 9
+            ASHT A 2 A_ReFire
+            ASHT DEFED 5
             Goto Ready
         Spawn:
             ASHT G -1

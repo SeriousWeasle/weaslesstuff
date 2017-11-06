@@ -1,0 +1,8 @@
+ACTOR ClipBoxSpawner : RandomSpawner replaces ClipBox
+{
+    DropItem "ClipBoxVanilla" 255 40
+    DropItem "ClipBox12mm" 255 20
+    DropItem "ClipBox5mm" 255 40
+    DropItem "12mmPistolGiver" 255 5
+    DropItem "MachinePistolGiver" 255 5
+}

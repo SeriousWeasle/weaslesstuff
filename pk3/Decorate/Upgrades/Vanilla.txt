@@ -2,3 +2,8 @@ ACTOR VanillaBerserk : Berserk
 {
 
 }
+
+ACTOR VanillaBackpack : Backpack
+{
+    
+}

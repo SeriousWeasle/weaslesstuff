@@ -1,0 +1,18 @@
+ACTOR ClipBoxMixed : CustomInventory
+{
+    Inventory.PickupMessage "Picked up a box containing various bullets"
+    States
+    {
+        Spawn:
+            AMMO A -1
+            Stop
+        Pickup:
+            TNT1 A 0
+            {
+                A_GiveInventory("Clip", 50);
+                A_GiveInventory("Clip5mm", 125);
+                A_GiveInventory("Clip12mm", 40);
+            }
+            Stop
+    }
+}

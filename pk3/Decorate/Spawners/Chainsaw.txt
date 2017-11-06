@@ -1,5 +1,0 @@
-ACTOR ChainsawSpawner : RandomSpawner replaces Chainsaw
-{
-    DropItem "12mmPistol" 256 50
-    DropItem "VanillaChainsaw" 256 50
-}

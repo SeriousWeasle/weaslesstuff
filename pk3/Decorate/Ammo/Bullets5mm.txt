@@ -13,3 +13,15 @@ ACTOR Clip5mm : Ammo
             Stop
     }
 }
+
+ACTOR ClipBox5mm : Clip5mm
+{
+    Inventory.PickupMessage "Picked up 125 5mm bullets"
+    Inventory.Amount 125
+    States
+    {
+        Spawn:
+            B5LG A -1
+            Stop
+    }
+}

@@ -13,3 +13,14 @@ ACTOR ClipVanilla : Clip
     Inventory.PickupMessage "Picked up 10 9mm bullets"
     Inventory.Amount 10
 }
+
+ACTOR CellVanilla : Cell
+{
+    
+}
+
+ACTOR ClipBoxVanilla : ClipBox
+{
+    Inventory.PickupMessage "Picked up 50 9mm bullets"
+    Inventory.Amount 50
+}

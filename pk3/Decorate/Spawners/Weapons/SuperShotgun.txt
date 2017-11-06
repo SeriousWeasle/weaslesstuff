@@ -1,0 +1,5 @@
+ACTOR SuperShotgunSpawner : RandomSpawner replaces SuperShotgun
+{
+    DropItem "AutoShotgun" 255 1
+    DropItem "VanillaSuperShotgun" 255 3
+}
