@@ -5,4 +5,5 @@ ACTOR ClipSpawner : RandomSpawner replaces Clip
     DropItem "Clip5mm" 255 40
     DropItem "12mmPistolGiver" 255 2
     DropItem "MachinePistolGiver" 255 2
+    DropItem "EnergyPistolGiver" 255 1
 }

@@ -6,6 +6,7 @@ ACTOR 12mmPistolAmount : Inventory
 ACTOR 12mmPistolGiver : CustomInventory
 {
     Inventory.PickupMessage "Got a CE standard issue 12 mm Pistol"
+    Inventory.PickupSound "misc/w_pkup"
     States
     {
         Spawn:

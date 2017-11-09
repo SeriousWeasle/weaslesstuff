@@ -1,0 +1,15 @@
+ACTOR LunariumCell : Ammo
+{
+    Inventory.PickupMessage "Picked up a small Lunarium Energy Cell"
+    Inventory.Amount 20
+    Inventory.MaxAmount 400
+    Ammo.BackpackAmount 20
+    Ammo.BackpackMaxAmount 800
+    Inventory.Icon "LNCLA0"
+    States
+    {
+        Spawn:
+            LNCL ABCDEF 6
+            Loop
+    }
+}

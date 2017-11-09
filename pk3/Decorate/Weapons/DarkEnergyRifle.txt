@@ -27,7 +27,7 @@ ACTOR DarkEnergyRifle : DoomWeapon
             Loop
         Fire:
             DENR A 0 A_PlaySound ("DarkEnergyRifle/Fire", 0)
-            DENR B 3 A_FireCustomMissile("DarkEnergyProjectile")
+            DENR B 3 A_FireProjectile("DarkEnergyProjectile")
             DENR A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE)
             DENR A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE)
             DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)
@@ -45,7 +45,7 @@ ACTOR DarkEnergyRifle : DoomWeapon
             Goto Ready
         AltFire:
             DENR A 0 A_PlaySound ("DarkEnergyRifle/Fire", 0)
-            DENR B 3 A_FireCustomMissile("DarkEnergyProjectileAltFire")
+            DENR B 3 A_FireProjectile("DarkEnergyProjectileAltFire")
             DENR A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE)
             DENR A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE)
             DENR A 1 A_WeaponOffset(-3, -3, WOF_ADD|WOF_INTERPOLATE)

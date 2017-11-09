@@ -1,0 +1,15 @@
+ACTOR SolariumCell : Ammo
+{
+    Inventory.PickupMessage "Picked up a small Solarium Energy Cell"
+    Inventory.Amount 20
+    Inventory.MaxAmount 400
+    Ammo.BackpackAmount 20
+    Ammo.BackpackMaxAmount 800
+    Inventory.Icon "SLCLA0"
+    States
+    {
+        Spawn:
+            SLCL ABCDEF 6
+            Loop
+    }
+}

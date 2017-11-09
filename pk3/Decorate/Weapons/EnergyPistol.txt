@@ -1,0 +1,401 @@
+ACTOR EnergyPistolAmount : Inventory
+{
+    Inventory.MaxAmount 1
+}
+
+ACTOR EnergyPistolGiver : CustomInventory
+{
+    Inventory.PickupMessage "Got an Energy Pistol"
+    Inventory.PickupSound "misc/w_pkup"
+    States
+    {
+        Spawn:
+            ENPI A -1
+            Stop
+        Pickup:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolAmount", 1, "GiveSecond")
+            TNT1 A 0 A_GiveInventory("EnergyPistol", 1)
+            TNT1 A 0 A_GiveInventory("EnergyPistolAmount", 1)
+            Stop
+        GiveSecond:
+            TNT1 A 0 A_GiveInventory("EnergyPistol", 1)
+            TNT1 A 0 A_GiveInventory("DoubleEnergyPistol", 1)
+            Stop
+    }
+}
+
+ACTOR EnergyPistolCellsLoaded : Inventory
+{
+    Inventory.MaxAmount 1
+}
+
+ACTOR EnergyPistolSolariumLoaded : Inventory
+{
+    Inventory.MaxAmount 1
+}
+
+ACTOR EnergyPistolLunariumLoaded : Inventory
+{
+    Inventory.MaxAmount 1
+}
+
+ACTOR EnergyPistol : DoomWeapon
+{
+    Weapon.Slotnumber 2
+    Weapon.AmmoGive1 20
+    Weapon.AmmoType1 "LunariumCell"
+    Weapon.AmmoGive2 20
+    Weapon.AmmoType2 "SolariumCell"
+    Inventory.PickupMessage "Got an Energy Pistol"
+    States
+    {
+        Ready:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolLunariumLoaded", 1, "ReadyLunarium")
+        ReadyCheckSolarium:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolSolariumLoaded", 1, "ReadySolarium")
+        ReadyCheckCell:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "ReadyCells")
+        ReadyCells:
+            ENPT F 1 A_WeaponReady (WRF_ALLOWRELOAD)
+            Loop
+        ReadyLunarium:
+            ENPT C 1 A_WeaponReady (WRF_ALLOWRELOAD)
+            Loop
+        ReadySolarium:
+            ENPT A 1 A_WeaponReady (WRF_ALLOWRELOAD)
+            Loop
+        Deselect:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolLunariumLoaded", 1, "DeselectLunarium")
+        DeselectCheckSolarium:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolSolariumLoaded", 1, "DeselectSolarium")
+        DeselectCheckCells:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "DeselectCells")
+        DeselectCells:
+            ENPT F 1 A_Lower
+            Loop
+        DeselectLunarium:
+            ENPT C 1 A_Lower
+            Loop
+        DeselectSolarium:
+            ENPT A 1 A_Lower
+            Loop
+        Select:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolLunariumLoaded", 1, "SelectLunarium")
+        SelectCheckSolarium:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolSolariumLoaded", 1, "SelectSolarium")
+        SelectCheckCells:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "SelectCells")
+        SelectCells:
+            ENPT F 1 A_Raise
+            Loop
+        SelectLunarium:
+            ENPT C 1 A_Raise
+            Loop
+        SelectSolarium:
+            ENPT A 1 A_Raise
+            Loop
+        Reload:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolLunariumLoaded", 1, "LoadSolarium")
+        CheckSolarium:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolSolariumLoaded", 1, "LoadCell")
+        CheckCells:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "LoadLunarium")
+        LoadLunarium:
+            ENPT F 4
+            {
+                A_TakeInventory("EnergyPistolCellsLoaded", 1);
+                A_PlaySound("EnergyPistol/Switch", 0);
+            }
+            ENPT C 4 A_GiveInventory("EnergyPistolLunariumLoaded", 1)
+            Goto Ready
+        LoadSolarium:
+            ENPT C 4
+            {
+                A_TakeInventory("EnergyPistolLunariumLoaded", 1);
+                A_PlaySound("EnergyPistol/Switch", 0);
+            }
+            ENPT A 4 A_GiveInventory("EnergyPistolSolariumLoaded", 1)
+            Goto Ready
+        LoadCell:
+            ENPT A 4
+            {
+                A_TakeInventory("EnergyPistolSolariumLoaded", 1);
+                A_PlaySound("EnergyPistol/Switch", 0);
+            }
+            ENPT F 4 A_GiveInventory("EnergyPistolCellsLoaded", 1)
+            Goto Ready
+        Fire:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "AmmoCheckCells")
+        FireCheckLunarium:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolLunariumLoaded", 1, "AmmoCheckLunarium")
+        FireCheckSolarium:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolSolariumLoaded", 1, "AmmoCheckSolarium")
+        AmmoCheckCells:
+            TNT1 A 0 A_JumpIfInventory("Cell", 1, "FireCells")
+            Goto Ready
+        AmmoCheckLunarium:
+            TNT1 A 0 A_JumpIfInventory("LunariumCell", 1, "FireLunarium")
+            Goto Ready
+        AmmoCheckSolarium:
+            TNT1 A 0 A_JumpIfInventory("SolariumCell", 1, "FireSolarium")
+            Goto Ready
+        FireCells:
+            ENPT F 3 A_TakeInventory("Cell", 1)
+            ENPT E 3
+            {
+                A_FireProjectile("EnergyPistolCellBall");
+                A_PlaySound("EnergyPistol/Fire", 0);
+            }
+            ENPT F 1 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            ENPT F 1 A_WeaponOffset(-2.5, -2.5, WOF_ADD|WOF_INTERPOLATE)
+            ENPT F 1 A_WeaponOffset(-2.5, -2.5, WOF_ADD|WOF_INTERPOLATE)
+            ENPT F 1 A_WeaponOffset(-2.5, -2.5, WOF_ADD|WOF_INTERPOLATE)
+            ENPT F 1 A_WeaponOffset(-2.5, -2.5, WOF_ADD|WOF_INTERPOLATE)
+            ENPT F 3 A_ReFire
+            Goto Ready
+        FireLunarium:
+            ENPT C 3 A_TakeInventory("LunariumCell", 1)
+            ENPT D 3
+            {
+                A_FireProjectile("EnergyPistolLunariumBall");
+                A_PlaySound("EnergyPistol/Fire", 0);
+            }
+            ENPT C 1 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            ENPT C 1 A_WeaponOffset(-2.5, -2.5, WOF_ADD|WOF_INTERPOLATE)
+            ENPT C 1 A_WeaponOffset(-2.5, -2.5, WOF_ADD|WOF_INTERPOLATE)
+            ENPT C 1 A_WeaponOffset(-2.5, -2.5, WOF_ADD|WOF_INTERPOLATE)
+            ENPT C 1 A_WeaponOffset(-2.5, -2.5, WOF_ADD|WOF_INTERPOLATE)
+            ENPT C 3 A_ReFire
+            Goto Ready
+        FireSolarium:
+            ENPT A 3 A_TakeInventory("SolariumCell", 1)
+            ENPT B 3
+            {
+                A_FireProjectile("EnergyPistolSolariumBall");
+                A_PlaySound("EnergyPistol/Fire", 0);
+            }
+            ENPT A 1 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            ENPT A 1 A_WeaponOffset(-2.5, -2.5, WOF_ADD|WOF_INTERPOLATE)
+            ENPT A 1 A_WeaponOffset(-2.5, -2.5, WOF_ADD|WOF_INTERPOLATE)
+            ENPT A 1 A_WeaponOffset(-2.5, -2.5, WOF_ADD|WOF_INTERPOLATE)
+            ENPT A 1 A_WeaponOffset(-2.5, -2.5, WOF_ADD|WOF_INTERPOLATE)
+            ENPT A 3 A_ReFire
+            Goto Ready
+        Spawn:
+            ENPI A -1
+            Stop
+        
+    }
+}
+
+ACTOR DoubleEnergyPistol : DoomWeapon
+{
+    Weapon.Slotnumber 2
+    Weapon.AmmoGive1 20
+    Weapon.AmmoType1 "LunariumCell"
+    Weapon.AmmoGive2 20
+    Weapon.AmmoType2 "SolariumCell"
+    Inventory.PickupMessage "Got an Energy Pistol"
+    States
+    {
+        Ready:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolLunariumLoaded", 1, "ReadyLunarium")
+        ReadyCheckSolarium:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolSolariumLoaded", 1, "ReadySolarium")
+        ReadyCheckCell:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "ReadyCells")
+        ReadyCells:
+            ENPD F 1 A_WeaponReady (WRF_ALLOWRELOAD)
+            Loop
+        ReadyLunarium:
+            ENPD C 1 A_WeaponReady (WRF_ALLOWRELOAD)
+            Loop
+        ReadySolarium:
+            ENPD A 1 A_WeaponReady (WRF_ALLOWRELOAD)
+            Loop
+        Deselect:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolLunariumLoaded", 1, "DeselectLunarium")
+        DeselectCheckSolarium:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolSolariumLoaded", 1, "DeselectSolarium")
+        DeselectCheckCells:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "DeselectCells")
+        DeselectCells:
+            ENPD F 1 A_Lower
+            Loop
+        DeselectLunarium:
+            ENPD C 1 A_Lower
+            Loop
+        DeselectSolarium:
+            ENPD A 1 A_Lower
+            Loop
+        Select:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolLunariumLoaded", 1, "SelectLunarium")
+        SelectCheckSolarium:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolSolariumLoaded", 1, "SelectSolarium")
+        SelectCheckCells:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "SelectCells")
+        SelectCells:
+            ENPD F 1 A_Raise
+            Loop
+        SelectLunarium:
+            ENPD C 1 A_Raise
+            Loop
+        SelectSolarium:
+            ENPD A 1 A_Raise
+            Loop
+        Reload:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolLunariumLoaded", 1, "LoadSolarium")
+        CheckSolarium:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolSolariumLoaded", 1, "LoadCell")
+        CheckCells:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "LoadLunarium")
+        LoadLunarium:
+            ENPD F 4
+            {
+                A_TakeInventory("EnergyPistolCellsLoaded", 1);
+                A_PlaySound("EnergyPistol/Switch", 0);
+            }
+            ENPD C 4 A_GiveInventory("EnergyPistolLunariumLoaded", 1)
+            Goto Ready
+        LoadSolarium:
+            ENPD C 4
+            {
+                A_TakeInventory("EnergyPistolLunariumLoaded", 1);
+                A_PlaySound("EnergyPistol/Switch", 0);
+            }
+            ENPD A 4 A_GiveInventory("EnergyPistolSolariumLoaded", 1)
+            Goto Ready
+        LoadCell:
+            ENPD A 4
+            {
+                A_TakeInventory("EnergyPistolSolariumLoaded", 1);
+                A_PlaySound("EnergyPistol/Switch", 0);
+            }
+            ENPD F 4 A_GiveInventory("EnergyPistolCellsLoaded", 1)
+            Goto Ready
+        Fire:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "AmmoCheckCells")
+        FireCheckLunarium:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolLunariumLoaded", 1, "AmmoCheckLunarium")
+        FireCheckSolarium:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolSolariumLoaded", 1, "AmmoCheckSolarium")
+        AmmoCheckCells:
+            TNT1 A 0 A_JumpIfInventory("Cell", 1, "FireCells")
+            Goto Ready
+        AmmoCheckLunarium:
+            TNT1 A 0 A_JumpIfInventory("LunariumCell", 1, "FireLunarium")
+            Goto Ready
+        AmmoCheckSolarium:
+            TNT1 A 0 A_JumpIfInventory("SolariumCell", 1, "FireSolarium")
+            Goto Ready
+        FireCells:
+            ENPD F 3 A_TakeInventory("Cell", 1)
+            ENPD E 3
+            {
+                A_FireProjectile("EnergyPistolCellBall", 0, 0, -12);
+                A_FireProjectile("EnergyPistolCellBall", 0, 0, 12);
+                A_PlaySound("EnergyPistol/Fire", 0);
+            }
+            ENPD G 2
+            ENPD H 1
+            ENPD I 1
+            ENPD J 1
+            ENPD F 3 A_ReFire
+            Goto Ready
+        FireLunarium:
+            ENPD C 3 A_TakeInventory("LunariumCell", 1)
+            ENPD D 3
+            {
+                A_FireProjectile("EnergyPistolLunariumBall", 0, 0, -12);
+                A_FireProjectile("EnergyPistolLunariumBall", 0, 0, 12);
+                A_PlaySound("EnergyPistol/Fire", 0);
+            }
+            ENPD K 2
+            ENPD L 1
+            ENPD M 1
+            ENPD N 1
+            ENPD C 3 A_ReFire
+            Goto Ready
+        FireSolarium:
+            ENPD A 3 A_TakeInventory("SolariumCell", 1)
+            ENPD B 3
+            {
+                A_FireProjectile("EnergyPistolSolariumBall", 0, 0, -12);
+                A_FireProjectile("EnergyPistolSolariumBall", 0, 0, 12);
+                A_PlaySound("EnergyPistol/Fire", 0);
+            }
+            ENPD O 2
+            ENPD P 1
+            ENPD Q 1
+            ENPD R 1
+            ENPD A 3 A_ReFire
+            Goto Ready
+        Spawn:
+            ENPI B -1
+            Stop
+        
+    }
+}
+
+Actor EnergyPistolBallInheritor
+{
+    Radius 2
+    Height 2
+    SeeSound ""
+    DeathSound "EnergyPistol/Hit"
+    RenderStyle Add
+    Projectile
+    Scale 1
+    Alpha 0.75
+}
+
+ACTOR EnergyPistolCellBall : EnergyPistolBallInheritor
+{
+    Speed 35
+    Damage 5
+    States
+    {
+        Spawn:
+            ENBG ABCDCB 2 Bright
+            Loop
+        Death:
+            ENBG EFGH 3 Bright
+        FadeOut:
+            ENBG I 2 Bright A_FadeOut(0.1)
+            Loop
+    }
+}
+
+ACTOR EnergyPistolLunariumBall : EnergyPistolBallInheritor
+{
+    Speed 45
+    Damage 3
+    States
+    {
+        Spawn:
+            ENBB ABCDCB 2 Bright
+            Loop
+        Death:
+            ENBB EFGHI 3 Bright
+        FadeOut:
+            ENBB I 2 Bright A_FadeOut(0.1)
+            Loop
+    }
+}
+
+ACTOR EnergyPistolSolariumBall : EnergyPistolBallInheritor
+{
+    Speed 25
+    Damage 7
+    States
+    {
+        Spawn:
+            ENBR ABCDCB 2 Bright
+            Loop
+        Death:
+            ENBR EFGH 3 Bright
+        FadeOut:
+            ENBR I 2 Bright A_FadeOut(0.1)
+            Loop
+    }
+}

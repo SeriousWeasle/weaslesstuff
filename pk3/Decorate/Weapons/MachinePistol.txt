@@ -6,6 +6,7 @@ ACTOR MachinePistolAmount : Inventory
 ACTOR MachinePistolGiver : CustomInventory
 {
     Inventory.PickupMessage "Got the machine pistol"
+    Inventory.PickupSound "misc/w_pkup"
     States
     {
         Spawn:

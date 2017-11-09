@@ -22,7 +22,7 @@ ACTOR LunSolCannon : DoomWeapon
         Fire:
             LSCN A 1 A_PlaySound ("LunSolCannon/Fire", 0)
             LSCN A 34
-            LSCN A 3 A_FireCustomMissile("LunariumBall")
+            LSCN A 3 A_FireProjectile("LunariumBall")
             LSCN A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE)
             LSCN A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE)
             LSCN A 15
@@ -62,7 +62,7 @@ ACTOR LunSolCannon : DoomWeapon
         AltFire:
             LSCN A 1 A_PlaySound ("LunSolCannon/Fire", 0)
             LSCN A 34
-            LSCN A 3 A_FireCustomMissile("SolariumBall")
+            LSCN A 3 A_FireProjectile("SolariumBall")
             LSCN A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE)
             LSCN A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE)
             LSCN A 15

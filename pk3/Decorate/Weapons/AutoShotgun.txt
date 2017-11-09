@@ -7,7 +7,7 @@ ACTOR AutoShotgun : DoomWeapon
     Weapon.AmmoGive2 8
     Weapon.AmmoType2 "Shell"
     Weapon.AmmoUse2 1
-    Inventory.PickupMessage "Got the Auto Shotgun. Let's kill some stuff at a fast pace!"
+    Inventory.PickupMessage "Got the Auto Shotgun"
     States
     {
         Ready:

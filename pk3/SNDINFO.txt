@@ -15,6 +15,11 @@ DarkEnergyRifle/Fire         firedenr
 
 LunSolCannon/Fire            lnslfire
 
+//Energy Pistol
+EnergyPistol/Fire            epstfire
+EnergyPistol/Switch          epswitch
+EnergyPistol/Hit             sphit
+
 //Explosions
 Explosions/DarkEnergySmall   denexp1
 Explosions/Lunarium          lunexp
