@@ -20,6 +20,10 @@ EnergyPistol/Fire            epstfire
 EnergyPistol/Switch          epswitch
 EnergyPistol/Hit             sphit
 
+PlasmaCannon/Fire            laserbmf
+PlasmaCannon/SpinUp          laserup
+PlasmaCannon/SpinDown        laserdn
+
 //Explosions
 Explosions/DarkEnergySmall   denexp1
 Explosions/Lunarium          lunexp

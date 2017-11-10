@@ -127,3 +127,8 @@ ACTOR VanillaPlasmaRifle : PlasmaRifle
 {
     Weapon.SlotNumber 6
 }
+
+ACTOR VanillaBFG : BFG9000
+{
+    Weapon.SlotNumber 7
+}

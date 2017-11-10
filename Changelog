@@ -108,3 +108,7 @@ Version 1.19
 -Fixed bug where backpacks not upgrading solarium and lunarium capacity
 -Fixed the dual energy pistols consuming 1 ammo per shot
 -Small other fixes
+
+Version 1.20
+-Added a new slot 7 weapon
+-Fixed bugs

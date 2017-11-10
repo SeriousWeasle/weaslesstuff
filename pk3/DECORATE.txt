@@ -36,6 +36,7 @@
 #include "Decorate/Weapons/LunSolCannon.txt"
 #include "Decorate/Weapons/MachinePistol.txt"
 #include "Decorate/Weapons/EnergyPistol.txt"
+#include "Decorate/Weapons/PlasmaCannon.txt"
 
 
 //Spawners
@@ -53,5 +54,6 @@
 #include "Decorate/Spawners/Weapons/Shotgun.txt"
 #include "Decorate/Spawners/Weapons/Chaingun.txt"
 #include "Decorate/Spawners/Weapons/PlasmaRifle.txt"
+#include "Decorate/Spawners/Weapons/BFG.txt"
 
 #include "Decorate/Spawners/ToggleSpawners.txt"

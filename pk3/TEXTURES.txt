@@ -2176,3 +2176,93 @@ Sprite SLCUF0, 76, 56
         Rotate 0
     }
 }
+
+Sprite ENBBJ0, 12, 12
+{
+    Offset 6, 6
+    Patch ENBBJ0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite ENBBK0, 12, 12
+{
+    Offset 6, 6
+    Patch ENBBK0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite ENBBL0, 12, 12
+{
+    Offset 6, 6
+    Patch ENBBL0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite ENBGJ0, 12, 12
+{
+    Offset 6, 6
+    Patch ENBGJ0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite ENBGK0, 12, 12
+{
+    Offset 6, 6
+    Patch ENBGK0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite ENBGL0, 12, 12
+{
+    Offset 6, 6
+    Patch ENBGL0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite ENBRJ0, 12, 12
+{
+    Offset 6, 6
+    Patch ENBRJ0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite ENBRK0, 12, 12
+{
+    Offset 6, 6
+    Patch ENBRK0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite ENBRL0, 12, 12
+{
+    Offset 6, 6
+    Patch ENBRL0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite REPGI0, 51, 22
+{
+    Offset 26, 22
+    Patch REPGI0, 0, 0
+    {
+        Rotate 0
+    }
+}
