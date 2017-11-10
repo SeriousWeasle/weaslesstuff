@@ -103,3 +103,8 @@ Version 1.18
 -Added Solarium and Lunarium Cells
 -Added an energy pistol complete with dual wielding.
 -Fixed some stuff.
+
+Version 1.19
+-Fixed bug where backpacks not upgrading solarium and lunarium capacity
+-Fixed the dual energy pistols consuming 1 ammo per shot
+-Small other fixes

@@ -13,4 +13,6 @@ ACTOR UpgradeSpawner : RandomSpawner
     DropItem "AutoShellUpgrade" 255 2
     DropItem "12mmBulletUpgrade" 255 2
     DropItem "5mmBulletUpgrade" 255 2
+    DropItem "LunariumUpgrade" 255 2
+    DropItem "SolariumUpgrade" 255 2
 }

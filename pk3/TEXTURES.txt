@@ -2044,3 +2044,135 @@ Sprite ENPDR0, 320, 200
         FlipX
     }
 }
+
+Sprite LNCUA0, 76, 56
+{
+    XScale 4
+    YScale 4
+    Offset 38, 56
+    Patch LNCUA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNCUB0, 76, 56
+{
+    XScale 4
+    YScale 4
+    Offset 38, 56
+    Patch LNCUB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNCUC0, 76, 56
+{
+    XScale 4
+    YScale 4
+    Offset 38, 56
+    Patch LNCUC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNCUD0, 76, 56
+{
+    XScale 4
+    YScale 4
+    Offset 38, 56
+    Patch LNCUD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNCUE0, 76, 56
+{
+    XScale 4
+    YScale 4
+    Offset 38, 56
+    Patch LNCUE0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNCUF0, 76, 56
+{
+    XScale 4
+    YScale 4
+    Offset 38, 56
+    Patch LNCUF0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite SLCUA0, 76, 56
+{
+    XScale 4
+    YScale 4
+    Offset 38, 56
+    Patch SLCUA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite SLCUB0, 76, 56
+{
+    XScale 4
+    YScale 4
+    Offset 38, 56
+    Patch SLCUB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite SLCUC0, 76, 56
+{
+    XScale 4
+    YScale 4
+    Offset 38, 56
+    Patch SLCUC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite SLCUD0, 76, 56
+{
+    XScale 4
+    YScale 4
+    Offset 38, 56
+    Patch SLCUD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite SLCUE0, 76, 56
+{
+    XScale 4
+    YScale 4
+    Offset 38, 56
+    Patch SLCUE0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite SLCUF0, 76, 56
+{
+    XScale 4
+    YScale 4
+    Offset 38, 56
+    Patch SLCUF0, 0, 0
+    {
+        Rotate 0
+    }
+}

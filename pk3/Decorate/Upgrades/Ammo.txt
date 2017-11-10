@@ -129,6 +129,34 @@ ACTOR 5mmBulletUpgrade : CustomInventory
     }
 }
 
+ACTOR LunariumUpgrade : CustomInventory
+{
+    Height 26
+    Inventory.PickupMessage "Got a Lunarium Cell inventory space upgrade"
+    States
+    {
+        Spawn:
+            LNCU ABCDEF 6
+            Loop
+        Pickup:
+            TNT1 A 1 ACS_NamedExecute("lunariumupgrade", 0)
+    }
+}
+
+ACTOR SolariumUpgrade : CustomInventory
+{
+    Height 26
+    Inventory.PickupMessage "Got a Solarium inventory space upgrade"
+    States
+    {
+        Spawn:
+            SLCU ABCDEF 6
+            Loop
+        Pickup:
+            TNT1 A 1 ACS_NamedExecute("solariumupgrade", 0)
+    }
+}
+
 ACTOR SmallBackpack : CustomInventory
 {
     Height 26
