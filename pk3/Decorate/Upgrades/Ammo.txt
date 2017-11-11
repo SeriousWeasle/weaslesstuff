@@ -9,6 +9,19 @@ ACTOR SuperBackpack : CustomInventory
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("superbackpack", 0)
+            TNT1 A 1
+            {
+                A_GiveInventory("Clip", 10);
+                A_GiveInventory("Cell", 20);
+                A_GiveInventory("RocketAmmo", 1);
+                A_GiveInventory("Shell", 4);
+                A_GiveInventory("ShellAuto", 8);
+                A_GiveInventory("Clip12mm", 8);
+                A_GiveInventory("Clip5mm", 25);
+                A_GiveInventory("DarkCrystal", 4);
+                A_GiveInventory("LunariumCell", 40);
+                A_GiveInventory("SolariumCell", 40);
+            }
     }
 }
 
@@ -23,6 +36,7 @@ ACTOR ShellUpgrade : CustomInventory
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("shellsupgrade", 0)
+            TNT1 A 1 A_GiveInventory("Shell", 4)
     }
 }
 
@@ -37,6 +51,7 @@ ACTOR BulletUpgrade : CustomInventory
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("bulletupgrade", 0)
+            TNT1 A 1 A_GiveInventory("Clip", 10)
     }
 }
 
@@ -51,6 +66,7 @@ ACTOR RocketUpgrade : CustomInventory
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("rocketupgrade", 0)
+            TNT1 A 1 A_GiveInventory("RocketAmmo", 1)
     }
 }
 
@@ -65,6 +81,7 @@ ACTOR CellUpgrade : CustomInventory
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("cellupgrade", 0)
+            TNT1 A 1 A_GiveInventory("Cell", 1)
     }
 }
 
@@ -79,6 +96,7 @@ ACTOR AutoShellUpgrade : CustomInventory
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("shellautoupgrade", 0)
+            TNT1 A 1 A_GiveInventory("ShellAuto", 8)
     }
 }
 
@@ -93,6 +111,7 @@ ACTOR 12mmBulletUpgrade : CustomInventory
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("clip12mmupgrade", 0)
+            TNT1 A 1 A_GiveInventory("Clip12mm", 8)
     }
 }
 
@@ -112,6 +131,7 @@ ACTOR DarkCrystalUpgrade : CustomInventory
             Loop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("darkcrystalupgrade", 0)
+            TNT1 A 1 A_GiveInventory("DarkCrystal", 4)
     }
 }
 
@@ -126,6 +146,7 @@ ACTOR 5mmBulletUpgrade : CustomInventory
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("clip5mmupgrade", 0)
+            TNT1 A 1 A_GiveInventory("Clip5mm", 25)
     }
 }
 
@@ -140,6 +161,7 @@ ACTOR LunariumUpgrade : CustomInventory
             Loop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("lunariumupgrade", 0)
+            TNT1 A 1 A_GiveInventory("LunariumCell", 40)
     }
 }
 
@@ -154,6 +176,7 @@ ACTOR SolariumUpgrade : CustomInventory
             Loop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("solariumupgrade", 0)
+            TNT1 A 1 A_GiveInventory("SolariumCell", 40)
     }
 }
 
@@ -168,5 +191,18 @@ ACTOR SmallBackpack : CustomInventory
             Stop
         Pickup:
             TNT1 A 1 ACS_NamedExecute("smallbackpack", 0)
+            TNT1 A 1
+            {
+                A_GiveInventory("Clip", 10);
+                A_GiveInventory("Cell", 20);
+                A_GiveInventory("RocketAmmo", 1);
+                A_GiveInventory("Shell", 4);
+                A_GiveInventory("ShellAuto", 8);
+                A_GiveInventory("Clip12mm", 8);
+                A_GiveInventory("Clip5mm", 25);
+                A_GiveInventory("DarkCrystal", 4);
+                A_GiveInventory("LunariumCell", 40);
+                A_GiveInventory("SolariumCell", 40);
+            }
     }
 }
