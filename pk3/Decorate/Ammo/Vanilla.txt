@@ -24,3 +24,8 @@ ACTOR ClipBoxVanilla : ClipBox
     Inventory.PickupMessage "Picked up 50 9mm bullets"
     Inventory.Amount 50
 }
+
+ACTOR CellPackVanilla : CellPack
+{
+
+}

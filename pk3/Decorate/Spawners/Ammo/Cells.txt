@@ -4,4 +4,11 @@ ACTOR CellSpawner : RandomSpawner replaces Cell
     DropItem "DarkCrystal" 255 1
     DropItem "SolariumCell" 255 2
     DropItem "LunariumCell" 255 2
+}
+
+ACTOR CellPackSpawner : RandomSpawner replaces CellPack
+{
+    DropItem "CellPackVanilla" 255 2
+    DropItem "BigLunariumCell" 255 1
+    DropItem "BigSolariumCell" 255 1
 } 

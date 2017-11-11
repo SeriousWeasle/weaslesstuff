@@ -2258,10 +2258,28 @@ Sprite ENBRL0, 12, 12
     }
 }
 
-Sprite REPGI0, 51, 22
+Sprite PLCNI0, 51, 22
 {
     Offset 26, 22
-    Patch REPGI0, 0, 0
+    Patch PLCNI0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite LNCBA0, 32, 21
+{
+    Offset 16, 21
+    Patch LNCBA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite SLCBA0, 32, 21
+{
+    Offset 16, 21
+    Patch SLCBA0, 0, 0
     {
         Rotate 0
     }

@@ -13,3 +13,15 @@ ACTOR LunariumCell : Ammo
             Loop
     }
 }
+
+ACTOR BigLunariumCell : LunariumCell
+{
+    Inventory.PickupMessage "Picked up a large lunarium cell pack"
+    Inventory.Amount 200
+    States
+    {
+        Spawn:
+            LNCB A -1
+            Stop
+    }
+}

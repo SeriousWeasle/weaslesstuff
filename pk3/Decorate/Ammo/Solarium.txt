@@ -13,3 +13,15 @@ ACTOR SolariumCell : Ammo
             Loop
     }
 }
+
+ACTOR BigSolariumCell : SolariumCell
+{
+    Inventory.PickupMessage "Picked up a large Solarium cell pack"
+    Inventory.Amount 200
+    States
+    {
+        Spawn:
+            SLCB A -1
+            Stop
+    }
+}
