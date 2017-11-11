@@ -49,7 +49,11 @@ ACTOR PlasmaCannon : DoomWeapon
                 A_TakeInventory("PlasmaCannonCellsLoaded", 1);
                 A_PlaySound("EnergyPistol/Switch", 0);
             }
-            PLCN A 4 A_GiveInventory("PlasmaCannonLunariumLoaded", 1)
+            PLCN A 4
+            {
+                A_GiveInventory("PlasmaCannonLunariumLoaded", 1);
+                A_Print("Lunarium Cells Loaded");
+            }
             Goto Ready
         LoadSolarium:
             PLCN A 4
@@ -57,7 +61,11 @@ ACTOR PlasmaCannon : DoomWeapon
                 A_TakeInventory("PlasmaCannonLunariumLoaded", 1);
                 A_PlaySound("EnergyPistol/Switch", 0);
             }
-            PLCN A 4 A_GiveInventory("PlasmaCannonSolariumLoaded", 1)
+            PLCN A 4
+            {
+                A_GiveInventory("PlasmaCannonSolariumLoaded", 1);
+                A_Print("Solarium Cells Loaded");
+            }
             Goto Ready
         LoadCell:
             PLCN A 4
@@ -65,7 +73,11 @@ ACTOR PlasmaCannon : DoomWeapon
                 A_TakeInventory("PlasmaCannonSolariumLoaded", 1);
                 A_PlaySound("EnergyPistol/Switch", 0);
             }
-            PLCN A 4 A_GiveInventory("PlasmaCannonCellsLoaded", 1)
+            PLCN A 4
+            {
+                A_GiveInventory("PlasmaCannonCellsLoaded", 1);
+                A_Print("Energy Cells Loaded");
+            }
             Goto Ready
         AltFire:
             PLCN A 0 A_JumpIfInventory("PlasmaCannonSpinUp", 1, "AltAmmoTypeCheck")
