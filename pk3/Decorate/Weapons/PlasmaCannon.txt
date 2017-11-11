@@ -82,13 +82,13 @@ ACTOR PlasmaCannon : DoomWeapon
             TNT1 A 0 A_JumpIfInventory("PlasmaCannonSolariumLoaded", 1, "AmmoCheckSolarium")
         AmmoCheckCells:
             TNT1 A 0 A_JumpIfInventory("Cell", 12, "FireCells")
-            Goto Ready
+            Goto SpinDown
         AmmoCheckLunarium:
             TNT1 A 0 A_JumpIfInventory("LunariumCell", 12, "FireLunarium")
-            Goto Ready
+            Goto SpinDown
         AmmoCheckSolarium:
             TNT1 A 0 A_JumpIfInventory("SolariumCell", 12, "FireSolarium")
-            Goto Ready
+            Goto SpinDown
         FireCells:
             PLCN E 2
             {
@@ -209,13 +209,13 @@ ACTOR PlasmaCannon : DoomWeapon
             TNT1 A 0 A_JumpIfInventory("PlasmaCannonSolariumLoaded", 1, "AltAmmoCheckSolarium")
         AltAmmoCheckCells:
             TNT1 A 0 A_JumpIfInventory("Cell", 4, "AltFireCells")
-            Goto Ready
+            Goto SpinDown
         AltAmmoCheckLunarium:
             TNT1 A 0 A_JumpIfInventory("LunariumCell", 4, "AltFireLunarium")
-            Goto Ready
+            Goto SpinDown
         AltAmmoCheckSolarium:
             TNT1 A 0 A_JumpIfInventory("SolariumCell", 4, "AltFireSolarium")
-            Goto Ready
+            Goto SpinDown
         AltFireCells:
             PLCN E 1
             {
