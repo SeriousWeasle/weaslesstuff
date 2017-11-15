@@ -1,0 +1,89 @@
+StatusBar fullscreen, fullscreenoffsets
+{
+    //Basic HUD shapes
+    DrawImage "WEASHUD", 0, -58;
+    DrawImage "WEASAMMO", -158, -146;
+
+    //Health and armor bar
+    Alpha 0.5
+    {
+        DrawBar "WEASBARF", "WEASBARE", Health(100), Horizontal, Interpolate(1), 27, -49;
+        DrawBar "WEASBARF", "WEASBARE", Armor(100), Horizontal, Interpolate(1), 27, -24;
+    }
+
+    //Health and armor numbers
+    DrawNumber 9, SmallFont, DarkGray, Health, 56, -45;
+    DrawNumber 9, SmallFont, DarkGray, Armor, 56, -20;
+
+    //Ammo
+    DrawImage ammoicon1, -23, -78, center;
+    DrawImage ammoicon2, -23, -41, center;
+    DrawNumber 15, BIGFONT, White, ammo1, Alignment(center), -95, -84;
+    DrawNumber 15, BIGFONT, White, ammo2, Alignment(center), -95, -47;
+
+    //For 3 ammo types
+    IsSelected PlasmaCannon
+    {
+        DrawImage "CELLA0", -23, -109;
+        DrawNumber 15, BIGFONT, White, Ammo("Cell"), Alignment(center), -95, -121;
+        InInventory PlasmaCannonCellsLoaded
+        {
+            DrawImage "WEASSEL", -23, -115, center;
+            DrawImage "CELLLOAD", -158, -146;
+        }
+
+        InInventory PlasmaCannonLunariumLoaded
+        {
+            DrawImage "WEASSEL", -23, -78, center;
+            DrawImage "LUNLOAD", -158, -146;
+        }
+
+        InInventory PlasmaCannonSolariumLoaded
+        {
+            DrawImage "WEASSEL", -23, -41, center;
+            DrawImage "SOLLOAD", -158, -146;
+        }
+    }
+    
+    IsSelected DoubleEnergyPistol, EnergyPistol
+    {
+        DrawImage "CELLA0", -23, -109;
+        DrawNumber 15, BIGFONT, White, Ammo("Cell"), Alignment(center), -95, -121;
+        InInventory EnergyPistolCellsLoaded
+        {
+            DrawImage "WEASSEL", -23, -115, center;
+            DrawImage "CELLLOAD", -158, -146;
+        }
+
+        InInventory EnergyPistolLunariumLoaded
+        {
+            DrawImage "WEASSEL", -23, -78, center;
+            DrawImage "LUNLOAD", -158, -146;
+        }
+
+        InInventory EnergyPistolSolariumLoaded
+        {
+            DrawImage "WEASSEL", -23, -41, center;
+            DrawImage "SOLLOAD", -158, -146;
+        }
+    }
+
+    IsSelected VanillaSuperShotgun
+    {
+        InInventory not GreenShellsLoadedSSG
+        {
+            DrawImage "WEASSEL", -23, -78, center;
+            DrawImage "RSLOAD", -158, -146;
+        }
+
+        InInventory GreenShellsLoadedSSG 
+        {
+            DrawImage "WEASSEL", -23, -41, center;
+            DrawImage "GSLOAD", -158, -146;
+        }
+    }
+    //Keys
+	drawswitchableimage YellowCard && YellowSkull, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 17, -67;
+	drawswitchableimage RedCard && RedSkull, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 28, -67;
+	drawswitchableimage BlueCard && BlueSkull, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 39, -67;
+}

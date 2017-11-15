@@ -52,7 +52,6 @@ ACTOR PlasmaCannon : DoomWeapon
             PLCN A 4
             {
                 A_GiveInventory("PlasmaCannonLunariumLoaded", 1);
-                A_Print("Lunarium Cells Loaded");
             }
             Goto Ready
         LoadSolarium:
@@ -64,7 +63,6 @@ ACTOR PlasmaCannon : DoomWeapon
             PLCN A 4
             {
                 A_GiveInventory("PlasmaCannonSolariumLoaded", 1);
-                A_Print("Solarium Cells Loaded");
             }
             Goto Ready
         LoadCell:
@@ -76,7 +74,6 @@ ACTOR PlasmaCannon : DoomWeapon
             PLCN A 4
             {
                 A_GiveInventory("PlasmaCannonCellsLoaded", 1);
-                A_Print("Energy Cells Loaded");
             }
             Goto Ready
         AltFire:
