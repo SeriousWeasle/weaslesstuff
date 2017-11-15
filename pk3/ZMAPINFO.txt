@@ -8,6 +8,7 @@ Skill VeryEasy
     SpawnFilter = Nightmare
     Name = "Very Easy"
     MustConfirm = "You take half damage and get double ammo. Maximum monster amount."
+    TextColor = "Cyan"
     EasyKey
 }
 
@@ -19,6 +20,7 @@ Skill Easy
     Name = "Easy"
     AmmoFactor = 2
     MustConfirm = "Least amount of monsters, take half damage and get double ammo."
+    TextColor = "LightBlue"
     EasyKey
 }
 
@@ -28,6 +30,7 @@ Skill Moderate
     EasyKey
     DamageFactor = 0.75
     Name = "Moderate"
+    TextColor = "Green"
     MustConfirm = "Take 75% damage and normal ammo ammounts."
 }
 
@@ -35,6 +38,7 @@ Skill Normal
 {
     SpawnFilter = Normal
     Name = "Normal"
+    TextColor = "Yellow"
     MustConfirm = "No damage or ammo modifiers"
 }
 
@@ -42,6 +46,7 @@ Skill Hard
 {
     SpawnFilter = Hard
     Name = "Hard"
+    TextColor = "Yellow"
     DamageFactor = 1.25
     MustConfirm = "More monsters and take 25% more damage"
 }
@@ -51,6 +56,7 @@ Skill VeryHard
     SpawnFilter = Nightmare
     Name = "Very Hard"
     DamageFactor = 1.5
+    TextColor = "Black"
     MustConfirm = "Take 50% more damage and maximum monsters"
 }
 
@@ -65,4 +71,16 @@ Skill SlaughterFest
     RespawnTime = 30
     RespawnLimit = 0
     MustConfirm = "Same as Very Easy, but infinite monsters"
+}
+
+Skill SuperEasy
+{
+    SpawnFilter = Nightmare
+    Name = "Walk in the park"
+    EasyBossBrain
+    EasyKey
+    TextColor = "Purple"
+    DamageFactor = 0.25
+    AmmoFactor = 4
+    MustConfirm = "Take 25% damage and get quadruple ammo. This skill is for people who want to play slaughter maps without the difficulty or just have fun."
 }
