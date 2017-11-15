@@ -1,0 +1,11 @@
+ACTOR RocketPropelledDuckAmmo : Ammo
+{
+    Inventory.PickupMessage "Picked up some RPDs (Rocket propelled Ducks)"
+    Inventory.Amount 3
+    States
+    {
+        Spawn:
+            BPAK A -1
+            Stop
+    }
+}

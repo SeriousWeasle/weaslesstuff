@@ -14,6 +14,7 @@
 #include "Decorate/Ammo/Mixed.txt"
 #include "Decorate/Ammo/Lunarium.txt"
 #include "Decorate/Ammo/Solarium.txt"
+#include "Decorate/Ammo/Ducks.txt"
 
 //Effects
 #include "Decorate/Effects/DarkEnergy.txt"

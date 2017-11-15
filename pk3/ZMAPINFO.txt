@@ -1,0 +1,68 @@
+ClearSkills
+
+Skill VeryEasy
+{
+    AmmoFactor = 2
+    DamageFactor = 0.5
+    EasyBossBrain
+    SpawnFilter = Nightmare
+    Name = "Very Easy"
+    MustConfirm = "You take half damage and get double ammo. Maximum monster amount."
+    EasyKey
+}
+
+Skill Easy
+{
+    EasyBossBrain
+    SpawnFilter = Baby
+    DamageFactor = 0.5
+    Name = "Easy"
+    AmmoFactor = 2
+    MustConfirm = "Least amount of monsters, take half damage and get double ammo."
+    EasyKey
+}
+
+Skill Moderate
+{
+    SpawnFilter = Easy
+    EasyKey
+    DamageFactor = 0.75
+    Name = "Moderate"
+    MustConfirm = "Take 75% damage and normal ammo ammounts."
+}
+
+Skill Normal
+{
+    SpawnFilter = Normal
+    Name = "Normal"
+    MustConfirm = "No damage or ammo modifiers"
+}
+
+Skill Hard
+{
+    SpawnFilter = Hard
+    Name = "Hard"
+    DamageFactor = 1.25
+    MustConfirm = "More monsters and take 25% more damage"
+}
+
+Skill VeryHard
+{
+    SpawnFilter = Nightmare
+    Name = "Very Hard"
+    DamageFactor = 1.5
+    MustConfirm = "Take 50% more damage and maximum monsters"
+}
+
+Skill SlaughterFest
+{
+    SpawnFilter = Nightmare
+    Name = "Slaughterfest"
+    EasyBossBrain
+    EasyKey
+    DamageFactor = 0.5
+    AmmoFactor = 2
+    RespawnTime = 30
+    RespawnLimit = 0
+    MustConfirm = "Same as Very Easy, but infinite monsters"
+}

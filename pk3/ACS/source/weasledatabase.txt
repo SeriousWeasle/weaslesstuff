@@ -1,0 +1,12 @@
+#library "weasledatabase"
+#include "zcommon.acs"
+
+script "xpsaver" (void)
+{
+    SetResultValue(GetCVar("ws_data_xptotal"));
+}
+
+script "levelsaver" (void)
+{
+    SetResultValue(GetCVar("ws_data_level"));
+}
