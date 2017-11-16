@@ -9,3 +9,15 @@ ACTOR ClipLarge : Clip
             Loop
     }
 }
+
+ACTOR BulletsQuake : Clip
+{
+    Inventory.Amount 50
+    Inventory.PickupMessage "Picked up 50 bullets"
+    States
+    {
+        Spawn:
+            Q3BL A -1
+            Stop
+    }
+}

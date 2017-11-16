@@ -7,6 +7,7 @@
 
 //Ammo
 #include "Decorate/Ammo/Shells.txt"
+#include "Decorate/Ammo/Bullets.txt"
 #include "Decorate/Ammo/ShellsAuto.txt"
 #include "Decorate/Ammo/Bullets12mm.txt"
 #include "Decorate/Ammo/DarkCrystals.txt"
