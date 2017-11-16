@@ -1,0 +1,5 @@
+Q3SHA = "Q3SHA"
+{
+    Spin = 50
+    Scale = 1.0
+}
