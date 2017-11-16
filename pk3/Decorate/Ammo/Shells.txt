@@ -33,16 +33,3 @@ ACTOR ShellsTen : Shell
             Stop
     }
 }
-
-ACTOR ShellsQuake : Shell
-{
-    Inventory.PickupMessage "Picked up 16 shells"
-    Inventory.Amount 16
-    +NOGRAVITY
-    States
-    {
-        Spawn:
-            Q3SH A -1
-            Stop
-    }
-}

@@ -9,3 +9,15 @@ Q3BLA = "Q3BLA"
     Spin = 50
     Scale = 1.0
 }
+
+Q3CLA = "Q3CLA"
+{
+    Spin = 50
+    Scale = 1.0
+}
+
+Q3RKA = "Q3RKA"
+{
+    Spin = 50
+    Scale = 1.0
+}

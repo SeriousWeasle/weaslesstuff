@@ -1,0 +1,49 @@
+ACTOR ShellsQuake : Shell
+{
+    Inventory.PickupMessage "Picked up 16 shells"
+    Inventory.Amount 16
+    States
+    {
+        Spawn:
+            Q3SH A -1
+            Stop
+    }
+}
+
+ACTOR BulletsQuake : Clip
+{
+    Inventory.Amount 50
+    Inventory.PickupMessage "Picked up 50 bullets"
+    States
+    {
+        Spawn:
+            Q3BL A -1
+            Stop
+    }
+}
+
+
+
+ACTOR RocketsQuake : RocketAmmo
+{
+    Inventory.Amount 4
+    Inventory.PickupMessage "Picked up 4 rockets"
+    States
+    {
+        Spawn:
+            Q3RK A -1
+            Stop
+    }
+}
+
+ACTOR CellsQuake : Cell
+{
+    Inventory.Amount 100
+    Inventory.PickupMessage "Picked up 100 energy"
+    States
+    {
+        Spawn:
+            Q3CL A -1
+            Stop
+    }
+}
