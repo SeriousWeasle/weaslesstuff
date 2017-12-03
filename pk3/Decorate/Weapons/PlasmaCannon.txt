@@ -331,7 +331,7 @@ ACTOR PlasmaCannonBeamInheritor
 ACTOR PlasmaCannonCellBeam : PlasmaCannonBeamInheritor
 {
     Speed 60
-    Damage 5
+    Damage 16
     States
     {
         Spawn:
@@ -349,7 +349,7 @@ ACTOR PlasmaCannonCellBeam : PlasmaCannonBeamInheritor
 ACTOR PlasmaCannonLunariumBeam : PlasmaCannonBeamInheritor
 {
     Speed 70
-    Damage 3
+    Damage 8
     States
     {
         Spawn:
@@ -367,7 +367,7 @@ ACTOR PlasmaCannonLunariumBeam : PlasmaCannonBeamInheritor
 ACTOR PlasmaCannonSolariumBeam : PlasmaCannonBeamInheritor
 {
     Speed 50
-    Damage 7
+    Damage 24
     States
     {
         Spawn:

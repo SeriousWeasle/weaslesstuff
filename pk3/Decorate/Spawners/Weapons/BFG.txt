@@ -1,5 +1,5 @@
 ACTOR BFGSpawner : RandomSpawner replaces BFG9000
 {
-    DropItem "VanillaBFG" 255 3
+    DropItem "VanillaBFG" 255 2
     DropItem "PlasmaCannon" 255 1
 }

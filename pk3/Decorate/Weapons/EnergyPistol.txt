@@ -352,7 +352,7 @@ Actor EnergyPistolBallInheritor
 ACTOR EnergyPistolCellBall : EnergyPistolBallInheritor
 {
     Speed 35
-    Damage 5
+    Damage 16
     States
     {
         Spawn:
@@ -369,7 +369,7 @@ ACTOR EnergyPistolCellBall : EnergyPistolBallInheritor
 ACTOR EnergyPistolLunariumBall : EnergyPistolBallInheritor
 {
     Speed 45
-    Damage 3
+    Damage 8
     States
     {
         Spawn:
@@ -386,7 +386,7 @@ ACTOR EnergyPistolLunariumBall : EnergyPistolBallInheritor
 ACTOR EnergyPistolSolariumBall : EnergyPistolBallInheritor
 {
     Speed 25
-    Damage 7
+    Damage 24
     States
     {
         Spawn:
