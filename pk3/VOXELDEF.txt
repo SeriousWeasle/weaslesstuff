@@ -21,3 +21,13 @@ Q3RKA = "Q3RKA"
     Spin = 50
     Scale = 1.0
 }
+
+LWUPA = "LWUPA"
+{
+    Scale = 2.0
+}
+
+SWUPA = "SWUPA"
+{
+    Scale = 2.0
+}

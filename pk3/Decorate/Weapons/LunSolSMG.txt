@@ -1,0 +1,525 @@
+ACTOR SMGSolariumLoaded : Inventory
+{
+    Inventory.MaxAmount 1
+}
+
+ACTOR SMGLunariumUpgraded : Inventory
+{
+    Inventory.MaxAmount 4
+}
+
+ACTOR SMGSolariumUpgraded : Inventory
+{
+    Inventory.MaxAmount 4
+}
+
+ACTOR SMGClipLunarium : Ammo
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 50
+    Ammo.BackpackAmount 0
+    Ammo.BackpackMaxAmount 50
+    Inventory.Icon "ENBBC0"
+    States
+    {
+        Spawn:
+            LNCL ABCDEF 6
+            Loop
+    }
+}
+
+ACTOR SMGClipSolarium : Ammo
+{
+    Inventory.Amount 0
+    Inventory.MaxAmount 25
+    Ammo.BackpackAmount 0
+    Ammo.BackpackMaxAmount 25
+    Inventory.Icon "ENBRC0"
+    States
+    {
+        Spawn:
+            LNCL ABCDEF 6
+            Loop
+    }
+}
+
+ACTOR LunSolSMG : DoomWeapon
+{
+    Weapon.SlotNumber 1
+    Weapon.AmmoUse1 0
+    Weapon.AmmoGive1 50
+    Weapon.AmmoType1 "SMGClipLunarium"
+    Weapon.AmmoUse2 0
+    Weapon.AmmoGive2 25
+    Weapon.AmmoType2 "SMGClipSolarium"
+    Inventory.PickupMessage "Got an SMG with a Lunarium/Solarium battery"
+    States
+    {
+        Ready:
+            PSMG A 1 A_WeaponReady (WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+            Loop
+        Deselect:
+            PSMG A 0 A_PlaySound("12mmPistol/Lower", 0)
+            Goto Lower
+        Lower:
+            PSMG A 1 A_Lower
+            Loop
+        Select:
+            PSMG A 0 A_PlaySound("12mmPistol/Raise", 0)
+            Goto Raise
+        Raise:
+            PSMG A 1 A_Raise
+            Loop
+        Fire:
+            PSMG A 1 A_JumpIfInventory("SMGSolariumLoaded", 1, "SolariumFireCheck")
+        LunariumFireCheck:
+            PSMG A 1 A_JumpIfInventory("SMGClipLunarium", 1, "FireLunarium")
+            Goto Ready
+        FireLunarium:
+            PSMG A 0 A_JumpIfInventory("SMGLunariumUpgraded", 1, "FireLunarium1")
+            PSMG A 0 A_PlaySound ("PSMG/Fire", 0)
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_TakeInventory("SMGClipLunarium", 1)
+            PSMG E 1 A_WeaponOffset(5, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 2 A_WeaponOffset(-5, -5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_ReFire
+            Goto Ready
+        FireLunarium1:
+            PSMG A 0 A_JumpIfInventory("SMGLunariumUpgraded", 2, "FireLunarium2")
+            PSMG A 0 A_PlaySound ("PSMG/Fire", 0)
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_TakeInventory("SMGClipLunarium", 1)
+            PSMG E 1 A_WeaponOffset(5, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 2 A_WeaponOffset(-5, -5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_ReFire
+            Goto Ready
+        FireLunarium2:
+            PSMG A 0 A_JumpIfInventory("SMGLunariumUpgraded", 3, "FireLunarium3")
+            PSMG A 0 A_PlaySound ("PSMG/Fire", 0)
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_TakeInventory("SMGClipLunarium", 1)
+            PSMG E 1 A_WeaponOffset(5, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 2 A_WeaponOffset(-5, -5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_ReFire
+            Goto Ready
+        FireLunarium3:
+            PSMG A 0 A_JumpIfInventory("SMGLunariumUpgraded", 4, "FireLunarium4")
+            PSMG A 0 A_PlaySound ("PSMG/Fire", 0)
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_TakeInventory("SMGClipLunarium", 1)
+            PSMG E 1 A_WeaponOffset(5, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 2 A_WeaponOffset(-5, -5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_ReFire
+            Goto Ready
+        FireLunarium4:
+            PSMG A 0 A_PlaySound ("PSMG/Fire", 0)
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGLP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_TakeInventory("SMGClipLunarium", 1)
+            PSMG E 1 A_WeaponOffset(5, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 2 A_WeaponOffset(-5, -5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_ReFire
+            Goto Ready
+        SolariumFireCheck:
+            PSMG A 0 A_JumpIfInventory("SMGClipSolarium", 1, "FireSolarium")
+            Goto Ready
+        FireSolarium:
+            PSMG A 0 A_JumpIfInventory("SMGSolariumUpgraded", 1, "FireSolarium1")
+            PSMG A 0 A_PlaySound ("PSMG/Fire", 0)
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_TakeInventory("SMGClipSolarium", 1)
+            PSMG C 2 A_WeaponOffset(5, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 3 A_WeaponOffset(-5, -5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_ReFire
+            Goto Ready
+        FireSolarium1:
+            PSMG A 0 A_JumpIfInventory("SMGSolariumUpgraded", 2, "FireSolarium2")
+            PSMG A 0 A_PlaySound ("PSMG/Fire", 0)
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_TakeInventory("SMGClipSolarium", 1)
+            PSMG C 2 A_WeaponOffset(5, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 3 A_WeaponOffset(-5, -5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_ReFire
+            Goto Ready
+        FireSolarium2:
+            PSMG A 0 A_JumpIfInventory("SMGSolariumUpgraded", 3, "FireSolarium3")
+            PSMG A 0 A_PlaySound ("PSMG/Fire", 0)
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_TakeInventory("SMGClipSolarium", 1)
+            PSMG C 2 A_WeaponOffset(5, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 3 A_WeaponOffset(-5, -5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_ReFire
+            Goto Ready
+        FireSolarium3:
+            PSMG A 0 A_JumpIfInventory("SMGSolariumUpgraded", 4, "FireSolarium4")
+            PSMG A 0 A_PlaySound ("PSMG/Fire", 0)
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_TakeInventory("SMGClipSolarium", 1)
+            PSMG C 2 A_WeaponOffset(5, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 3 A_WeaponOffset(-5, -5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_ReFire
+            Goto Ready
+        FireSolarium4:
+            PSMG A 0 A_PlaySound ("PSMG/Fire", 0)
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_FireProjectile("LunSolSMGSP", random(-1,1), 0, 0, 0, 0, random(-1,1))
+            PSMG A 0 A_TakeInventory("SMGClipSolarium", 1)
+            PSMG C 2 A_WeaponOffset(5, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 3 A_WeaponOffset(-5, -5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_ReFire
+            Goto Ready
+        AltFire:
+            PSMG A 0 A_JumpIfInventory("SMGSolariumLoaded", 1, "SolariumAltFireCheck")
+        LunariumAltFireCheck:
+            PSMG A 0 A_JumpIfInventory("SMGLunariumUpgraded", 1, "LunariumAltFireCheck1")
+            PSMG A 0 A_JumpIfInventory("SMGClipLunarium", 25, "AltFireLunarium")
+            Goto Ready
+        LunariumAltFireCheck1:
+            PSMG A 0 A_JumpIfInventory("SMGLunariumUpgraded", 2, "LunariumAltFireCheck2")
+            PSMG A 0 A_JumpIfInventory("SMGClipLunarium", 20, "AltFireLunarium1")
+            Goto Ready
+        LunariumAltFireCheck2:
+            PSMG A 0 A_JumpIfInventory("SMGLunariumUpgraded", 3, "LunariumAltFireCheck3")
+            PSMG A 0 A_JumpIfInventory("SMGClipLunarium", 15, "AltFireLunarium2")
+            Goto Ready
+        LunariumAltFireCheck3:
+            PSMG A 0 A_JumpIfInventory("SMGLunariumUpgraded", 4, "LunariumAltFireCheck4")
+            PSMG A 0 A_JumpIfInventory("SMGClipLunarium", 10, "AltFireLunarium3")
+            Goto Ready
+        LunariumAltFireCheck4:
+            PSMG A 0 A_JumpIfInventory("SMGClipLunarium", 5, "AltFireLunarium4")
+            Goto Ready
+        AltFireLunarium:
+            PSMG A 0 A_PlaySound ("EnergyPistol/Fire", 0)
+            PSMG A 0 A_FireProjectile("EnergyPistolLunariumBall")
+            PSMG A 0 A_TakeInventory("SMGClipLunarium", 25)
+            PSMG E 3 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            Goto Ready
+        AltFireLunarium1:
+            PSMG A 0 A_PlaySound ("EnergyPistol/Fire", 0)
+            PSMG A 0 A_FireProjectile("EnergyPistolLunariumBall")
+            PSMG A 0 A_TakeInventory("SMGClipLunarium", 20)
+            PSMG E 3 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            Goto Ready
+        AltFireLunarium2:
+            PSMG A 0 A_PlaySound ("EnergyPistol/Fire", 0)
+            PSMG A 0 A_FireProjectile("EnergyPistolLunariumBall")
+            PSMG A 0 A_TakeInventory("SMGClipLunarium", 15)
+            PSMG E 3 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            Goto Ready
+        AltFireLunarium3:
+            PSMG A 0 A_PlaySound ("EnergyPistol/Fire", 0)
+            PSMG A 0 A_FireProjectile("EnergyPistolLunariumBall")
+            PSMG A 0 A_TakeInventory("SMGClipLunarium", 10)
+            PSMG E 3 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            Goto Ready
+        AltFireLunarium4:
+            PSMG A 0 A_PlaySound ("EnergyPistol/Fire", 0)
+            PSMG A 0 A_FireProjectile("EnergyPistolLunariumBall")
+            PSMG A 0 A_TakeInventory("SMGClipLunarium", 5)
+            PSMG E 3 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 3 A_ReFire
+            Goto Ready
+        SolariumAltFireCheck:
+            PSMG A 0 A_JumpIfInventory("SMGSolariumUpgraded", 1, "SolariumAltFireCheck1")
+            PSMG A 0 A_JumpIfInventory("SMGClipSolarium", 25, "AltFireSolarium")
+            Goto Ready
+        SolariumAltFireCheck1:
+            PSMG A 0 A_JumpIfInventory("SMGSolariumUpgraded", 2, "SolariumAltFireCheck2")
+            PSMG A 0 A_JumpIfInventory("SMGClipSolarium", 20, "AltFireSolarium1")
+            Goto Ready
+        SolariumAltFireCheck2:
+            PSMG A 0 A_JumpIfInventory("SMGSolariumUpgraded", 3, "SolariumAltFireCheck3")
+            PSMG A 0 A_JumpIfInventory("SMGClipSolarium", 15, "AltFireSolarium2")
+            Goto Ready
+        SolariumAltFireCheck3:
+            PSMG A 0 A_JumpIfInventory("SMGSolariumUpgraded", 4, "SolariumAltFireCheck4")
+            PSMG A 0 A_JumpIfInventory("SMGClipSolarium", 10, "AltFireSolarium3")
+            Goto Ready
+        SolariumAltFireCheck4:
+            PSMG A 0 A_JumpIfInventory("SMGClipSolarium", 5, "AltFireSolarium4")
+            Goto Ready
+        AltFireSolarium:
+            PSMG A 0 A_PlaySound ("EnergyPistol/Fire", 0)
+            PSMG A 0 A_FireProjectile("EnergyPistolSolariumBall")
+            PSMG A 0 A_TakeInventory("SMGClipSolarium", 25)
+            PSMG E 3 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 3 A_ReFire
+            Goto Ready
+        AltFireSolarium1:
+            PSMG A 0 A_PlaySound ("EnergyPistol/Fire", 0)
+            PSMG A 0 A_FireProjectile("EnergyPistolSolariumBall")
+            PSMG A 0 A_TakeInventory("SMGClipSolarium", 20)
+            PSMG E 3 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 3 A_ReFire
+            Goto Ready
+        AltFireSolarium2:
+            PSMG A 0 A_PlaySound ("EnergyPistol/Fire", 0)
+            PSMG A 0 A_FireProjectile("EnergyPistolSolariumBall")
+            PSMG A 0 A_TakeInventory("SMGClipSolarium", 15)
+            PSMG E 3 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 3 A_ReFire
+            Goto Ready
+        AltFireSolarium3:
+            PSMG A 0 A_PlaySound ("EnergyPistol/Fire", 0)
+            PSMG A 0 A_FireProjectile("EnergyPistolSolariumBall")
+            PSMG A 0 A_TakeInventory("SMGClipSolarium", 10)
+            PSMG E 3 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 3 A_ReFire
+            Goto Ready
+        AltFireSolarium4:
+            PSMG A 0 A_PlaySound ("EnergyPistol/Fire", 0)
+            PSMG A 0 A_FireProjectile("EnergyPistolSolariumBall")
+            PSMG A 0 A_TakeInventory("SMGClipSolarium", 5)
+            PSMG E 3 A_WeaponOffset(10, 10, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 3 A_ReFire
+            Goto Ready
+        Zoom:
+            PSMG A 0 A_JumpIfInventory("SMGSolariumLoaded", 1, "LoadLunarium")
+        LoadSolarium:
+            PSMG A 8
+                {
+                    A_GiveInventory("SMGSolariumLoaded", 1);
+                    A_PlaySound("EnergyPistol/Switch", 0);
+                }
+            Goto Ready
+        LoadLunarium:
+            PSMG A 8
+                {
+                    A_TakeInventory("SMGSolariumLoaded", 1);
+                    A_PlaySound("EnergyPistol/Switch", 0);
+                }
+            Goto Ready
+        Reload:
+            PSMG A 0 A_JumpIfInventory("SMGSolariumLoaded", 1, "ReloadCheckSolarium")
+        ReloadCheckLunarium:
+            PSMG A 0 A_JumpIfInventory("SMGClipLunarium", CallACS("SMGCheckLunariumCap"), "Ready")
+        ReloadLunarium:
+            PSMG A 0 A_PlaySound("PSMG/Reload", 0)
+            PSMG A 4 A_WeaponOffset(0, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 20
+            PSMG A 4 A_WeaponOffset(0, -7, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, -7, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, -7, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, -4, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 8 A_SetInventory("SMGClipLunarium", CallACS("SMGCheckLunariumCap"))
+            Goto Ready
+        ReloadCheckSolarium:
+            PSMG A 0 A_JumpIfInventory("SMGClipSolarium", CallACS("SMGCheckSolariumCap"), "Ready")
+        ReloadSolarium:
+            PSMG A 0 A_PlaySound("PSMG/Reload", 0)
+            PSMG A 4 A_WeaponOffset(0, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, 5, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 20
+            PSMG A 4 A_WeaponOffset(0, -7, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, -7, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, -7, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 4 A_WeaponOffset(0, -4, WOF_ADD|WOF_INTERPOLATE)
+            PSMG A 8 A_SetInventory("SMGClipSolarium", CallACS("SMGCheckSolariumCap"))
+            Goto Ready
+        Spawn:
+            PSMG F -1
+            Stop
+    }
+}
+
+ACTOR LunSolSMGProjectileInheritor
+{
+    Radius 1
+    Height 1
+    SeeSound ""
+    DeathSound "EnergyPistol/Hit"
+    RenderStyle Add
+    Projectile
+    Scale 1
+    Alpha 0.75
+}
+
+ACTOR LunSolSMGLP : LunSolSMGProjectileInheritor
+{
+    Speed 65
+    Damage 3
+    States
+    {
+        Spawn:
+            LSMP AB 2 Bright
+            Loop
+        Death:
+            LSMP CDEFG 3 Bright
+        FadeOut:
+            LSMP G 2 Bright A_FadeOut(0.1)
+            Loop
+    }
+}
+
+ACTOR LunSolSMGSP : LunSolSMGProjectileInheritor
+{
+    Speed 45
+    Damage 7
+    States
+    {
+        Spawn:
+            SSMP AB 2 Bright
+            Loop
+        Death:
+            SSMP CDEFG 3 Bright
+        FadeOut:
+            SSMP G 2 Bright A_FadeOut(0.1)
+            Loop
+    }
+}
+
+ACTOR SMGLunariumUpgrade : CustomInventory
+{
+    Inventory.PickupMessage "Got a Solarium Core upgrade"
+    States
+    {
+        Spawn:
+            LWUP A -1
+            Stop
+        Pickup:
+            LWUP A 0 A_GiveInventory("SMGLunariumUpgraded", 1)
+            LWUP A 0 ACS_NamedExecute("clipupgradelunarium", 0)
+            Stop
+    }
+}
+
+ACTOR SMGSolariumUpgrade : CustomInventory
+{
+    Inventory.PickupMessage "Got a Solarium Core upgrade"
+    States
+    {
+        Spawn:
+            SWUP A -1
+            Stop
+        Pickup:
+            SWUP A 0 A_GiveInventory("SMGSolariumUpgraded", 1)
+            SWUP A 0 ACS_NamedExecute("clipupgradesolarium", 0)
+            Stop
+    }
+}

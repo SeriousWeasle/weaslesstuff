@@ -10,6 +10,11 @@ AutoShotgun/Pump             ashtpump
 //SMG stuff
 SMG/Fire                     smgfire
 
+SMG2/Fire                    smg2fir
+
+PSMG/Fire                    psmgfir
+PSMG/Reload                  psmgrel
+
 //Dark Energy Rifle
 DarkEnergyRifle/Fire         firedenr
 

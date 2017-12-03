@@ -1,14 +1,18 @@
 ACTOR CellSpawner : RandomSpawner replaces Cell
 {
-    DropItem "CellVanilla" 255 4
-    DropItem "DarkCrystal" 255 1
-    DropItem "SolariumCell" 255 2
-    DropItem "LunariumCell" 255 2
+    DropItem "CellVanilla" 255 40
+    DropItem "DarkCrystal" 255 10
+    DropItem "SolariumCell" 255 20
+    DropItem "LunariumCell" 255 20
+    DropItem "SMGSolariumUpgrade" 255 1
+    DropItem "SMGLunariumUpgrade" 255 1
 }
 
 ACTOR CellPackSpawner : RandomSpawner replaces CellPack
 {
-    DropItem "CellPackVanilla" 255 2
-    DropItem "BigLunariumCell" 255 1
-    DropItem "BigSolariumCell" 255 1
+    DropItem "CellPackVanilla" 255 20
+    DropItem "BigLunariumCell" 255 10
+    DropItem "BigSolariumCell" 255 10
+    DropItem "SMGSolariumUpgrade" 255 1
+    DropItem "SMGLunariumUpgrade" 255 1
 } 

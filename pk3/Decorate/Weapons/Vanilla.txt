@@ -123,6 +123,11 @@ ACTOR VanillaChaingun : Chaingun
     Weapon.SlotNumber 4
 }
 
+ACTOR VanillaChainsaw : Chainsaw
+{
+    Weapon.SlotNumber 1
+}
+
 ACTOR VanillaPlasmaRifle : PlasmaRifle
 {
     Weapon.SlotNumber 6

@@ -2,7 +2,7 @@ StatusBar fullscreen, fullscreenoffsets
 {
     //Basic HUD shapes
     DrawImage "WEASHUD", 0, -58;
-    DrawImage "WEASAMMO", -175, -146;
+    DrawImage "WEASAMMO", -175, -147;
 
     //Health and armor bar
     Alpha 0.5
@@ -16,59 +16,59 @@ StatusBar fullscreen, fullscreenoffsets
     DrawNumber 9, SmallFont, DarkGray, Armor, 56, -20;
 
     //Ammo
-    DrawImage ammoicon1, -23, -78, center;
-    DrawImage ammoicon2, -23, -41, center;
-    DrawNumber 5, BIGFONT, White, ammo1, Alignment(center), -134, -84;
-    DrawNumber 5, BIGFONT, White, ammo2, Alignment(center), -134, -47;
-    DrawNumber 5, BIGFONT, White, ammo1capacity, Alignment(center), -76, -84;
-    DrawNumber 5, BIGFONT, White, ammo2capacity, Alignment(center), -76, -47;
+    DrawImage ammoicon1, -23, -79, center;
+    DrawImage ammoicon2, -23, -42, center;
+    DrawNumber 5, BIGFONT, White, ammo1, Alignment(center), -134, -85;
+    DrawNumber 5, BIGFONT, White, ammo2, Alignment(center), -134, -48;
+    DrawNumber 5, BIGFONT, White, ammo1capacity, Alignment(center), -76, -85;
+    DrawNumber 5, BIGFONT, White, ammo2capacity, Alignment(center), -76, -48;
 
     //For 3 ammo types
     IsSelected PlasmaCannon
     {
-        DrawImage "CELLA0", -23, -109;
-        DrawNumber 5, BIGFONT, White, Ammo("Cell"), Alignment(center), -134, -121;
-        DrawNumber 5, BIGFONT, White, AmmoCapacity("Cell"), Alignment(center), -76, -121;
+        DrawImage "CELLA0", -23, -110;
+        DrawNumber 5, BIGFONT, White, Ammo("Cell"), Alignment(center), -134, -122;
+        DrawNumber 5, BIGFONT, White, AmmoCapacity("Cell"), Alignment(center), -76, -122;
         InInventory PlasmaCannonCellsLoaded
         {
-            DrawImage "WEASSEL", -23, -115, center;
-            DrawImage "CELLLOAD", -158, -146;
+            DrawImage "WEASSEL", -23, -116, center;
+            DrawImage "CELLLOAD", -175, -147;
         }
 
         InInventory PlasmaCannonLunariumLoaded
         {
-            DrawImage "WEASSEL", -23, -78, center;
-            DrawImage "LUNLOAD", -158, -146;
+            DrawImage "WEASSEL", -23, -79, center;
+            DrawImage "LUNLOAD", -175, -147;
         }
 
         InInventory PlasmaCannonSolariumLoaded
         {
-            DrawImage "WEASSEL", -23, -41, center;
-            DrawImage "SOLLOAD", -158, -146;
+            DrawImage "WEASSEL", -23, -42, center;
+            DrawImage "SOLLOAD", -175, -147;
         }
     }
     
     IsSelected DoubleEnergyPistol, EnergyPistol
     {
-        DrawImage "CELLA0", -23, -109;
-        DrawNumber 5, BIGFONT, White, Ammo("Cell"), Alignment(center), -134, -121;
-        DrawNumber 5, BIGFONT, White, AmmoCapacity("Cell"), Alignment(center), -76, -121;
+        DrawImage "CELLA0", -23, -110;
+        DrawNumber 5, BIGFONT, White, Ammo("Cell"), Alignment(center), -134, -122;
+        DrawNumber 5, BIGFONT, White, AmmoCapacity("Cell"), Alignment(center), -76, -122;
         InInventory EnergyPistolCellsLoaded
         {
-            DrawImage "WEASSEL", -23, -115, center;
-            DrawImage "CELLLOAD", -163, -146;
+            DrawImage "WEASSEL", -23, -116, center;
+            DrawImage "CELLLOAD", -175, -147;
         }
 
         InInventory EnergyPistolLunariumLoaded
         {
-            DrawImage "WEASSEL", -23, -78, center;
-            DrawImage "LUNLOAD", -158, -146;
+            DrawImage "WEASSEL", -23, -79, center;
+            DrawImage "LUNLOAD", -175, -147;
         }
 
         InInventory EnergyPistolSolariumLoaded
         {
-            DrawImage "WEASSEL", -23, -41, center;
-            DrawImage "SOLLOAD", -158, -146;
+            DrawImage "WEASSEL", -23, -42, center;
+            DrawImage "SOLLOAD", -175, -147;
         }
     }
 
@@ -76,14 +76,29 @@ StatusBar fullscreen, fullscreenoffsets
     {
         InInventory not GreenShellsLoadedSSG
         {
-            DrawImage "WEASSEL", -23, -78, center;
-            DrawImage "RSLOAD", -158, -146;
+            DrawImage "WEASSEL", -23, -79, center;
+            DrawImage "RSLOAD", -175, -147;
         }
 
         InInventory GreenShellsLoadedSSG 
         {
-            DrawImage "WEASSEL", -23, -41, center;
-            DrawImage "GSLOAD", -158, -146;
+            DrawImage "WEASSEL", -23, -42, center;
+            DrawImage "GSLOAD", -175, -147;
+        }
+    }
+
+    IsSelected LunSolSMG
+    {
+        InInventory not SMGSolariumLoaded
+        {
+            DrawImage "WEASSEL", -23, -79, center;
+            DrawImage "LUNLOAD", -175, -147;
+        }
+
+        InInventory SMGSolariumLoaded 
+        {
+            DrawImage "WEASSEL", -23, -42, center;
+            DrawImage "SOLLOAD", -175, -147;
         }
     }
     //Keys
