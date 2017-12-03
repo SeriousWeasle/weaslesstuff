@@ -2,7 +2,7 @@ ACTOR SMG2 : DoomWeapon
 {
     Weapon.SlotNumber 4
     Weapon.AmmoUse1 1
-    Weapon.AmmoGive1 75
+    Weapon.AmmoGive1 40
     Weapon.AmmoType1 "Clip12mm"
     Weapon.AmmoUse2 1
     Weapon.AmmoType2 "Clip12mm"
