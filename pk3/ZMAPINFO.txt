@@ -3,6 +3,7 @@ ClearSkills
 Skill VeryEasy
 {
     AmmoFactor = 2
+    DoubleAmmoFactor = 4
     DamageFactor = 0.5
     EasyBossBrain
     SpawnFilter = Nightmare
@@ -19,6 +20,7 @@ Skill Easy
     DamageFactor = 0.5
     Name = "Easy"
     AmmoFactor = 2
+    DoubleAmmoFactor = 4
     MustConfirm = "Least amount of monsters, take half damage and get double ammo."
     TextColor = "LightBlue"
     EasyKey
@@ -39,6 +41,7 @@ Skill Normal
     SpawnFilter = Normal
     Name = "Normal"
     TextColor = "Yellow"
+    DefaultSkill
     MustConfirm = "No damage or ammo modifiers"
 }
 
@@ -46,7 +49,7 @@ Skill Hard
 {
     SpawnFilter = Hard
     Name = "Hard"
-    TextColor = "Yellow"
+    TextColor = "Gold"
     DamageFactor = 1.25
     MustConfirm = "More monsters and take 25% more damage"
 }
@@ -68,6 +71,7 @@ Skill SlaughterFest
     EasyKey
     DamageFactor = 0.5
     AmmoFactor = 2
+    DoubleAmmoFactor = 4
     RespawnTime = 30
     RespawnLimit = 0
     MustConfirm = "Same as Very Easy, but infinite monsters"
@@ -82,5 +86,6 @@ Skill SuperEasy
     TextColor = "Purple"
     DamageFactor = 0.25
     AmmoFactor = 4
+    DoubleAmmoFactor = 8
     MustConfirm = "Take 25% damage and get quadruple ammo. This skill is for people who want to play slaughter maps without the difficulty or just have fun."
 }
