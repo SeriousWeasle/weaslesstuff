@@ -1,0 +1,49 @@
+ACTOR LootboxCommonOpened
+{
+	States
+	{
+		Spawn:
+			LBXC B -1
+			Stop
+	}
+}
+
+ACTOR LootboxUncommonOpened
+{
+	States
+	{
+		Spawn:
+			LBXU B -1
+			Stop
+	}
+}
+
+ACTOR LootboxRareOpened
+{
+	States
+	{
+		Spawn:
+			LBXR B -1
+			Stop
+	}
+}
+
+ACTOR LootboxEpicOpened
+{
+	States
+	{
+		Spawn:
+			LXBE B -1
+			Stop
+	}
+}
+
+ACTOR LootboxLegendaryOpened
+{
+	States
+	{
+		Spawn:
+			LXBL B -1
+			Stop
+	}
+}

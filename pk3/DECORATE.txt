@@ -30,6 +30,7 @@
 
 //Miscellaneous
 #include "Decorate/Misc/Lootboxes.txt"
+#include "Decorate/Misc/LootboxContent.txt"
 
 //Upgrades
 //#include "Decorate/Upgrades/Ammo.txt"

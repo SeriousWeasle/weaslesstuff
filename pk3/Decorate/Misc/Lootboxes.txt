@@ -1,4 +1,4 @@
-ACTOR LootBoxInheritor : CustomInventory
+ACTOR LootboxInheritor : CustomInventory
 {
 	+COUNTITEM
 }
@@ -9,23 +9,56 @@ ACTOR CommonLootBox : LootboxInheritor
 	States
 	{
 		Spawn:
-			BPAK A -1
+			LBXC A -1
 			Stop
 		Pickup:
-			LBXC B 5
-			LBXC C 5
-			LBXC D 5
-			LBXC E 5 A_DropItem(LootBoxCommonSpawner)
-			LBXC F 5
-		Disappear:
-			LBXC F 1 A_FadeOut(0.05)
-			LBXC F 1 A_Jump("Disappear")
+			TNT1
+			{
+				A_DropItem(LootboxCommonSpawner);
+				A_DropItem(LootboxCommonOpen);
+			}
+			Stop
 	}
 }
 
-ACTOR LootBoxCommonSpawner : RandomSpawner
+ACTOR UncommonLootbox : LootboxInheritor
 {
-	DropItem "StimPack" 255 10
-	DropItem "Shotgun" 255 1
-	DropItem "HealthBonus" 255 3
+	Inventory.PickupMessage "Got a uncommon loot box!"
+	States
+	{
+		Spawn:
+			LBXU A -1
+			Stop
+		Pickup:
+			TNT1 A_DropItem(LootboxUncommonSpawner)
+			Stop
+	}
+}
+
+ACTOR RareLootbox : LootboxInheritor
+{
+	Inventory.PickupMessage "Got a rare loot box!"
+	States
+	{
+		Spawn:
+			LBXR A -1
+			Stop
+		Pickup:
+			TNT1 A_DropItem(LootboxRareSpawner)
+			Stop
+	}
+}
+
+ACTOR EpicLootbox : LootboxInheritor
+{
+	Inventory.PickupMessage "Got a epic loot box!"
+	States
+	{
+		Spawn:
+			LBXE A -1
+			Stop
+		Pickup:
+			TNT1 A_DropItem(LootboxEpicSpawner)
+			Stop
+	}
 }
