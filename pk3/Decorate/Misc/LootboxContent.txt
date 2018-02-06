@@ -1,15 +1,15 @@
 ACTOR LootboxCommonSpawner : RandomSpawner
 {
-	DropItem "Stimpack" 255 10
-	DropItem "Shotgun" 255 1
-	DropItem "HealthBonus" 255 3
+	DropItem "" 255 1
+	DropItem "" 255 1
+	DropItem "" 255 1
 }
 
 ACTOR LootboxUncommonSpawner : RandomSpawner
 {
-	DropItem "Stimpack" 255 3
-	DropItem "Shotgun" 255 10
-	DropItem "Medikit" 255 1
+	DropItem "" 255 1
+	DropItem "" 255 1
+	DropItem "" 255 1
 }
 
 ACTOR LootboxRareSpawner : RandomSpawner

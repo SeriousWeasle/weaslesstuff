@@ -45,7 +45,7 @@ ACTOR SMGClipSolarium : Ammo
 
 ACTOR LunSolSMG : DoomWeapon
 {
-    Weapon.SlotNumber 1
+    Weapon.SlotNumber 6
     Weapon.AmmoUse1 0
     Weapon.AmmoGive1 50
     Weapon.AmmoType1 "SMGClipLunarium"
@@ -504,7 +504,6 @@ ACTOR SMGLunariumUpgrade : CustomInventory
             Stop
         Pickup:
             LWUP A 0 A_GiveInventory("SMGLunariumUpgraded", 1)
-            LWUP A 0 ACS_NamedExecute("clipupgradelunarium", 0)
             Stop
     }
 }
@@ -519,7 +518,6 @@ ACTOR SMGSolariumUpgrade : CustomInventory
             Stop
         Pickup:
             SWUP A 0 A_GiveInventory("SMGSolariumUpgraded", 1)
-            SWUP A 0 ACS_NamedExecute("clipupgradesolarium", 0)
             Stop
     }
 }

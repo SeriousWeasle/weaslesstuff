@@ -31,3 +31,14 @@ SWUPA = "SWUPA"
 {
     Scale = 2.0
 }
+
+LBXCA = "LBXCA" {}
+LBXCB = "LBXCB" {}
+LBXUA = "LBXUA" {}
+LBXUB = "LBXUB" {}
+LBXRA = "LBXRA" {}
+LBXRB = "LBXRB" {}
+LBXEA = "LBXEA" {}
+LBXEB = "LBXEB" {}
+LBXLA = "LBXLA" {}
+LBXLB = "LBXLB" {}

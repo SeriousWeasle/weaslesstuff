@@ -31,6 +31,7 @@
 //Miscellaneous
 #include "Decorate/Misc/Lootboxes.txt"
 #include "Decorate/Misc/LootboxContent.txt"
+#include "Decorate/Misc/LootboxEffects.txt"
 
 //Upgrades
 //#include "Decorate/Upgrades/Ammo.txt"

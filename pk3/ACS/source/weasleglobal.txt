@@ -89,16 +89,6 @@ script "SMGCheckSolariumCap" (void)
 	SetResultValue(GetAmmoCapacity("SMGClipSolarium"));
 }
 
-script "clipupgradelunarium" (void)
-{
-	SetAmmoCapacity("SMGClipLunarium", GetAmmoCapacity("SMGClipLunarium") + 50);
-}
-
-script "clipupgradesolarium" (void)
-{
-	SetAmmoCapacity("SMGClipSolarium", GetAmmoCapacity("SMGClipSolarium") + 25);
-}
-
 script "noberserk" (void)
 {
 	SetResultValue(GetCVar("weasle_noberserk"));

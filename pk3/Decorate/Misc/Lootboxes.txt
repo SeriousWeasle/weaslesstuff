@@ -12,10 +12,10 @@ ACTOR CommonLootBox : LootboxInheritor
 			LBXC A -1
 			Stop
 		Pickup:
-			TNT1
+			TNT1 A 0
 			{
 				A_DropItem(LootboxCommonSpawner);
-				A_DropItem(LootboxCommonOpen);
+				A_DropItem(LootboxCommonOpened);
 			}
 			Stop
 	}
@@ -30,7 +30,11 @@ ACTOR UncommonLootbox : LootboxInheritor
 			LBXU A -1
 			Stop
 		Pickup:
-			TNT1 A_DropItem(LootboxUncommonSpawner)
+			TNT1 A 0
+			{
+				A_DropItem(LootboxUncommonSpawner);
+				A_DropItem(LootboxUncommonOpened);
+			}
 			Stop
 	}
 }
@@ -44,7 +48,11 @@ ACTOR RareLootbox : LootboxInheritor
 			LBXR A -1
 			Stop
 		Pickup:
-			TNT1 A_DropItem(LootboxRareSpawner)
+			TNT1 A 0
+			{
+				A_DropItem(LootboxRareSpawner);
+				A_DropItem(LootboxRareOpened);
+			}
 			Stop
 	}
 }
@@ -58,7 +66,28 @@ ACTOR EpicLootbox : LootboxInheritor
 			LBXE A -1
 			Stop
 		Pickup:
-			TNT1 A_DropItem(LootboxEpicSpawner)
+			TNT1 A 0
+			{
+				A_DropItem(LootboxEpicSpawner);
+				A_DropItem(LootboxEpicOpened);
+			}
 			Stop
+	}
+}
+
+ACTOR LegendaryLootbox : LootboxInheritor
+{
+	Inventory.PickupMessage "Got a legendary loot box!"
+	States
+	{
+		Spawn:
+			LBXL A -1
+			Stop
+		Pickup:
+			TNT1 A 0
+			{
+				A_DropItem(LootboxLegendarySpawner);
+				A_DropItem(LootboxLegendaryOpened);
+			}
 	}
 }

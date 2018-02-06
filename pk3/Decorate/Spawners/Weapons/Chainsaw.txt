@@ -6,8 +6,6 @@ ACTOR ChainsawSpawner replaces Chainsaw
             TNT1 A 0
         DropChainsaw:
             TNT1 A 0 A_DropItem("VanillaChainsaw")
-        DropSMG:
-            TNT1 A 0 A_DropItem("LunSolSMG", 1, 127)
         End:
             TNT1 A 0
             Stop
