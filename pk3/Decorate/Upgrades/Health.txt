@@ -1,0 +1,17 @@
+ACTOR PlayerHealthUpgrade : Pickup
+{
+    Inventory.PickupMessage "Picked up a health upgrade. +25 max health."
+    States
+    {
+        Spawn:
+            PLRH A -1
+            Stop
+        Pickup:
+            TNT1 A 0
+            {
+                A_PlaySound("Weasle/HealthUp");
+                ACS_NamedExecute("upgradehealth");
+            }
+            Stop
+    }
+}

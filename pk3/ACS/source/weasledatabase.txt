@@ -3,10 +3,10 @@
 
 script "xpsaver" (void)
 {
-    SetResultValue(GetCVar("ws_data_xptotal"));
+    SetResultValue(GetCVar("weasledb_xptotal"));
 }
 
 script "levelsaver" (void)
 {
-    SetResultValue(GetCVar("ws_data_level"));
+    SetResultValue(GetCVar("weasledb_level"));
 }

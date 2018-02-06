@@ -1,0 +1,19 @@
+ACTOR NewChainsaw : DoomWeapon
+{
+	Weapon.SlotNumber 1
+	Inventory.PickupMessage "Picked up a chainsaw"
+	States
+	{
+		Ready:
+			CHSW A 1 A_WeaponReady (WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+			Loop
+		Deselect:
+			CHSW A 1 A_Lower
+			Loop
+		Select:
+			CHSW A 1 A_Raise
+			Loop
+		Fire:
+			Goto Ready
+	}
+}

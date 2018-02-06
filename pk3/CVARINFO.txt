@@ -1,3 +1,3 @@
 server int weasle_noberserk = 1;
-server int ws_data_xptotal = 0;
-server int ws_data_level = 1;
+server int weasledb_xptotal = 0;
+server int weasledb_level = 1;

@@ -1,0 +1,43 @@
+ACTOR ExplosiveRifle : DoomWeapon
+{
+    Weapon.SlotNumber 5
+    Weapon.AmmoGive1 10
+    Weapon.AmmoGive2 3
+    Weapon.AmmoType1 "MiniRocket"
+    Weapon.AmmoType2 "GrenadeAmmo"
+    Inventory.PickupMessage "Picked up the Explosive Rifle"
+    States
+    {
+        Ready:
+            EXAR A 1 A_WeaponReady (WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+            Loop
+        Deselect:
+            EXAR A 1 A_Lower
+            Loop
+        Select:
+            EXAR A 1 A_Raise
+            Loop
+        Fire:
+            EXAR B 3
+            {
+                A_PlaySound("ExplosiveRifle/Fire");
+                A_FireProjectile("MiniRocketProjectile");
+            }
+			Goto Ready
+    }
+}
+
+ACTOR MiniRocketProjectile
+{
+    Width 3
+    Height 3
+    Projectile
+    States
+    {
+        Spawn:
+            MRKT A -1
+            Stop
+        Death:
+            Stop
+    }
+}

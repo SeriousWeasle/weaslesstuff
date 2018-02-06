@@ -103,3 +103,8 @@ script "noberserk" (void)
 {
 	SetResultValue(GetCVar("weasle_noberserk"));
 }
+
+script "healthupgrade" (void)
+{
+	SetMaxHealth("Health", GetMaxHealth("Health") + 25);
+}

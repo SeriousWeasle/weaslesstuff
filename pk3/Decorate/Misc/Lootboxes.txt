@@ -1,0 +1,31 @@
+ACTOR LootBoxInheritor : CustomInventory
+{
+	+COUNTITEM
+}
+
+ACTOR CommonLootBox : LootboxInheritor
+{
+	Inventory.PickupMessage "Got a common loot box!"
+	States
+	{
+		Spawn:
+			BPAK A -1
+			Stop
+		Pickup:
+			LBXC B 5
+			LBXC C 5
+			LBXC D 5
+			LBXC E 5 A_DropItem(LootBoxCommonSpawner)
+			LBXC F 5
+		Disappear:
+			LBXC F 1 A_FadeOut(0.05)
+			LBXC F 1 A_Jump("Disappear")
+	}
+}
+
+ACTOR LootBoxCommonSpawner : RandomSpawner
+{
+	DropItem "StimPack" 255 10
+	DropItem "Shotgun" 255 1
+	DropItem "HealthBonus" 255 3
+}

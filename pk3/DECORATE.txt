@@ -28,8 +28,12 @@
 #include "Decorate/Monsters/Zombieman.txt"
 #include "Decorate/Monsters/ShotgunGuy.txt"
 
+//Miscellaneous
+#include "Decorate/Misc/Lootboxes.txt"
+
 //Upgrades
-#include "Decorate/Upgrades/Ammo.txt"
+//#include "Decorate/Upgrades/Ammo.txt"
+//#include "Decorate/Upgrades/Health.txt"
 
 //Weapons
 #include "Decorate/Weapons/AutoShotgun.txt"
@@ -42,6 +46,8 @@
 #include "Decorate/Weapons/PlasmaCannon.txt"
 #include "Decorate/Weapons/SMG12mm.txt"
 #include "Decorate/Weapons/LunSolSMG.txt"
+//#include "Decorate/Weapons/ExplosiveRifle.txt"
+//#include "Decorate/Weapons/NewChainsaw.txt"
 
 
 //Spawners
