@@ -1,0 +1,17 @@
+ACTOR ArmorShardNormal : ArmorBonus
+{
+    Armor.SaveAmount 5
+    Armor.MaxSaveAmount 250
+    Armor.SavePercent 42.5
+    Inventory.PickupMessage "Picked up a regular armor shard"
+    Inventory.PickupSound "Shard/Pickup"
+
+    +COUNTITEM
+    
+    States
+    {
+        Spawn:
+            SHDN A -1
+            Stop
+    }
+}

@@ -42,3 +42,6 @@ LBXEA = "LBXEA" {}
 LBXEB = "LBXEB" {}
 LBXLA = "LBXLA" {}
 LBXLB = "LBXLB" {}
+CLPLA = "CLPLA" {}
+CLPNA = "CLPNA" {}
+CLPSA = "CLPSA" {}

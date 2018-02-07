@@ -1,11 +1,38 @@
-ACTOR ClipLarge : Clip
+ACTOR SmallClip : Clip
 {
-    Inventory.Amount 15
-    Inventory.PickupMessage "Picked up a large clip (+15 bullets)"
+    Inventory.Amount 5
+    Inventory.PickupMessage "Picked up a small clip"
+    Inventory.PickupSound "Ammo/Pickup"
     States
     {
-        SPAWN:
-            CLLA A 0
-            Loop
+        Spawn:
+            CLPS A -1
+            Stop
+    }
+}
+
+ACTOR NormalClip : Clip
+{
+    Inventory.Amount 10
+    Inventory.PickupMessage "Picked up a clip"
+    Inventory.PickupSound "Ammo/Pickup"
+    States
+    {
+        Spawn:
+            CLPN A -1
+            Stop
+    }
+}
+
+ACTOR LargeClip : Clip
+{
+    Inventory.Amount 20
+    Inventory.PickupMessage "Picked up a large clip"
+    Inventory.PickupSound "Ammo/Pickup"
+    States
+    {
+        Spawn:
+            CLPL A -1
+            Stop
     }
 }

@@ -5,7 +5,7 @@ ACTOR LootboxInheritor : CustomInventory
 
 ACTOR CommonLootBox : LootboxInheritor
 {
-	Inventory.PickupMessage "Got a common loot box!"
+	Inventory.PickupMessage "Opened a common loot box!"
 	States
 	{
 		Spawn:
@@ -23,7 +23,7 @@ ACTOR CommonLootBox : LootboxInheritor
 
 ACTOR UncommonLootbox : LootboxInheritor
 {
-	Inventory.PickupMessage "Got a uncommon loot box!"
+	Inventory.PickupMessage "Opened a uncommon loot box!"
 	States
 	{
 		Spawn:
@@ -41,7 +41,7 @@ ACTOR UncommonLootbox : LootboxInheritor
 
 ACTOR RareLootbox : LootboxInheritor
 {
-	Inventory.PickupMessage "Got a rare loot box!"
+	Inventory.PickupMessage "Opened a rare loot box!"
 	States
 	{
 		Spawn:
@@ -59,7 +59,7 @@ ACTOR RareLootbox : LootboxInheritor
 
 ACTOR EpicLootbox : LootboxInheritor
 {
-	Inventory.PickupMessage "Got a epic loot box!"
+	Inventory.PickupMessage "Opened a epic loot box!"
 	States
 	{
 		Spawn:
@@ -77,7 +77,7 @@ ACTOR EpicLootbox : LootboxInheritor
 
 ACTOR LegendaryLootbox : LootboxInheritor
 {
-	Inventory.PickupMessage "Got a legendary loot box!"
+	Inventory.PickupMessage "Opened a legendary loot box!"
 	States
 	{
 		Spawn:

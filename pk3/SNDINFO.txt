@@ -1,44 +1,48 @@
 //Pistol stuff
-12mmPistol/Raise             12mmup
-12mmPistol/Lower             12mmlow
-12mmPistol/Fire              12mmfire
+12mmPistol/Raise				12mmup
+12mmPistol/Lower				12mmlow
+12mmPistol/Fire					12mmfire
 
 //Autoshotgun stuff
-AutoShotgun/Fire             ashtfire
-AutoShotgun/Pump             ashtpump
+AutoShotgun/Fire				ashtfire
+AutoShotgun/Pump				ashtpump
 
 //SMG stuff
-SMG/Fire                     smgfire
+SMG/Fire						smgfire
 
-SMG2/Fire                    smg2fir
+SMG2/Fire						smg2fir
 
-PSMG/Fire                    psmgfir
-PSMG/Reload                  psmgrel
+PSMG/Fire						psmgfir
+PSMG/Reload						psmgrel
 
 //Dark Energy Rifle
-DarkEnergyRifle/Fire         firedenr
+DarkEnergyRifle/Fire			firedenr
 
-LunSolCannon/Fire            lnslfire
+LunSolCannon/Fire				lnslfire
 
 //Energy Pistol
-EnergyPistol/Fire            epstfire
-EnergyPistol/Switch          epswitch
-EnergyPistol/Hit             sphit
+EnergyPistol/Fire				epstfire
+EnergyPistol/Switch				epswitch
+EnergyPistol/Hit				sphit
 
-PlasmaCannon/Fire            laserbmf
-PlasmaCannon/SpinUp          laserup
-PlasmaCannon/SpinDown        laserdn
+PlasmaCannon/Fire				laserbmf
+PlasmaCannon/SpinUp				laserup
+PlasmaCannon/SpinDown			laserdn
 
 //Explosions
-Explosions/DarkEnergySmall   denexp1
-Explosions/Lunarium          lunexp
-Explosions/Solarium          solexp
+Explosions/DarkEnergySmall		denexp1
+Explosions/Lunarium				lunexp
+Explosions/Solarium				solexp
 
 //Effects
-SFX/DarkEnergySparks1        dmsprk1
-SFX/DarkEnergySparks2        dmsprk2
-SFX/DarkEnergySparks3        dmsprk3
+SFX/DarkEnergySparks1			dmsprk1
+SFX/DarkEnergySparks2			dmsprk2
+SFX/DarkEnergySparks3			dmsprk3
 
-SFX/DarkEnergySparkLarge1    dmspkl1
-SFX/DarkEnergySparkLarge2    dmspkl2
-SFX/DarkEnergySparkLarge3    dmspkl3
+SFX/DarkEnergySparkLarge1		dmspkl1
+SFX/DarkEnergySparkLarge2		dmspkl2
+SFX/DarkEnergySparkLarge3		dmspkl3
+
+//Pickups
+Shard/Pickup					Shard
+Ammo/Pickup						Ammo

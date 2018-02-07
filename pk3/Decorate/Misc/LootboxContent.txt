@@ -1,8 +1,10 @@
 ACTOR LootboxCommonSpawner : RandomSpawner
 {
-	DropItem "" 255 1
-	DropItem "" 255 1
-	DropItem "" 255 1
+	DropItem "SmallClip" 255 1
+	DropItem "Clip" 255 1
+	DropItem "HealthBonus" 255 1
+	DropItem "ArmorBonus" 255 1
+	DropItem "ArmorShard" 255 1
 }
 
 ACTOR LootboxUncommonSpawner : RandomSpawner
@@ -28,7 +30,7 @@ ACTOR LootboxEpicSpawner : RandomSpawner
 
 ACTOR LootboxLegendarySpawner : RandomSpawner
 {
-	DropItem "" 255 1
-	DropItem "" 255 1
+	DropItem "PlasmaCannon" 255 1
+	DropItem "SMGLunariumUpgrade" 255 1
 	DropItem "" 255 1
 }
