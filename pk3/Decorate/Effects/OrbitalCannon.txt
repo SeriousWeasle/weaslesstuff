@@ -1,0 +1,44 @@
+ACTOR OrbitalDesignatorBeam
+{
+	Height 4
+	Radius 4
+	Speed 70
+	Damage 2
+	SeeSound ""
+	DeathSound ""
+	RenderStyle Add
+	Projectile
+	Alpha 0.75
+	+DONTSPLASH
+	States
+	{
+		Spawn:
+			OPRJ A -1
+			Stop
+		Death:
+			OPRJ B 3
+			{
+				A_PlaySound("OrbitalDesignator/Explode");
+				A_SpawnItemEx("OrbitalLaser", 0, 0, 0, 0, 0, 0, 0);
+			}
+			Stop
+	}
+}
+
+ACTOR OrbitalLaser
+{
+	SeeSound ""
+	DeathSound "OrbitalLaser/Fire"
+	RenderStyle Add
+	Alpha 0.80
+	+DONTSPLASH
+	States
+	{
+		Spawn:
+			DTRY A -1
+			Stop
+		Death:
+			DTXP A 3
+			Stop
+	}
+}

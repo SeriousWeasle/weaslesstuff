@@ -1,0 +1,23 @@
+Class Weasle_ParticleCannonProjectile
+{
+	Default
+	{
+		Radius 6;
+		Height 6;
+		Speed 24;
+		Damage 5;
+		DamageType "Nuclear";
+	}
+
+	States
+	{
+		Spawn:
+			PBAL A 1 A_EmitPlasma(3, 3);
+			Loop;
+	}
+
+	void A_EmitPlasma(damage, amount)
+	{
+		
+	}
+}

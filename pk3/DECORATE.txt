@@ -21,6 +21,7 @@
 //Effects
 #include "Decorate/Effects/DarkEnergy.txt"
 #include "Decorate/Effects/LunariumSolarium.txt"
+#include "Decorate/Effects/OrbitalCannon.txt"
 
 //Inventory
 
@@ -51,6 +52,7 @@
 #include "Decorate/Weapons/LunSolSMG.txt"
 //#include "Decorate/Weapons/ExplosiveRifle.txt"
 //#include "Decorate/Weapons/NewChainsaw.txt"
+#include "Decorate/Weapons/CerberusCannon.txt"
 
 
 //Spawners

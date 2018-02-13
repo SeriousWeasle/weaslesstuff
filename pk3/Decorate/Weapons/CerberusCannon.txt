@@ -1,0 +1,29 @@
+ACTOR CerberusCannon : DoomWeapon
+{
+	Inventory.PickupMessage "Picked up the Cerberus orbital cannon"
+	Weapon.AmmoType1 "LunariumCell"
+	Weapon.AmmoUse1 100
+	Weapon.AmmoType2 "SolariumCell"
+	Weapon.AmmoUse2 100
+	Weapon.SlotNumber 8
+	States
+	{
+		Ready:
+			OBCN A 1 A_WeaponReady (WRF_ALLOWRELOAD|WRF_ALLOWZOOM)
+			Loop
+		Select:
+			OBCN A 1 A_Raise
+			Loop
+		Deselect:
+			OBCN A 1 A_Lower
+			Loop
+		Fire:
+			OBCN B 3
+			{
+				A_PlaySound("OrbitalDesignator/Fire", 0);
+				A_FireProjectile("OrbitalDesignatorBeam");
+			}
+			OBCN A 3
+			Goto Ready
+	}
+}

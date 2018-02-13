@@ -20,3 +20,13 @@ Object DarkEnergyProjectile
         light DarkEnergyGlow
     }
 }
+
+pointlight OrbitalDesignatorGlow
+{
+	color 0.3 0.7 0.7
+	size 128
+	offset 0 0 0
+	subtractive 0
+	attenuate 0
+	dontlightself 1
+}
