@@ -1,4 +1,4 @@
-Class Weasle_ParticleCannonProjectile
+Class Weasle_ParticleCannonProjectile : Actor
 {
 	Default
 	{
@@ -7,17 +7,51 @@ Class Weasle_ParticleCannonProjectile
 		Speed 24;
 		Damage 5;
 		DamageType "Nuclear";
+		Projectile;
+		+ActivateImpact
+		+ActivatePCross
 	}
 
 	States
 	{
 		Spawn:
-			PBAL A 1 A_EmitPlasma(3, 3);
+			BPAK A 1 A_EmitPlasma(3, 8);
 			Loop;
+		Death:
+			Stop;
 	}
 
-	void A_EmitPlasma(damage, amount)
+	action void A_EmitPlasma(int amount, int randomint)
 	{
-		
+		int i = 0;
+		for (i = 0; i < amount + 1; i++)
+		{
+			A_SpawnItemEx("ParticleCloud", random(randomint, -randomint), random(randomint, -randomint), random(randomint, -randomint), random(randomint, -randomint), random(randomint, -randomint), random(randomint, -randomint), random(randomint, -randomint));
+		}
+	}
+}
+
+Class ParticleCloud : Actor
+{
+	Default
+	{
+		Damage 3;
+		Radius 3;
+		Height 3;
+		Speed 3;
+		DamageType "Nuclear";
+		Projectile;
+		+ActivateImpact
+		+ActivatePCross
+	}
+
+	States
+	{
+		Spawn:
+			CLIP A -1;
+			Stop;
+		Death:
+			CLIP A 1 A_FadeOut(0.05);
+			Loop;
 	}
 }

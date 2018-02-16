@@ -52,7 +52,7 @@
 #include "Decorate/Weapons/LunSolSMG.txt"
 //#include "Decorate/Weapons/ExplosiveRifle.txt"
 //#include "Decorate/Weapons/NewChainsaw.txt"
-#include "Decorate/Weapons/CerberusCannon.txt"
+//#include "Decorate/Weapons/CerberusCannon.txt"
 
 
 //Spawners
