@@ -124,6 +124,69 @@ ACTOR EnergyPistol : DoomWeapon
             }
             ENPT F 4 A_GiveInventory("EnergyPistolCellsLoaded", 1)
             Goto Ready
+		AltFire:
+			TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "AmmoCheckCellsAlt")
+        FireCheckLunariumAlt:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolLunariumLoaded", 1, "AmmoCheckLunariumAlt")
+        FireCheckSolariumAlt:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolSolariumLoaded", 1, "AmmoCheckSolariumAlt")
+        AmmoCheckCellsAlt:
+            TNT1 A 0 A_JumpIfInventory("Cell", 2, "FireCellsAlt")
+            Goto Ready
+        AmmoCheckLunariumAlt:
+            TNT1 A 0 A_JumpIfInventory("LunariumCell", 2, "FireLunariumAlt")
+            Goto Ready
+        AmmoCheckSolariumAlt:
+            TNT1 A 0 A_JumpIfInventory("SolariumCell", 2, "FireSolariumAlt")
+            Goto Ready
+		FireCellsAlt:
+            ENPT F 3 A_TakeInventory("Cell", 2)
+            ENPT E 3
+            {
+				A_FireProjectile("LunSolSMGCP", random(-2,2), 0, 0, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGCP", random(-2,2), 0, 0, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGCP", random(-2,2), 0, 0, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGCP", random(-2,2), 0, 0, 0, 0, random(-2,2));
+                A_PlaySound("EnergyPistol/Fire", 0);
+            }
+            ENPT G 2
+            ENPT H 1
+            ENPT I 1
+            ENPT J 1
+            ENPT F 3 A_ReFire
+            Goto Ready
+        FireLunariumAlt:
+            ENPT C 3 A_TakeInventory("LunariumCell", 2)
+            ENPT D 3
+            {
+				A_FireProjectile("LunSolSMGLP", random(-2,2), 0, 0, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGLP", random(-2,2), 0, 0, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGLP", random(-2,2), 0, 0, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGLP", random(-2,2), 0, 0, 0, 0, random(-2,2));
+                A_PlaySound("EnergyPistol/Fire", 0);
+            }
+            ENPT K 2
+            ENPT L 1
+            ENPT M 1
+            ENPT N 1
+            ENPT C 3 A_ReFire
+            Goto Ready
+        FireSolariumAlt:
+            ENPT A 3 A_TakeInventory("SolariumCell", 2)
+            ENPT B 3
+            {
+				A_FireProjectile("LunSolSMGSP", random(-2,2), 0, 0, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGSP", random(-2,2), 0, 0, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGSP", random(-2,2), 0, 0, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGSP", random(-2,2), 0, 0, 0, 0, random(-2,2));
+                A_PlaySound("EnergyPistol/Fire", 0);
+            }
+            ENPT O 2
+            ENPT P 1
+            ENPT Q 1
+            ENPT R 1
+            ENPT A 3 A_ReFire
+            Goto Ready
         Fire:
             TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "AmmoCheckCells")
         FireCheckLunarium:
@@ -273,6 +336,81 @@ ACTOR DoubleEnergyPistol : DoomWeapon
             }
             ENPD F 4 A_GiveInventory("EnergyPistolCellsLoaded", 1)
             Goto Ready
+		AltFire:
+			TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "AmmoCheckCellsAlt")
+        FireCheckLunariumAlt:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolLunariumLoaded", 1, "AmmoCheckLunariumAlt")
+        FireCheckSolariumAlt:
+            TNT1 A 0 A_JumpIfInventory("EnergyPistolSolariumLoaded", 1, "AmmoCheckSolariumAlt")
+        AmmoCheckCellsAlt:
+            TNT1 A 0 A_JumpIfInventory("Cell", 4, "FireCellsAlt")
+            Goto Ready
+        AmmoCheckLunariumAlt:
+            TNT1 A 0 A_JumpIfInventory("LunariumCell", 4, "FireLunariumAlt")
+            Goto Ready
+        AmmoCheckSolariumAlt:
+            TNT1 A 0 A_JumpIfInventory("SolariumCell", 4, "FireSolariumAlt")
+            Goto Ready
+		FireCellsAlt:
+            ENPD F 3 A_TakeInventory("Cell", 4)
+            ENPD E 3
+            {
+				A_FireProjectile("LunSolSMGCP", random(-2,2), 0, -12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGCP", random(-2,2), 0, -12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGCP", random(-2,2), 0, -12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGCP", random(-2,2), 0, -12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGCP", random(-2,2), 0, 12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGCP", random(-2,2), 0, 12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGCP", random(-2,2), 0, 12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGCP", random(-2,2), 0, 12, 0, 0, random(-2,2));
+                A_PlaySound("EnergyPistol/Fire", 4);
+            }
+            ENPD G 2
+            ENPD H 1
+            ENPD I 1
+            ENPD J 1
+            ENPD F 3 A_ReFire
+            Goto Ready
+        FireLunariumAlt:
+            ENPD C 3 A_TakeInventory("LunariumCell", 4)
+            ENPD D 3
+            {
+				A_FireProjectile("LunSolSMGLP", random(-2,2), 0, -12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGLP", random(-2,2), 0, -12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGLP", random(-2,2), 0, -12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGLP", random(-2,2), 0, -12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGLP", random(-2,2), 0, 12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGLP", random(-2,2), 0, 12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGLP", random(-2,2), 0, 12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGLP", random(-2,2), 0, 12, 0, 0, random(-2,2));
+                A_PlaySound("EnergyPistol/Fire", 4);
+            }
+            ENPD K 2
+            ENPD L 1
+            ENPD M 1
+            ENPD N 1
+            ENPD C 3 A_ReFire
+            Goto Ready
+        FireSolariumAlt:
+            ENPD A 3 A_TakeInventory("SolariumCell", 4)
+            ENPD B 3
+            {
+				A_FireProjectile("LunSolSMGSP", random(-2,2), 0, -12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGSP", random(-2,2), 0, -12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGSP", random(-2,2), 0, -12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGSP", random(-2,2), 0, -12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGSP", random(-2,2), 0, 12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGSP", random(-2,2), 0, 12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGSP", random(-2,2), 0, 12, 0, 0, random(-2,2));
+				A_FireProjectile("LunSolSMGSP", random(-2,2), 0, 12, 0, 0, random(-2,2));
+                A_PlaySound("EnergyPistol/Fire", 0);
+            }
+            ENPD O 2
+            ENPD P 1
+            ENPD Q 1
+            ENPD R 1
+            ENPD A 3 A_ReFire
+            Goto Ready
         Fire:
             TNT1 A 0 A_JumpIfInventory("EnergyPistolCellsLoaded", 1, "AmmoCheckCells")
         FireCheckLunarium:
@@ -352,6 +490,7 @@ Actor EnergyPistolBallInheritor
 ACTOR EnergyPistolCellBall : EnergyPistolBallInheritor
 {
     Speed 35
+	DamageType "Plasma"
     Damage 16
     States
     {
@@ -369,6 +508,7 @@ ACTOR EnergyPistolCellBall : EnergyPistolBallInheritor
 ACTOR EnergyPistolLunariumBall : EnergyPistolBallInheritor
 {
     Speed 45
+	DamageType "Plasma"
     Damage 8
     States
     {
@@ -386,6 +526,7 @@ ACTOR EnergyPistolLunariumBall : EnergyPistolBallInheritor
 ACTOR EnergyPistolSolariumBall : EnergyPistolBallInheritor
 {
     Speed 25
+	DamageType "Fire"
     Damage 24
     States
     {

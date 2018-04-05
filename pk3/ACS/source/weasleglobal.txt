@@ -94,7 +94,44 @@ script "noberserk" (void)
 	SetResultValue(GetCVar("weasle_noberserk"));
 }
 
-script "healthupgrade" (void)
+script "SMGSolariumReloader" (void)
 {
-	SetMaxHealth("Health", GetMaxHealth("Health") + 25);
+	int CurrentSolariumCell = CheckInventory("SolariumCell");
+	int CurrentSolariumSMG = CheckInventory("SMGClipSolarium");
+	int MaxSolariumSMG = GetAmmoCapacity("SMGClipSolarium");
+
+	int SolariumNeeded = MaxSolariumSMG - CurrentSolariumSMG;
+
+	if (SolariumNeeded <= CurrentSolariumCell)
+	{
+		TakeInventory("SolariumCell", SolariumNeeded);
+		SetResultValue(SolariumNeeded + CurrentSolariumSMG);
+	}
+
+	else
+	{
+		TakeInventory("SolariumCell", CurrentSolariumCell);
+		SetResultValue(CurrentSolariumCell + CurrentSolariumSMG);
+	}
+}
+
+script "SMGLunariumReloader" (void)
+{
+	int CurrentLunariumCell = CheckInventory("LunariumCell");
+	int CurrentLunariumSMG = CheckInventory("SMGClipLunarium");
+	int MaxLunariumSMG = GetAmmoCapacity("SMGClipLunarium");
+
+	int LunariumNeeded = MaxLunariumSMG - CurrentLunariumSMG;
+
+	if (LunariumNeeded <= CurrentLunariumCell)
+	{
+		TakeInventory("LunariumCell", LunariumNeeded);
+		SetResultValue(LunariumNeeded + CurrentLunariumSMG);
+	}
+
+	else
+	{
+		TakeInventory("LunariumCell", CurrentLunariumCell);
+		SetResultValue(CurrentLunariumCell + CurrentLunariumSMG);
+	}
 }

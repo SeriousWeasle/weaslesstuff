@@ -3,5 +3,5 @@ ACTOR PlasmaRifleSpawner : RandomSpawner replaces PlasmaRifle
     DropItem "VanillaPlasmaRifle" 255 4
     DropItem "DarkEnergyRifle" 255 1
     DropItem "EnergyPistolGiver" 255 1
-    DropItem "LunSolSMG" 255 1
+    DropItem "LunSolSMGGiver" 255 1
 }

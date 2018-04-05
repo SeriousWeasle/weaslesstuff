@@ -2430,3 +2430,66 @@ Sprite SSMPG0, 10, 10
         Rotate 0
     }
 }
+
+Sprite CSMPA0, 4, 4
+{
+    Offset 2, 2
+    Patch CSMPA0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite CSMPB0, 4, 4
+{
+    Offset 2, 2
+    Patch CSMPB0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite CSMPC0, 10, 10
+{
+    Offset 5, 5
+    Patch CSMPC0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite CSMPD0, 10, 10
+{
+    Offset 5, 5
+    Patch CSMPD0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite CSMPE0, 10, 10
+{
+    Offset 5, 5
+    Patch CSMPE0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite CSMPF0, 10, 10
+{
+    Offset 5, 5
+    Patch CSMPF0, 0, 0
+    {
+        Rotate 0
+    }
+}
+
+Sprite CSMPG0, 10, 10
+{
+    Offset 5, 5
+    Patch CSMPG0, 0, 0
+    {
+        Rotate 0
+    }
+}

@@ -1,0 +1,37 @@
+Class WS_CerberusCannon : WS_Weapon
+{
+	Default
+	{
+		Scale 1.0;
+		Radius 20;
+		Height 20;
+		Weapon.SlotNumber 8;
+		Weapon.AmmoType1 "LunariumCell";
+		Weapon.AmmoUse1 100;
+		Weapon.AmmoType2 "SolariumCell";
+		Weapon.AmmoUse2 100;
+		Inventory.Icon "OBCNB0";
+	}
+
+	States
+	{
+		Ready:
+			OBCN A 1 A_WeaponReady;
+			Loop;
+		Deselect:
+			OBCN A 1 A_Lower;
+			Loop;
+		Select:
+			OBCN A 1 A_Raise;
+			Loop;
+		Fire:
+			
+			OBCN C 3;
+			OBCN A 3;
+			Goto Ready;
+		AltFire:
+			OBCN D 3;
+			OBCN A 3;
+			Goto Ready;
+	}
+}

@@ -71,12 +71,12 @@ ACTOR CloudOfPurpleSmoke
     States
     {
         Spawn:
-            PSMK A 5 A_Explode(3,128)
-            PSMK B 6 A_Explode(3,128)
-            PSMK C 8 A_Explode(3,128)
-            PSMK DE 10 A_Explode(3,128)
-            PSMK FG 8 A_Explode(3,128)
-            PSMK H 9 A_Explode(3,128)
+            PSMK A 5 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK B 6 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK C 8 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK DE 10 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK FG 8 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK H 9 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
             Stop
     }
 }
@@ -97,14 +97,14 @@ ACTOR CloudOfPurpleSmoke2
     States
     {
         Spawn:
-            PSMK A 6 A_Explode(3,128)
-            PSMK B 8 A_Explode(3,128)
-            PSMK C 7 A_Explode(3,128)
-            PSMK DE 7 A_Explode(3,128)
-            PSMK FG 9 A_Explode(3,128)
-            PSMK FE 8 A_Explode(3,128)
-            PSMK DF 11 A_Explode(3,128)
-            PSMK H 5 A_Explode(3,128)
+            PSMK A 6 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK B 8 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK C 7 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK DE 7 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK FG 9 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK FE 8 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK DF 11 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK H 5 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
             Stop
     }
 }
@@ -125,15 +125,15 @@ ACTOR CloudOfPurpleSmoke3
     States
     {
         Spawn:
-            PSMK A 9 A_Explode(3,128)
-            PSMK B 5 A_Explode(3,128)
-            PSMK C 7 A_Explode(3,128)
-            PSMK DE 10 A_Explode(3,128)
-            PSMK FG 10 A_Explode(3,128)
-            PSMK FE 8 A_Explode(3,128)
-            PSMK DF 13 A_Explode(3,128)
-            PSMK FEDEFDG 9  A_Explode(3,128)
-            PSMK H 7 A_Explode(3,128)
+            PSMK A 9 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK B 5 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK C 7 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK DE 10 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK FG 10 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK FE 8 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK DF 13 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK FEDEFDG 9  A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
+            PSMK H 7 A_Explode(3,128, 0, 0, 0, 0, 0, "DarkSparksRandomizer", "Dark")
             Stop
     }
 }

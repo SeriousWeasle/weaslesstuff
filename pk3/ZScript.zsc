@@ -1,4 +1,8 @@
-version "2.4"
+version "3.2.5"
+
+//Base stuff
+#include "zscript/weasle/base/base_weapon.zsc"
+#include "zscript/weasle/base/base_fx.zsc"
 
 //Effects
 
@@ -8,3 +12,4 @@ version "2.4"
 
 //Weapons
 #include "zscript/weasle/weapons/particlecannon.zsc"
+#include "zscript/weasle/weapons/CerberusCannon.zsc"

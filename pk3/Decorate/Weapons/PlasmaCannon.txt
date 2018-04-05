@@ -331,6 +331,7 @@ ACTOR PlasmaCannonBeamInheritor
 ACTOR PlasmaCannonCellBeam : PlasmaCannonBeamInheritor
 {
     Speed 60
+	DamageType "Plasma"
     Damage 16
     States
     {
@@ -349,6 +350,7 @@ ACTOR PlasmaCannonCellBeam : PlasmaCannonBeamInheritor
 ACTOR PlasmaCannonLunariumBeam : PlasmaCannonBeamInheritor
 {
     Speed 70
+	DamageType "Plasma"
     Damage 8
     States
     {
@@ -367,6 +369,7 @@ ACTOR PlasmaCannonLunariumBeam : PlasmaCannonBeamInheritor
 ACTOR PlasmaCannonSolariumBeam : PlasmaCannonBeamInheritor
 {
     Speed 50
+	DamageType "Fire"
     Damage 24
     States
     {

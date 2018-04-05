@@ -15,7 +15,6 @@
 #include "Decorate/Ammo/Mixed.txt"
 #include "Decorate/Ammo/Lunarium.txt"
 #include "Decorate/Ammo/Solarium.txt"
-#include "Decorate/Ammo/Ducks.txt"
 #include "Decorate/Ammo/Q3AStyle.txt"
 
 //Effects

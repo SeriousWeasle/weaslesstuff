@@ -71,6 +71,7 @@ ACTOR DarkEnergyProjectile
 {
     Radius 3
     Height 4
+	DamageType "Dark"
     Speed 45
     Damage 4
     SeeSound ""
@@ -442,6 +443,7 @@ ACTOR DarkEnergyProjectileAltFire
     Height 4
     Speed 20
     Damage 4
+	DamageType "Dark"
     SeeSound ""
     DeathSound ""
     RenderStyle Subtract

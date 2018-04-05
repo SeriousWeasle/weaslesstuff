@@ -1,4 +1,0 @@
-ACTOR HMRifle : DoomWeapon
-{
-    Weapon.SlotNumber 6
-}

@@ -1,4 +1,4 @@
-StatusBar fullscreen, fullscreenoffsets
+StatusBar normal, fullscreenoffsets
 {
     //Basic HUD shapes
     DrawImage "WEASHUD", 0, -58;

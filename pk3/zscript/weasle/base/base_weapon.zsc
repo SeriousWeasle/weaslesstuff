@@ -1,0 +1,12 @@
+Class WS_Weapon : Weapon
+{
+	Default
+	{
+		Radius 26;
+		Height 12;
+		Scale 1.0;
+		Weapon.Kickback 100;
+		Weapon.BobStyle "Smooth";
+		Weapon.BobSpeed 1.0;
+	}
+}
