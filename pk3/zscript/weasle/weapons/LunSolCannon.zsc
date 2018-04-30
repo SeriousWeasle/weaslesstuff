@@ -1,0 +1,170 @@
+CLASS LunSolCannon : DoomWeapon
+{
+	Default
+	{
+		Weapon.SlotNumber 7;
+		Weapon.AmmoUse1 1;
+		Weapon.AmmoGive1 32;
+		Weapon.AmmoType1 "Cell";
+		Weapon.AmmoUse2 1;
+		Weapon.AmmoGive2 32;
+		Weapon.AmmoType2 "Cell";
+		Inventory.PickupMessage "Picked up a prototype Lunarium / Solarium Cannon";
+	}
+
+    States
+    {
+        Ready:
+            LSCN A 1 A_WeaponReady;
+            Loop;
+        Deselect:
+            LSCN A 1 A_Lower;
+            Loop;
+        Select:
+            LSCN A 1 A_Raise;
+            Loop;
+        Fire:
+            LSCN A 1 A_PlaySound ("LunSolCannon/Fire", 0);
+            LSCN A 34;
+            LSCN A 3 A_FireProjectile("LunariumBall");
+            LSCN A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 15;
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 3 A_WeaponOffset(0, 0, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 5 A_ReFire;
+            Goto Ready;
+        AltFire:
+            LSCN A 1 A_PlaySound ("LunSolCannon/Fire", 0);
+            LSCN A 34;
+            LSCN A 3 A_FireProjectile("SolariumBall");
+            LSCN A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(15, 15, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 15;
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 1 A_WeaponOffset(-1, -1, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 3 A_WeaponOffset(0, 0, WOF_ADD|WOF_INTERPOLATE);
+            LSCN A 5 A_ReFire;
+            Goto Ready;
+        Spawn:
+            BPAK A -1;
+            Stop;
+    }
+}
+
+CLASS LunariumBall : Actor
+{
+	Default
+	{
+		Radius 3;
+		Height 4;
+		Speed 25;
+		Damage 256;
+		SeeSound "";
+		DeathSound "";
+		RenderStyle "Add";
+		Projectile;
+		Scale 2.5;
+		Alpha 1;
+		+DONTSPLASH;
+	}
+
+    States
+    {
+        Spawn:
+            LUNP ABCB 5 Bright;
+            Loop;
+        Death:
+            TNT1 A 0 A_PlaySound("Explosions/Lunarium", 0);
+            TNT1 A 0 A_Explode(2048, 256);
+            TNT1 A 0 A_SpawnItemEx("LunariumExplosion", 0, 0, 0, 0, 0, 0, 0);
+            Stop;
+    }
+}
+
+CLASS SolariumBall : Actor
+{
+	Default
+	{
+		Radius 3;
+		Height 4;
+		Speed 25;
+		Damage 256;
+		SeeSound "";
+		DeathSound "";
+		RenderStyle "Add";
+		Projectile;
+		Scale 2.5;
+		Alpha 1;
+		+DONTSPLASH;
+	}
+
+    States
+    {
+        Spawn:
+            LUNP ABCB 5 Bright;
+            Loop;
+        Death:
+            TNT1 A 0 A_PlaySound("Explosions/Solarium", 0, 4);
+            TNT1 A 0 A_Explode(2048, 256);
+            TNT1 A 0 A_SpawnItemEx("LunariumExplosion", 0, 0, 0, 0, 0, 0, 0);
+            Stop;
+    }
+}

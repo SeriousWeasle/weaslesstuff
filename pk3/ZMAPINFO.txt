@@ -1,3 +1,8 @@
+gameinfo
+{
+	playerclasses = "Doomguy", "Player1", "Player2"
+}
+
 ClearSkills
 
 Skill VeryEasy

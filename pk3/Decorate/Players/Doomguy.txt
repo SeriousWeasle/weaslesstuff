@@ -1,0 +1,4 @@
+ACTOR Doomguy : DoomPlayer
+{
+	Player.DisplayName "Doomguy"
+}

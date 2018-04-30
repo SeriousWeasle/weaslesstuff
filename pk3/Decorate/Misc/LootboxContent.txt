@@ -9,28 +9,31 @@ ACTOR LootboxCommonSpawner : RandomSpawner
 
 ACTOR LootboxUncommonSpawner : RandomSpawner
 {
-	DropItem "" 255 1
-	DropItem "" 255 1
-	DropItem "" 255 1
+	DropItem "Clipbox" 255 1
+	DropItem "Cellpack" 255 1
+	DropItem "Medikit" 255 1
+	DropItem "Shellbox" 255 1
 }
 
 ACTOR LootboxRareSpawner : RandomSpawner
 {
-	DropItem "" 255 1
-	DropItem "" 255 1
-	DropItem "" 255 1
+	DropItem "Chaingun" 255 1
+	DropItem "SuperShotgun" 255 1
+	DropItem "Plasmarifle" 255 1
+	DropItem "RocketLauncher" 255 1
 }
 
 ACTOR LootboxEpicSpawner : RandomSpawner
 {
-	DropItem "" 255 1
-	DropItem "" 255 1
-	DropItem "" 255 1
+	DropItem "RocketLauncher" 255 1
+	DropItem "Plasmarifle" 255 1
+	DropItem "BFG9000" 255 1
 }
 
 ACTOR LootboxLegendarySpawner : RandomSpawner
 {
 	DropItem "PlasmaCannon" 255 1
+	DropItem "BFG9000" 255 1
 	DropItem "SMGLunariumUpgrade" 255 1
 	DropItem "SMGSolariumUpgrade" 255 1
 }

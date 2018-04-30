@@ -13,3 +13,4 @@ version "3.2.5"
 //Weapons
 #include "zscript/weasle/weapons/particlecannon.zsc"
 #include "zscript/weasle/weapons/CerberusCannon.zsc"
+#include "zscript/weasle/weapons/LunSolCannon.zsc"

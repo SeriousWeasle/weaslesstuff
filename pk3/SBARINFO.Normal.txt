@@ -12,102 +12,41 @@ StatusBar normal, fullscreenoffsets
     }
 
     //Health and armor numbers
-    DrawNumber 9, SmallFont, DarkGray, Health, 56, -45;
-    DrawNumber 9, SmallFont, DarkGray, Armor, 56, -20;
+    DrawNumber 9, SmallFont, DarkGray, Health, Alignment(center), 48, -45;
+    DrawNumber 9, SmallFont, DarkGray, Armor, Alignment(center), 48, -20;
 
     //Ammo
-    DrawImage ammoicon1, -23, -79, center;
-    DrawImage ammoicon2, -23, -42, center;
-    DrawNumber 5, SmallFont, White, ammo1, Alignment(center), -134, -85;
-    DrawNumber 5, SmallFont, White, ammo2, Alignment(center), -134, -48;
-    DrawNumber 5, SmallFont, White, ammo1capacity, Alignment(center), -76, -85;
-    DrawNumber 5, SmallFont, White, ammo2capacity, Alignment(center), -76, -48;
+    DrawImage ammoicon1, -15, -15, center;
+    DrawImage ammoicon2, -15, -35, center;
+    DrawNumber 5, SmallFont, White, ammo1, Alignment(center), -90, -20;
+    DrawNumber 5, SmallFont, White, ammo2, Alignment(center), -90, -40;
+    DrawNumber 5, SmallFont, White, ammo1capacity, Alignment(center), -50, -20;
+    DrawNumber 5, SmallFont, White, ammo2capacity, Alignment(center), -50, -40;
 
     //For 3 ammo types
     IsSelected PlasmaCannon
     {
-        DrawImage "CELLA0", -23, -110;
-        DrawNumber 5, SmallFont, White, Ammo("Cell"), Alignment(center), -134, -122;
-        DrawNumber 5, SmallFont, White, AmmoCapacity("Cell"), Alignment(center), -76, -122;
-        InInventory PlasmaCannonCellsLoaded
-        {
-            DrawImage "WEASSEL", -23, -116, center;
-            DrawImage "CELLLOAD", -175, -147;
-        }
-
-        InInventory PlasmaCannonLunariumLoaded
-        {
-            DrawImage "WEASSEL", -23, -79, center;
-            DrawImage "LUNLOAD", -175, -147;
-        }
-
-        InInventory PlasmaCannonSolariumLoaded
-        {
-            DrawImage "WEASSEL", -23, -42, center;
-            DrawImage "SOLLOAD", -175, -147;
-        }
+        DrawImage "CELLA0", -15, -50;
+        DrawNumber 5, SmallFont, White, Ammo("Cell"), Alignment(center), -90, -60;
+        DrawNumber 5, SmallFont, White, AmmoCapacity("Cell"), Alignment(center), -50, -60;
     }
     
     IsSelected DoubleEnergyPistol, EnergyPistol
     {
-        DrawImage "CELLA0", -23, -110;
-        DrawNumber 5, SmallFont, White, Ammo("Cell"), Alignment(center), -134, -122;
-        DrawNumber 5, SmallFont, White, AmmoCapacity("Cell"), Alignment(center), -76, -122;
-        InInventory EnergyPistolCellsLoaded
-        {
-            DrawImage "WEASSEL", -23, -116, center;
-            DrawImage "CELLLOAD", -175, -147;
-        }
-
-        InInventory EnergyPistolLunariumLoaded
-        {
-            DrawImage "WEASSEL", -23, -79, center;
-            DrawImage "LUNLOAD", -175, -147;
-        }
-
-        InInventory EnergyPistolSolariumLoaded
-        {
-            DrawImage "WEASSEL", -23, -42, center;
-            DrawImage "SOLLOAD", -175, -147;
-        }
-    }
-
-    IsSelected VanillaSuperShotgun
-    {
-        InInventory not GreenShellsLoadedSSG
-        {
-            DrawImage "WEASSEL", -23, -79, center;
-            DrawImage "RSLOAD", -175, -147;
-        }
-
-        InInventory GreenShellsLoadedSSG 
-        {
-            DrawImage "WEASSEL", -23, -42, center;
-            DrawImage "GSLOAD", -175, -147;
-        }
+        DrawImage "CELLA0", -15, -50;
+        DrawNumber 5, SmallFont, White, Ammo("Cell"), Alignment(center), -90, -60;
+        DrawNumber 5, SmallFont, White, AmmoCapacity("Cell"), Alignment(center), -50, -60;
     }
 
     IsSelected LunSolSMG
     {
-        DrawImage "LNCLA0", -23, -116;
-        DrawNumber 5, SmallFont, White, Ammo("LunariumCell"), Alignment(center), -134, -122;
-        DrawNumber 5, SmallFont, White, AmmoCapacity("LunariumCell"), Alignment(center), -76, -122;
+        DrawImage "LNCLA0", -15, -50;
+        DrawNumber 5, SmallFont, White, Ammo("LunariumCell"), Alignment(center), -90, -60;
+        DrawNumber 5, SmallFont, White, AmmoCapacity("LunariumCell"), Alignment(center), -50, -60;
 
-        DrawImage "SLCLA0", -23, -153;
-        DrawNumber 5, SmallFont, White, Ammo("SolariumCell"), Alignment(center), -134, -159;
-        DrawNumber 5, SmallFont, White, AmmoCapacity("SolariumCell"), Alignment(center), -76, -159;
-
-        InInventory not SMGSolariumLoaded
-        {
-            DrawImage "WEASSEL", -23, -79, center;
-            DrawImage "LUNLOAD", -175, -147;
-        }
-
-        InInventory SMGSolariumLoaded 
-        {
-            DrawImage "WEASSEL", -23, -42, center;
-            DrawImage "SOLLOAD", -175, -147;
-        }
+        DrawImage "SLCLA0", -15, -70;
+        DrawNumber 5, SmallFont, White, Ammo("SolariumCell"), Alignment(center), -90, -80;
+        DrawNumber 5, SmallFont, White, AmmoCapacity("SolariumCell"), Alignment(center), -50, -80;
     }
     //Keys
 	drawswitchableimage YellowCard && YellowSkull, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 17, -67;

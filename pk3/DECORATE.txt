@@ -28,6 +28,11 @@
 #include "Decorate/Monsters/Zombieman.txt"
 #include "Decorate/Monsters/ShotgunGuy.txt"
 
+//Players
+#include "Decorate/Players/Doomguy.txt"
+#include "Decorate/Players/Player_1.txt"
+#include "Decorate/Players/Player_2.txt"
+
 //Miscellaneous
 #include "Decorate/Misc/Lootboxes.txt"
 #include "Decorate/Misc/LootboxContent.txt"
@@ -35,7 +40,7 @@
 #include "Decorate/Armor/Bonuses.txt"
 
 //Upgrades
-//#include "Decorate/Upgrades/Ammo.txt"
+#include "Decorate/Upgrades/Ammo.txt"
 //#include "Decorate/Upgrades/Health.txt"
 
 //Weapons
@@ -43,7 +48,7 @@
 #include "Decorate/Weapons/12mmPistol.txt"
 #include "Decorate/Weapons/SMG5mm.txt"
 #include "Decorate/Weapons/DarkEnergyRifle.txt"
-#include "Decorate/Weapons/LunSolCannon.txt"
+//#include "Decorate/Weapons/LunSolCannon.txt"
 #include "Decorate/Weapons/MachinePistol.txt"
 #include "Decorate/Weapons/EnergyPistol.txt"
 #include "Decorate/Weapons/PlasmaCannon.txt"
