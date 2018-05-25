@@ -1,4 +1,4 @@
-version "3.2.5"
+version "2.4.0"
 
 //Base stuff
 #include "zscript/weasle/base/base_weapon.zsc"

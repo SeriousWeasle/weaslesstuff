@@ -1,4 +1,4 @@
-ACTOR Player1 : PlayerPawn
+ACTOR Player1 : DoomPlayer
 {
 	Health 150
 	Player.MaxHealth 150
