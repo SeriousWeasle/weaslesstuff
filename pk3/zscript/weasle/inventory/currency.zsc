@@ -1,3 +1,19 @@
-Class WeasleCoin : Actor {
-    
+Class WeasleCoin : CustomInventory
+{
+    Default
+    {
+        Inventory.Amount 1;
+        Inventory.MaxAmount 999; //Add in a maximum in the future, but for now this will do
+        Inventory.Icon 'WSCNA0';
+    }
+
+    States
+    {
+        Spawn:
+            WCSN A 0 -1;
+            Stop;
+        Pickup:
+            TNT1 A 1;
+            Stop;
+    }
 }

@@ -1,0 +1,8 @@
+Class WS_baseFX : ACTOR {
+    Default
+    {
+        Radius 20
+        Height: 10
+        Scale 1.0
+    }
+}
